@@ -10,10 +10,10 @@
 
 master.company.title = La empresa
 master.company.text = \
-	Acme L3 D01, Inc. es una compañía ficticia que ayuda a los \
+	Acme L3, S.A. es una compañía ficticia que ayuda a los \
 	estudiantes de D&amp;T2 a familiarizarse con el procedimiento \
 	para instanciar un proyecto starter.
-master.company.name = Acme L3 D01, Inc.
+master.company.name = Acme L3, S.A.
 master.company.address = 01 Acme Drive, Wondercity, Wonderland
 master.company.phone = +1 000 111 222
 master.company.email = contact@acme-c10401.com
