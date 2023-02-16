@@ -17,8 +17,10 @@ master.menu.sign-out = Salir
 
 # master.menu.anonymous #######################################################
 
-master.menu.anonymous = Anónimo
-master.menu.anonymous.favourite-link = 20090433W: García Aguilar, Javier
+master.menu.anonymous = 20090433W: García Aguilar, Javier
+master.menu.anonymous.favourite-link = favourite-link
+master.menu.anonymous = 47347286S: Cuenca Perez, Pablo
+master.menu.anonymous.favourite-link = https://es.coppermind.net/wiki/Coppermind:Bienvenidos
 
 
 # master.menu.administrator ###################################################
@@ -36,8 +38,8 @@ master.menu.provider = Proveedor
 master.menu.anonymous.favourite-link = Enlace favorito
 # master.menu.consumer ##########################################################
 
-master.menu.consumer = 47347286S: Cuenca Perez, Pablo
-master.menu.consumer.favourite-link = https://es.coppermind.net/wiki/Coppermind:Bienvenidos
+master.menu.consumer = consumidor
+master.menu.consumer.favourite-link = enlace favorito
 
 # master.menu.user-account ####################################################
 
