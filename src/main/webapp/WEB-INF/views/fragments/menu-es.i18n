@@ -18,7 +18,8 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 
-master.menu.anonymous = Anónimo 
+master.menu.anonymous = Anónimo
+master.menu.anonymous.favourite-link1 = 20090433W: García Aguilar, Javier 
 master.menu.anonymous.favourite-link2 = 47347286S: Cuenca Perez, Pablo
 
 
