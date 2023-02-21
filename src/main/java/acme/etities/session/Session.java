@@ -1,5 +1,5 @@
 
-package acme.entities.bulletin;
+package acme.etities.session;
 
 import java.util.Date;
 
@@ -7,29 +7,22 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Bulletin extends AbstractEntity {
+public class Session {
 	// Serialisation identifier -----------------------------------------------
 
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-	@Temporal(TemporalType.TIMESTAMP)
-	@Past
-	@NotNull
-	protected Date				moment;
 
 	@NotBlank
 	@Length(max = 76)
@@ -37,9 +30,12 @@ public class Bulletin extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 101)
-	protected String			message;
+	protected String			abstracto;
 
-	protected Boolean			isCritical;
+	protected SessionType		type;
+
+	@Temporal(TemporalType.TIME)
+	protected Date				totalTime;
 
 	@URL
 	protected String			link;
