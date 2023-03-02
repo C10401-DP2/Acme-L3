@@ -1,38 +1,40 @@
 
-package acme.datatypes;
+package acme.entities.peep;
 
 import java.util.Date;
 
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
-import acme.framework.data.AbstractDatatype;
+import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
 
-@Embeddable
+@Entity
 @Getter
 @Setter
-public class Peep extends AbstractDatatype {
+public class Peep extends AbstractEntity {
 
 	// Serialisation identifier
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	@Past
-	protected Date				instMoment;
-
 	@NotBlank
 	@Length(max = 76)
 	protected String			title;
+
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	protected Date				moment;
 
 	@NotBlank
 	@Length(max = 76)
@@ -42,10 +44,10 @@ public class Peep extends AbstractDatatype {
 	@Length(max = 101)
 	protected String			message;
 
-	@Length(max = 76)
+	@Email
 	protected String			email;
 
-	@Length(max = 101)
+	@URL
 	protected String			link;
 
 }
