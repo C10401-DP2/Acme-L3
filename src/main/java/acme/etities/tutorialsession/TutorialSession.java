@@ -1,23 +1,29 @@
 
-package acme.etities.session;
+package acme.etities.tutorialsession;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.datatypes.ActivityType;
+import acme.etities.tutorial.Tutorial;
+import acme.roles.Assistant;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Session {
+public class TutorialSession {
 	// Serialisation identifier -----------------------------------------------
 
 	protected static final long	serialVersionUID	= 1L;
@@ -30,12 +36,17 @@ public class Session {
 
 	@NotBlank
 	@Length(max = 101)
-	protected String			abstracto;
+	protected String			anAbstract;
 
-	protected SessionType		type;
+	protected ActivityType		type;
 
-	@Temporal(TemporalType.TIME)
-	protected Date				totalTime;
+	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
+	protected Date				initialDate;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
+	protected Date				finalDate;
 
 	@URL
 	protected String			link;
@@ -43,5 +54,15 @@ public class Session {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Tutorial			tutorial;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Assistant			assistant;
 
 }
