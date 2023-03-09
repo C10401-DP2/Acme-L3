@@ -17,8 +17,13 @@ master.menu.sign-out = Salir
 
 # master.menu.anonymous #######################################################
 
+
 master.menu.anonymous = Anónimo
-master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.anonymous.favourite-link1 = 20090433W: García Aguilar, Javier 
+master.menu.anonymous.favourite-link2 = 47347286S: Cuenca Perez, Pablo
+master.menu.anonymous.favourite-link3 = 45969301Y: Del Hoyo Carcaboso, David
+master.menu.anonymous.favourite-link4 = 45970129Y: Zarandieta Ortiz, David
+master.menu.anonymous.favourite-link5 = 45968205Z: García Chavero, Adrián
 
 # master.menu.administrator ###################################################
 
@@ -32,12 +37,11 @@ master.menu.administrator.shut-down = Parar el sistema
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
-master.menu.anonymous.favourite-link = 20090433W: García Aguilar, Javier
-
+master.menu.anonymous.favourite-link = Enlace favorito
 # master.menu.consumer ##########################################################
 
-master.menu.consumer = Consumidor
-master.menu.consumer.favourite-link = Enlace favorito
+master.menu.consumer = consumidor
+master.menu.consumer.favourite-link = enlace favorito
 
 # master.menu.user-account ####################################################
 
