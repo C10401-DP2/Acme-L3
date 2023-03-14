@@ -24,7 +24,7 @@ public class Lecturer extends AbstractRole {
 
 	@NotBlank
 	@Length(max = 101)
-	protected String			résumé;
+	protected String			resume;
 
 	@NotBlank
 	@Length(max = 101)
