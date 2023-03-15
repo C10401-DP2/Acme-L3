@@ -16,8 +16,8 @@ public class CompanyDashboard extends AbstractForm {
 	protected static final long	serialVersionUID	= 1L;
 
 	//Atributes ---------------------------------------------------------------
-	Map<String, Double>			totalHandsOnPracticumByMonth;
-    Map<String, Double>			totalPracticePracticumByMonth;
+	Map<String, Integer>		totalHandsOnPracticumByMonth;
+    Map<String, Integer>		totalPracticePracticumByMonth;
 	Map<String, Double>			averagePracticumSessions;
 	Map<String, Double>			standardDesviationPracticumSessions;
 	Map<String, Double>			minTimePracticumSessions;
