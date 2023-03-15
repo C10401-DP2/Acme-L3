@@ -15,6 +15,8 @@ package acme.roles;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
+import org.hibernate.validator.constraints.URL;
+
 import acme.framework.data.AbstractRole;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,15 +28,18 @@ public class Consumer extends AbstractRole {
 
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long serialVersionUID = 1L;
+	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	protected String company;
+	protected String			company;
 
 	@NotBlank
-	protected String sector;
+	protected String			sector;
+
+	@URL
+	protected String			link;
 
 	// Derived attributes -----------------------------------------------------
 
