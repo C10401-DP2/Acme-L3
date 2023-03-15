@@ -15,7 +15,6 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.datatypes.ActivityType;
-import acme.entities.course.Course;
 import acme.entities.tutorial.Tutorial;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
@@ -60,10 +59,5 @@ public class TutorialSession extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	protected Tutorial			tutorial;
-
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	protected Course			course;
 
 }
