@@ -1,10 +1,11 @@
 
 package acme.roles;
 
-import java.util.List;
-
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -30,13 +31,18 @@ public class Student extends AbstractRole {
 
 	@NotBlank
 	@Length(max = 101)
-	protected List<String>		Sfeat;
+	protected String			Sfeat;
 
 	@NotBlank
 	@Length(max = 101)
-	protected List<String>		Wfeat;
+	protected String			Wfeat;
 
 	@URL
 	protected String			link;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Course			courses;
 
 }

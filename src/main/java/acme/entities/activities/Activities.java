@@ -2,11 +2,15 @@
 package acme.entities.activities;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.enrolment.Enrolment;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,9 +35,14 @@ public class Activities extends AbstractEntity {
 	protected String			abstrat;
 
 	protected ActivityType		atype;
-	
-	
 
 	@URL
 	protected String			link;
+
+	// Relationships
+
+	@Valid
+	@NotNull
+	@ManyToOne(optional = false)
+	protected Enrolment			enrolment;
 }
