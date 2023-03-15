@@ -1,5 +1,5 @@
 
-package acme.entities.bulletin;
+package acme.entities.offer;
 
 import java.util.Date;
 
@@ -23,7 +23,11 @@ import lombok.Setter;
 @Setter
 public class Offer extends AbstractEntity {
 
+    // Serialisation identifier -----------------------------------------------
+
     protected static final long	serialVersionUID	= 1L;
+
+    // Attributes -------------------------------------------------------------
 
     @Temporal(TemporalType.TIMESTAMP)
 	@Past
