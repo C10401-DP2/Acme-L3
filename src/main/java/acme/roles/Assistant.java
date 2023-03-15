@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import acme.framework.data.AbstractRole;
 import lombok.Getter;
@@ -30,7 +31,10 @@ public class Assistant extends AbstractRole {
 
 	@NotBlank
 	@Length(max = 101)
-	protected String			résumé;
+	protected String			resume;
+
+	@URL
+	protected String			link;
 
 	// Derived attributes -----------------------------------------------------
 
