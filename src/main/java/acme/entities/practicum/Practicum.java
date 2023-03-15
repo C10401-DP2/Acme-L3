@@ -51,11 +51,6 @@ public class Practicum extends AbstractEntity {
 	@Length(max = 76)
 	protected String            goals;
 
-    // Derived attributes -----------------------------------------------------
-
-    @NotNull
-	protected Integer			totalTime;
-
     // Relationships ----------------------------------------------------------
 
     @NotNull
