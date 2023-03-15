@@ -16,6 +16,7 @@ import org.hibernate.validator.constraints.URL;
 
 import acme.datatypes.ActivityType;
 import acme.entities.tutorial.Tutorial;
+import acme.framework.data.AbstractEntity;
 import acme.roles.Assistant;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,7 +24,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class TutorialSession {
+public class TutorialSession extends AbstractEntity {
 	// Serialisation identifier -----------------------------------------------
 
 	protected static final long	serialVersionUID	= 1L;
