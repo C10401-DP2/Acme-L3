@@ -1,0 +1,4 @@
+key,key:audit,subject,assessment,initial-date,final-date,mark,link
+auditing-record-01,audit-01,math,High-stakes assessment,2022/07/12 10:30,2022/11/27 13:20,Aplus,https://twitter.com/
+auditing-record-02,audit-01,chemistry,Formative assessment,2022/06/20 14:45,2022/09/11 18:50,C,null
+auditing-record-03,audit-03,history,Interim assessment,2022/07/28 18:15,2022/12/21 14:35,B,https://es.wikipedia.org/

@@ -1,5 +1,5 @@
 
-package acme.entities.auditingRecords;
+package acme.entities.auditingRecord;
 
 import java.util.Date;
 
