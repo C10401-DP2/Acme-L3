@@ -1,4 +1,8 @@
 key,key:assistant,key:course,code,title,anAbstract,goals,draftMode,totalTime
-tutorial-1,assistant-01,course-1,A101,Tutorial 01,This is the first tutorial,Learn to initialize the proyect
-tutorial-2,assistant-02,course-2,A102,Tutorial 02,This is the second tutorial,Learn to update the proyect
-tutorial-3,assistant-03,course-3,A103,Tutorial 03,This is the third tutorial,Learn to finish the proyect
+tutorial-1,assistant-01,course-1,A101,Tutorial 01,This is the first tutorial,Learn to initialize the project,false,3
+tutorial-2,assistant-02,course-2,A102,Tutorial 02,This is the second tutorial,Learn to update the project,false,2
+tutorial-3,assistant-01,course-2,A103,Tutorial 03,This is the third tutorial,Learn to finish the project,false,4
+tutorial-4,assistant-01,course-2,A104,Tutorial 04,This is the fourth tutorial,Learn to install the programs,false,3
+tutorial-5,assistant-02,course-3,A105,Tutorial 05,This is the fifth tutorial,Learn how to implement a functionality,false,2
+tutorial-6,assistant-02,course-3,A106,Tutorial 06,This is the sixth tutorial,Learn how to create an entity,false,2
+tutorial-7,assistant-02,course-3,A107,Tutorial 07,This is the seventh tutorial,Learn how to create a role,false,2

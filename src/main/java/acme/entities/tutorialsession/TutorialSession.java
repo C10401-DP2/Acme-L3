@@ -38,6 +38,7 @@ public class TutorialSession extends AbstractEntity {
 	@Length(max = 101)
 	protected String			anAbstract;
 
+	@NotNull
 	protected ActivityType		type;
 
 	@Temporal(TemporalType.TIMESTAMP)
