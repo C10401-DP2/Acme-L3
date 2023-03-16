@@ -364,7 +364,6 @@ Audit
 + conclusion: String {NotBlank, Length(max = 101)}
 + strongPoints: String {NotBlank, Length(max = 101)}
 + weakPoints: String {NotBlank, Length(max = 101)}
-+ mark: Mark {NotNull}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
@@ -483,16 +482,16 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>441</x>
-      <y>1316</y>
+      <x>1120</x>
+      <y>420</y>
       <w>266</w>
       <h>77</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
 Auditor
 --
 + firm: String {NotBlank, Length(max = 76)}
-+ profesionalId: String {NotBlank, Length(max = 26)}
++ profesionalId: String {NotBlank, Unique, Length(max = 26)}
 + certifications: String {NotBlank, Length(max = 101)}
 + link: String {URL}
 bg=green</panel_attributes>
@@ -540,8 +539,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1120</x>
-      <y>392</y>
+      <x>1106</x>
+      <y>273</y>
       <w>77</w>
       <h>98</h>
     </coordinates>
@@ -560,8 +559,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1120</x>
-      <y>518</y>
+      <x>1218</x>
+      <y>294</y>
       <w>70</w>
       <h>63</h>
     </coordinates>
@@ -627,17 +626,6 @@ bg=green</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0;50.0;130.0;50.0;440.0;310.0;440.0;310.0;480.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>567</x>
-      <y>889</y>
-      <w>21</w>
-      <h>441</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;610.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -745,9 +733,9 @@ m2=1</panel_attributes>
       <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-m1=0..n
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
@@ -1102,8 +1090,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>938</x>
-      <y>322</y>
+      <x>959</x>
+      <y>329</y>
       <w>112</w>
       <h>49</h>
     </coordinates>
@@ -1116,12 +1104,12 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>959</x>
-      <y>364</y>
-      <w>49</w>
-      <h>56</h>
+      <y>371</y>
+      <w>70</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>50.0;10.0;10.0;60.0</additional_attributes>
+    <additional_attributes>80.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
@@ -1198,5 +1186,41 @@ bg=green</panel_attributes>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>60.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1015</x>
+      <y>455</y>
+      <w>119</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1309</x>
+      <y>259</y>
+      <w>266</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+AuditorDashboard
+--
++ totalAudits: Integer
++ averageAuditingRecordsPerAudit: Integer
++ deviationAuditingRecordsPerAudit: Integer
++ minimumAuditingRecordsPerAudit: Integer
++ maximumAuditingRecordsPerAudit: Integer
++ averagePeriodLengthPerAuditingRecord: Integer
++ deviationPeriodLengthPerAuditingRecord: Integer
++ minimumPeriodLengthPerAuditingRecord: Integer
++ maximumPeriodLengthPerAuditingRecord: Integer
+bg=green</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
