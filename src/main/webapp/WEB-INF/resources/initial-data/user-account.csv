@@ -1,5 +1,10 @@
 key,enabled,identity,password,username
 user-account-anonymous-01,false,"UserIdentity{name: 'John', surname: 'Doe', email: 'john.doe@acme.com'}",HIDDEN-PASSWORD,anonymous
 user-account-administrator-01,true,"UserIdentity{name: 'Administrator', surname: 'Acme', email: 'administrator@acme.com'}",administrator,administrator
-user-account-anonymous-02,false,"UserIdentity{name: 'Jane', surname: 'Doe', email: 'bdiasid@acme.com'}",HIDDEN-PASSWORD,anonymous
-user-account-anonymous-03,false,"UserIdentity{name: 'John', surname: 'Wall', email: 'abudys@acme.com}","HIDDEN-PASSWORD",anonymous
+user-account-auditor-01,true,"UserIdentity{name: 'William', surname: 'Jameson', email: 'williamjameson@acme.com'}",auditor1,auditor1
+user-account-auditor-02,true,"UserIdentity{name: 'Oliver', surname: 'Smith', email: 'oliversmith@acme.com'}",auditor2,auditor2
+user-account-assistant-01,true,"UserIdentity{name: 'Marie', surname: 'Jones', email: 'mariejones@acme.com'}",assistant1,assistant1
+user-account-assistant-02,true,"UserIdentity{name: 'Xavier', surname: 'Monroe', email: 'xaviermonroe@acme.com'}",assistant2,assistant2
+user-account-assistant-03,true,"UserIdentity{name: 'Peter', surname: 'Biden', email: 'peterbiden@acme.com'}",assistant3,assistant3
+user-account-company-02,false,"UserIdentity{name: 'Jane', surname: 'Doe', email: 'bdiasid@acme.com'}",company1,company1
+user-account-company-03,false,"UserIdentity{name: 'John', surname: 'Wall', email: 'abudys@acme.com}",company1,company2
