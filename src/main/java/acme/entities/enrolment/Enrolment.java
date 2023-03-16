@@ -3,6 +3,7 @@ package acme.entities.enrolment;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -10,8 +11,10 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Length;
 
 import acme.framework.data.AbstractEntity;
 import acme.roles.Student;
@@ -31,25 +34,27 @@ public class Enrolment extends AbstractEntity {
 
 	@NotBlank
 	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
+	@Column(unique = true)
 	protected String			code;
 
 	@NotBlank
-	@Size(max = 76)
+	@Length(max = 76)
 	protected String			motivation;
 
 	@NotBlank
-	@Size(max = 101)
+	@Length(max = 101)
 	protected String			goals;
-
-	// Derived attributes -----------------------------------------------------
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
+	@Past
 	protected Date				initialDate;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
+	@Past
 	protected Date				finalDate;
+	// Derived attributes -----------------------------------------------------
 
 
 	public Integer totalTime() {

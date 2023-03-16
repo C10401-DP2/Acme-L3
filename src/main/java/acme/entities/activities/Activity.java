@@ -6,8 +6,8 @@ import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.datatypes.ActivityType;
@@ -19,7 +19,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Activities extends AbstractEntity {
+public class Activity extends AbstractEntity {
 
 	// Serialisation identifier
 
@@ -28,14 +28,15 @@ public class Activities extends AbstractEntity {
 	// Attributes
 
 	@NotBlank
-	@Size(max = 76)
+	@Length(max = 76)
 	protected String			title;
 
 	@NotBlank
-	@Size(max = 101)
+	@Length(max = 101)
 	protected String			abstrat;
 
-	protected ActivityType		atype;
+	@NotNull
+	protected ActivityType		aType;
 
 	@URL
 	protected String			link;

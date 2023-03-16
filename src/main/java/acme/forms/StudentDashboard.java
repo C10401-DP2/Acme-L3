@@ -3,7 +3,7 @@ package acme.forms;
 
 import java.util.Map;
 
-import acme.entities.activities.Activities;
+import acme.entities.activities.Activity;
 import acme.framework.data.AbstractForm;
 
 public class StudentDashboard extends AbstractForm {
@@ -15,10 +15,10 @@ public class StudentDashboard extends AbstractForm {
 	// Atributes -----------------------------------------------------
 
 	Integer						totalActivities;
-	Map<Activities, Double>		averageActivities;
-	Map<Activities, Double>		deviationActivities;
-	Map<Activities, Double>		minPeriodActivities;
-	Map<Activities, Double>		maxPeriodActivities;
+	Map<Activity, Double>		averagePeriodActivities;
+	Map<Activity, Double>		deviationPeriodActivities;
+	Map<Activity, Double>		minPeriodActivities;
+	Map<Activity, Double>		maxPeriodActivities;
 	Double						averageLearningTime;
 	Double						deviationLearningTime;
 	Double						minimumLearningTime;

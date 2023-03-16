@@ -27,15 +27,15 @@ public class Student extends AbstractRole {
 
 	@NotBlank
 	@Length(max = 76)
-	protected String			Statement;
+	protected String			statement;
 
 	@NotBlank
 	@Length(max = 101)
-	protected String			Sfeat;
+	protected String			SFeat;
 
 	@NotBlank
 	@Length(max = 101)
-	protected String			Wfeat;
+	protected String			WFeat;
 
 	@URL
 	protected String			link;
