@@ -199,7 +199,7 @@ Course
 + title: String {NotBlank, Length(max = 76)}
 + anAbstract: String {NotBlank, Length(max = 101)}
 + type: ActivityType
-+ price: Double {Min(0)}
++ price: Money
 + link: String {URL}
 bg=green</panel_attributes>
     <additional_attributes/>
@@ -278,7 +278,7 @@ Lecture
 --
 + almaMatter: String {NotBlank, Length(max = 76)}
 + resume: String {NotBlank, Length(max = 101)}
-+ listOfQualifications: String {NotBlank, Length(max = 101)}
++ qualifications: String {NotBlank, Length(max = 101)}
 + link: String {URL}
 bg=green</panel_attributes>
     <additional_attributes/>

@@ -2,6 +2,6 @@
 package acme.datatypes;
 
 public enum ActivityType {
-	THEORY, HANDSON
+	THEORY, HANDSON, BALANCED
 
 }
