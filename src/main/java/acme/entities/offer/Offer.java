@@ -9,11 +9,11 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.framework.components.datatypes.Money;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,35 +23,34 @@ import lombok.Setter;
 @Setter
 public class Offer extends AbstractEntity {
 
-    // Serialisation identifier -----------------------------------------------
+	// Serialisation identifier -----------------------------------------------
 
-    protected static final long	serialVersionUID	= 1L;
+	protected static final long	serialVersionUID	= 1L;
 
-    // Attributes -------------------------------------------------------------
+	// Attributes -------------------------------------------------------------
 
-    @Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	@NotNull
-	protected Date	            moment;
+	protected Date				moment;
 
-    @NotBlank
+	@NotBlank
 	@Length(max = 76)
-	protected String            heading;
+	protected String			heading;
 
-    @NotBlank
+	@NotBlank
 	@Length(max = 101)
 	protected String			summary;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date                initialDate;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				initialDate;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date                finalDate;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				finalDate;
 
-    @Min(0)
-    private Double              price;
+	private Money				price;
 
-    @URL
+	@URL
 	protected String			link;
 
 }
