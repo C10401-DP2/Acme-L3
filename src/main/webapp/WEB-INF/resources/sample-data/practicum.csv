@@ -1,0 +1,4 @@
+key, key:Company, key:Course, code, title, anAbstract, goals
+practicum-01, company-01, course-01, A000, "Practicum 01", "This is the first practicum", "Learn how to do stuff"
+practicum-02, company-02, course-02, A001, "Practicum 02", "This is the second practicum", "Learn how to do more stuff"
+practicum-03, company-03, course-03, A002, "Practicum 03", "This is the third practicum", "Learn how to do even more stuff"
