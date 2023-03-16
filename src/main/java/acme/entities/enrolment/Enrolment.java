@@ -54,6 +54,10 @@ public class Enrolment extends AbstractEntity {
 	@NotNull
 	@Past
 	protected Date				finalDate;
+
+	@NotNull
+	protected Boolean			draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 

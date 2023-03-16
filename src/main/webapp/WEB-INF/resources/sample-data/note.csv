@@ -1,3 +1,6 @@
 key,inst-moment,title,author,message,email,link
-note-01,2023/01/03 21:01,Prueba,pabcueper - Cuenca; Pablo,Esto es una prueba, pabcueper@alum.us.es, https://es.coppermind.net/wiki/Coppermind:Bienvenidos
+note-01,2023/01/03 21:01,NoteEstandar,pabcueper - Cuenca; Pablo,Esto es una note, pabcueper@alum.us.es, https://es.coppermind.net/wiki/Coppermind:Bienvenidos
+note-02, 2022/02/17 23:59, NoteSin, pabcueper - Cuenca; Pablo, Esto es una note sin link ni correo, null, null
+note-03, 2022/10/1 00:00, NoteSinL, pabcueper - Cuenca; Pablo, Esto es una note sin link, correofalso@gmail.com, null
+note-03, 2021/11/3 15:39, TituSinC, pabcueper - Cuenca; Pablo, Esto es una note sin correo, null, https://ev.us.es
 

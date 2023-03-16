@@ -1,2 +1,4 @@
 key, moment, title, is-critical, link
-bulletin-01, 2023/01/03 21:01, bulletin1, True, google.com
+bulletin-01, 2023/01/03 21:01, BulletinCon, True, https://ev.us.es
+bulletin-02, 2022/11/12 23:59, BulletinSin, True, null
+bulletin-02, 2022/11/13 00:00, BulletinSin, True, null

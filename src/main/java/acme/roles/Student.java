@@ -45,4 +45,7 @@ public class Student extends AbstractRole {
 	@ManyToOne(optional = false)
 	protected Course			courses;
 
+	@NotNull
+	protected Boolean			draftMode;
+
 }
