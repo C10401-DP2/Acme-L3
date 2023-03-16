@@ -39,6 +39,7 @@ public class Course extends AbstractEntity {
 	@Length(max = 101)
 	protected String			anAbstract;
 
+	@NotNull
 	protected ActivityType		activityType;
 
 	protected Money				retailPrice;
