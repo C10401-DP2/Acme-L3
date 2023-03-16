@@ -14,12 +14,14 @@ import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.framework.data.AbstractEntity;
 import acme.roles.Company;
+import acme.roles.Course;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -50,6 +52,9 @@ public class Practicum extends AbstractEntity {
     @NotBlank
 	@Length(max = 76)
 	protected String            goals;
+
+	@NotNull
+	protected Boolean			draftMode;
 
     // Relationships ----------------------------------------------------------
 

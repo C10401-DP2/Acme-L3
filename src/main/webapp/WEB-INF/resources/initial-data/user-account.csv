@@ -6,5 +6,5 @@ user-account-auditor-02,true,"UserIdentity{name: 'Oliver', surname: 'Smith', ema
 user-account-assistant-01,true,"UserIdentity{name: 'Marie', surname: 'Jones', email: 'mariejones@acme.com'}",assistant1,assistant1
 user-account-assistant-02,true,"UserIdentity{name: 'Xavier', surname: 'Monroe', email: 'xaviermonroe@acme.com'}",assistant2,assistant2
 user-account-assistant-03,true,"UserIdentity{name: 'Peter', surname: 'Biden', email: 'peterbiden@acme.com'}",assistant3,assistant3
-user-account-company-02,false,"UserIdentity{name: 'Jane', surname: 'Doe', email: 'bdiasid@acme.com'}",company1,company1
-user-account-company-03,false,"UserIdentity{name: 'John', surname: 'Wall', email: 'abudys@acme.com}",company1,company2
+user-account-company-01,false,"UserIdentity{name: 'Jane', surname: 'Doe', email: 'bdiasid@acme.com'}",company1,company1
+user-account-company-02,false,"UserIdentity{name: 'John', surname: 'Wall', email: 'abudys@acme.com}",company1,company2

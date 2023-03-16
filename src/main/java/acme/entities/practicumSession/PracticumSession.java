@@ -13,11 +13,14 @@ import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import acme.entities.practicum.Practicum;
+import acme.framework.components.datatypes.Money;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Company;
 import lombok.Getter;
