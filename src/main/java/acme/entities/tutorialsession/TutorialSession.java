@@ -18,7 +18,6 @@ import acme.datatypes.ActivityType;
 import acme.entities.tutorial.Tutorial;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Assistant;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -40,6 +39,7 @@ public class TutorialSession extends AbstractEntity {
 	@Length(max = 101)
 	protected String			anAbstract;
 
+	@NotNull
 	protected ActivityType		type;
 
 	@Temporal(TemporalType.TIMESTAMP)

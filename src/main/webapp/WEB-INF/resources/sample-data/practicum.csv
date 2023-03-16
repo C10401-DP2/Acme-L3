@@ -1,10 +1,10 @@
-key, key:Company, key:Course, code, title, anAbstract, goals, draftMode
-practicum-01, company-01, , A000, "Practicum 01", "This is the first practicum", "Learn how to do stuff", 0
-practicum-02, , course-02, A001, "Practicum 02", "This is the second practicum", "Learn how to do more stuff",1
-practicum-03, company-09, course-02, A004, "Practicum 03", "This is the third practicum", "Learn how to do even more stuff",
-practicum-04, , , A003, "Practicum 04", "This is the fourth practicum", "Learn how to do even more stuff",0
-practicum-05, company-02, course-01, A-204, "Practicum 05", "This is the fifth practicum", "1234567891234567891234567891234567891234567891234567891234567891234567891234567891234567892345678923456789123456789123456789123456789123456789123456789123456789123456789",0
-practicum-06, company-02, course-01, A532205, "Practicum 06", "1234567891234567891234567891234567891234567891234567891234567891234567891234567891234567892345678923456789123456789123456789123456789123456789123456789123456789123456789", "Learn how to do even more stuff",0
-practicum-07, company-02, course-01, 532206, , "This is the seventh practicum", "Learn how to do even more stuff",0
-practicum-08, company-02, course-01, ABCD, "Practicum 08", , "Learn how to do even more stuff",0
-practicum-09, company-02, course-01, A003, "Practicum 09", "This is the ninth practicum","Learn how to do stuff" ,0
+key,key:company,key:course,code,title,anAbstract,goals,draftMode
+practicum-01,company-01,course-01,A000,Practicum 01,This is the first practicum,Learn how to do stuff,0
+practicum-02,company-02,course-02,A001,Practicum 02,This is the second practicum,Learn how to do more stuff,0
+practicum-03,company-01,course-02,A004,Practicum 03,This is the third practicum,Learn how to do even more stuff,0
+practicum-04,company-02,course-02,A003,Practicum 04,This is the fourth practicum,Learn how to do even more stuff,0
+practicum-05,company-02,course-01,A-204,Practicum 05,This is the fifth practicum,Learn how to do stuff,0
+practicum-06,company-02,course-01,A532205,Practicum 06,1234567891234567891234567891234567891234567891234567891234567891234567891234567891234567892345678923456789123456789123456789123456789123456789123456789123456789123456789,Learn how to do even more stuff,0
+practicum-07,company-02,course-01,532206,Practicum 01,This is the seventh practicum,Learn how to do even more stuff,0
+practicum-08,company-02,course-01,ABCD,Practicum 08,This is the practicum eight.,Learn how to do even more stuff,0
+practicum-09,company-02,course-01,A003,Practicum 09,This is the ninth practicum,Learn how to do stuff,0

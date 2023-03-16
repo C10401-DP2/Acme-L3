@@ -1,0 +1,3 @@
+key,code,title,anAbstract,activityType,retailPrice,link,draftMode,key:lecturer
+course-01,A000,Primero de bachillerato,Curso académico post obligatorio,BALANCED,EUR 300.0,null,0,lecturer-01
+course-02,A001,Primero de bachillerato,Curso académico post obligatorio,BALANCED,EUR 300.0,alguadira.es,0,lecturer-02

@@ -1,4 +1,7 @@
-key,key:audit,subject,assessment,initial-date,final-date,mark,link
-auditing-record-01,audit-01,math,High-stakes assessment,2022/07/12 10:30,2022/11/27 13:20,Aplus,https://twitter.com/
-auditing-record-02,audit-01,chemistry,Formative assessment,2022/06/20 14:45,2022/09/11 18:50,C,null
-auditing-record-03,audit-03,history,Interim assessment,2022/07/28 18:15,2022/12/21 14:35,B,https://es.wikipedia.org/
+key,key:audit,key:course,subject,assessment,initial-date,final-date,mark,link
+auditing-record-01,audit-01,course-01,math,High-stakes assessment,2022/07/12 10:30,2022/11/27 13:20,Aplus,https://twitter.com/
+auditing-record-02,audit-01,course-02,chemistry,Formative assessment,2022/06/20 14:45,2022/09/11 18:50,C,null
+auditing-record-03,audit-03,course-01,history,Interim assessment,2022/07/28 18:15,2022/12/21 14:35,B,https://es.wikipedia.org/
+auditing-record-04,audit-05,course-01,geography,High-stakes assessment,2022/05/17 09:30,2022/08/22 11:45,Fminus,null
+auditing-record-05,audit-04,course-03,physical education,Summative assessment,2022/07/30 20:45,2022/11/07 18:10,B,null
+auditing-record-06,audit-02,course-03,math,High-stakes assessment,2022/09/01 9:00,2023/01/11 15:15,A,https://es-es.facebook.com/

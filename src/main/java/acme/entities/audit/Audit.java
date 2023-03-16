@@ -5,12 +5,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
-import acme.entities.auditor.Auditor;
 import acme.framework.data.AbstractEntity;
+import acme.roles.Auditor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -41,6 +42,9 @@ public class Audit extends AbstractEntity {
 	@NotBlank
 	@Length(max = 101)
 	protected String			weakPoints;
+
+	@NotNull
+	protected Boolean			draftMode;
 
 	// Derived attributes
 

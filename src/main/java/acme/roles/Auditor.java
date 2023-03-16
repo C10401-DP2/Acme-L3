@@ -1,5 +1,5 @@
 
-package acme.entities.auditor;
+package acme.roles;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
