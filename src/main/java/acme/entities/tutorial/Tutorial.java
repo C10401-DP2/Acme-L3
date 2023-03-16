@@ -11,10 +11,15 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.course.Course;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Assistant;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Tutorial extends AbstractEntity {
 	// Serialisation identifier -----------------------------------------------
 
@@ -39,6 +44,9 @@ public class Tutorial extends AbstractEntity {
 	@Length(max = 101)
 	protected String			goals;
 
+	@NotNull
+	protected Boolean			draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 	@NotNull
@@ -50,5 +58,10 @@ public class Tutorial extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	protected Assistant			assistant;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Course			course;
 
 }
