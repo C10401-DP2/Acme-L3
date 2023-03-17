@@ -179,7 +179,7 @@ Offer
 + summary: String {NotBlank, Length{max = 101}}
 + initialDate: Date {Temporal(TIMESTAMP)}
 + finalDate: Date {Temporal(TIMESTAMP)} 
-+ price: Double {Min(0)}
++ price: Money
 + link: String {URL}
 bg=green</panel_attributes>
     <additional_attributes/>
@@ -198,10 +198,10 @@ Course
 + code: String {Pattern([A-Z]{1,3} [0-9]{3}), NotBlank, Unique}
 + title: String {NotBlank, Length(max = 76)}
 + anAbstract: String {NotBlank, Length(max = 101)}
-+ type: ActivityType
-+ price: Double {Min(0)}
++ retailPrice: Money
 + link: String {URL}
 + draftMode: Boolean {NotNull}
++ /activityType: ActivityType {Transient}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
@@ -297,9 +297,9 @@ Lecture
 --
 + title: String {NotBlank, Length(max = 76}
 + anAbstract: String {NotBlank, Length(max = 101)}
-+ learningTime: Integer {Min(0),NotNull)
++ learningTime: Double {Min(0),NotNull)
 + body: String {NotBlank, Length(max = 101)}
-+ type: ActivityType {NotNull}
++ activityType: ActivityType {NotNull}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
