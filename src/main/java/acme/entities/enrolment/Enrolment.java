@@ -71,6 +71,11 @@ public class Enrolment extends AbstractEntity {
 	//Relationships -----------------------------------------------------------
 
 
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Enrolment	enrolment;
+
 	@Valid
 	@NotNull
 	@ManyToOne(optional = false)
