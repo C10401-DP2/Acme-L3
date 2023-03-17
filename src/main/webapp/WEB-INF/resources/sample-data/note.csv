@@ -1,8 +1,0 @@
-key,inst-moment,title,author,message,email,link
-note-01,2021/01/03 21:01,NoteEstandar,"pabcueper - Cuenca, Pablo",Esto es una note,paucueper@gmail.com, https://es.coppermind.net/wiki/Coppermind:Bienvenidos
-note-02, 2021/02/17 23:59, NoteSin, "pabcueper - Cuenca, Pablo", Esto es una note sin link ni correo, null, null
-note-03, 2021/10/01 00:00, NoteSinL, "pabcueper - Cuenca, Pablo", Esto es una note sin link,example@us.es, null
-note-04, 2021/11/3 15:39, NoteSinC, "pabcueper - Cuenca, Pablo", Esto es una note sin correo, null, https://ev.us.es
-note-05, 2021/03/16 13:21, NoteLargoñ, "pabcueper - Cuenca, Pablo", Esto es una note con un mensaje mucho mas largo pero sin pasarse,paucal@acme.com, https://ev.us.es
-note-06, 2021/12/31 23:59, TituFLim, "pabcueper - Cuenca, Pablo", Esto es una note con una fecha limite,dangar@alum.us.es, https://ev.us.es
-note-07, 2021/01/01 23:59, TituFLim, "pabcueper - Cuenca, Pablo", Esto es una note con una fecha limite,gonlab@hotmail.com, https://ev.us.es

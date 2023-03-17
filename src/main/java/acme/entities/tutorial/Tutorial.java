@@ -4,6 +4,7 @@ package acme.entities.tutorial;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -33,15 +34,15 @@ public class Tutorial extends AbstractEntity {
 	protected String			code;
 
 	@NotBlank
-	@Length(max = 76)
+	@Length(max = 75)
 	protected String			title;
 
 	@NotBlank
-	@Length(max = 101)
+	@Length(max = 100)
 	protected String			anAbstract;
 
 	@NotBlank
-	@Length(max = 101)
+	@Length(max = 100)
 	protected String			goals;
 
 	@NotNull
@@ -49,19 +50,24 @@ public class Tutorial extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-	@NotNull
-	protected Integer			totalTime;
+
+	@Transient
+	protected Integer totalTime() {
+		//estimatedHours: sum of stretchs  of time of associated TutorialSessions.
+		return null;
+	}
 
 	// Relationships ----------------------------------------------------------
 
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	protected Assistant			assistant;
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	protected Course			course;
+	protected Assistant	assistant;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Course	course;
 
 }

@@ -1,9 +1,0 @@
-key,title,abstrat,a-type,link,initial-date,final-date,key:enrolment
-activity-01,clase magistral,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,THEORY,null,2020/02/03 21:21,2021/03/10 12:00,enrolment-01
-activity-02,clase magistral con voz digital,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,THEORY,http://ev.us.es,2020/02/03 23:59,2021/03/10 12:00,enrolment-02
-activity-03,clase magistral con voz digital y sin profores que revisen lo que dice,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,THEORY,http://coppermind.es,2020/12/31 23:59,2021/01/01 00:00,enrolment-01
-activity-04,clase al aire libre,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,HANDSON,null,2021/02/03 21:21,2021/03/10 12:00,enrolment-02
-activity-05,clase al aire libre en naturaleza rodeado de arboles en mitad de un bosque,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,HANDSON,null,2020/02/03 00:00,2021/02/03 23:59,enrolment-01
-activity-06,clase al aire libre entre visitando un lago rodeado de pirañas que muerden,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,HANDSON,http://ev.us.es,2020/02/03 22:22,2021/02/04 00:00,enrolment-02
-activity-07,clase al aire magistral al aire libre,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,HANDSON,null,2020/02/03 22:22,2021/02/04 00:00,enrolment-01
-activity-08,clase al aire libre pero magistral con voz en digital,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,HANDSON,http://ev.us.es,2021/02/03 22:22,2021/02/04 11:11,enrolment-02
