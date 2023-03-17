@@ -1,4 +1,4 @@
-key,key:tutorial,key:assistant,title,anAbstract,activity-type,initialDate,finalDate,link
+key,key:tutorial,key:assistant,title,an-abstract,type,initial-date,final-date,link
 tutorialsession-1,tutorial-01,assistant-01,Tutorial Session 01,This is the first tutorial session,THEORY,2023/03/16 15:00,2023/03/16 17:00,https://www.youtube.com/
-tutorialsession-2,tutorial-02,assistant-02,Tutorial Session 02,This is the second tutorial session,HANDS-ON,2023/03/17 17:00,2023/03/17 19:00,https://www.youtube.com/
+tutorialsession-2,tutorial-02,assistant-02,Tutorial Session 02,This is the second tutorial session,HANDSON,2023/03/17 17:00,2023/03/17 19:00,https://www.youtube.com/
 tutorialsession-3,tutorial-03,assistant-03,Tutorial Session 03,This is the third tutorial session,THEORY,2023/03/18 18:00,2023/03/17 20:30,null

@@ -7,6 +7,8 @@ user-account-assistant-01,true,"UserIdentity{name: 'Marie', surname: 'Jones', em
 user-account-assistant-02,true,"UserIdentity{name: 'Xavier', surname: 'Monroe', email: 'xaviermonroe@acme.com'}",assistant2,assistant2
 user-account-assistant-03,true,"UserIdentity{name: 'Peter', surname: 'Biden', email: 'peterbiden@acme.com'}",assistant3,assistant3
 user-account-company-01,false,"UserIdentity{name: 'Jane', surname: 'Doe', email: 'bdiasid@acme.com'}",company1,company1
-user-account-company-02,false,"UserIdentity{name: 'John', surname: 'Wall', email: 'abudys@acme.com'}",company1,company2
+user-account-company-02,false,"UserIdentity{name: 'John', surname: 'Wall', email: 'abudys@acme.com'}",company2,company2
 user-account-lecturer-01,false,"UserIdentity{name: 'Jane', surname: 'Doe', email: 'bdiasid@acme.com'}",lecturer1,lecturer1
 user-account-lecturer-02,false,"UserIdentity{name: 'Jane', surname: 'Doe', email: 'bdiasid@acme.com'}",lecturer2,lecturer2
+user-account-student-01, true, "UserIdentity{name: 'Pablo', surname: 'Cuenca', email: 'correofalso2@acme.com'}", student1, student1
+user-account-student-02, true, "UserIdentity{name: 'Javier', surname: 'Garcia', email: 'correofalso1@acme.com'}", student2, student2
