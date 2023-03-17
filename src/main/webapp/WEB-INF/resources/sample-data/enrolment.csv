@@ -1,0 +1,6 @@
+key, code, motivation, goals, initial-date, final-date, draft-mode, key:student, key:course
+enrolment-01, AIO1381, ganar un motivo por el que levantarse cada mañana, g@anar much0 din%ro, 2023/02/02 21:02, 2023/02/03 21:02, 0, student-01, course-01
+enrolment-02, SIL09191, apoyar a su familia, aprender lo necesario para valerse por si mismo y poder cumplir sus sueños y los de su familia, 2023/02/02 23:59, 2023/02/04 00:00, 0, student-01, course-02
+enrolment-03, AZAO138, lograr la iluminación de su alma y el despertar del chakra interior para conseguir la union del alma, ser feliz, 2023/02/02 00:00, 2023/02/03 23:59, 0, student-02, course-01
+enrolment-04, Z1381, conseguir la independiencia de sus padres, ahorrar dinero para invertir en ONG y dar un % a éstas, 2022/12/31 21:02, 2023/02/01 00:00, 0, student-02, course-02
+
