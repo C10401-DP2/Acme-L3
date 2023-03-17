@@ -32,11 +32,11 @@ public class Student extends AbstractRole {
 
 	@NotBlank
 	@Length(max = 101)
-	protected String			SFeat;
+	protected String			sFeat;
 
 	@NotBlank
 	@Length(max = 101)
-	protected String			WFeat;
+	protected String			wFeat;
 
 	@URL
 	protected String			link;

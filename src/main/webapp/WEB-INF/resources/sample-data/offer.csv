@@ -1,0 +1,9 @@
+key,inst-moment,heading,summary,initial-date,final-date,price,link
+offer-01, 2023/01/03 21:02, Esto es el primer heading de todos, Este es el summary de esta offer que contiene este simbolo #, null, null, EUR 18.99, null--
+offer-02, 2022/12/31 23:59, Esto es un heading extremadamente largo comparado con el resto, Este es el summary de esta offer que contiene este simbolo @, 2023/01/01 00:00, 2023/01/04 21:02, EUR 19.00, null--
+offer-03, 2023/01/01 00:00, Corto, Este es el summary de esta offer que contiene este simbolo %, null, null, USD 11.11, ev.us.es
+offer-04, 2023/01/03 21:12, Esto es un heading normal, Este es el summary de esta offer que contiene este simbolo &, null, null, GBP 7.99, coppermind.es
+
+offer-05, 2023/01/03 14:41, Esto es una cabecera normal, Este es el summary de esta offer, 2023/01/04 00:00, 2023/01/04 23:59, GBP 8.00, null
+offer-06, 2023/01/03 13:13, Esto es una cabecera extremadamente larga comparada con el resto de headings, Este es el summary de esta offer, null, null, USD 12.99, ev.us.es
+offer-07, 2023/01/03 07:41, Short, Este es el summary de esta offer y contiene el siguiente simbolo ñ, 2023/01/04 00:00, 2023/12/30 23:59, EUR 0.01, ev.us.es
