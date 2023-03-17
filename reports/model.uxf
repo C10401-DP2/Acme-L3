@@ -452,7 +452,7 @@ Tutorial
 + title: String {NotBlank, Length(max = 76)}
 + anAbstract: String {NotBlank, Length(max = 101)}
 + goals: String {NotBlank, Length(max = 101)}
-+ totalTime: Integer
++ /totalTime: Integer {Transient}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
