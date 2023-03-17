@@ -1,6 +1,6 @@
 key,key:auditor,code,conclusion,strong-points,weak-points,draft-mode
-audit-01,auditor-01,XYZ1A1234,It is a really good document.,Gives a good evaluation about the situation.,Costs too much time and resources to our organization.,0
-audit-02,auditor-01,B56D5678,Really bad in my opinion.,Increases transparency in reports.,The information given is hard to understand.,0
-audit-03,auditor-02,QP9Z9876,"Pretty good, but you should change the introduction.",Helps identifying deficiencies in the system.,May have conflicts with other reports.,0
-audit-04,auditor-01,MNO8B2345,I don't think this is a good point.,Provides detailed and useful information.,Doesn't guarantee detection of errors.,0
-audit-05,auditor-02,ZBL1K4091,"From my point of view, I think you did pretty well.",The information is clear.,Too much time-consuming to our organization.,0
+audit-01,auditor-01,XYZ1234,It is a really good document.,Gives a good evaluation about the situation.,Costs too much time and resources to our organization.,0
+audit-02,auditor-01,BD5678,Really bad in my opinion.,Increases transparency in reports.,The information given is hard to understand.,0
+audit-03,auditor-02,QP0236,"Pretty good, but you should change the introduction.",Helps identifying deficiencies in the system.,May have conflicts with other reports.,0
+audit-04,auditor-01,M2345,I don't think this is a good point.,Provides detailed and useful information.,Doesn't guarantee detection of errors.,0
+audit-05,auditor-02,ZBL1091,"From my point of view, I think you did pretty well.",The information is clear.,Too much time-consuming to our organization.,0

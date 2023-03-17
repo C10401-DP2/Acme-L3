@@ -1,4 +1,4 @@
-key,key:userAccount,supervisor,expertiseFields,resume,link
+key,key:userAccount,supervisor,expertise-fields,resume,link
 assistant-01,user-account-assistant-01,John Pitt,Programming and computer science,This is a resume for assistant 01,https://www.youtube.com/
 assistant-02,user-account-assistant-02,Marie Biden,Java and python,This is a resume for assistant 02,https://www.youtube.com/
 assistant-03,user-account-assistant-03,Axel Kennedy,Electronic and arduino programming,This is a resume for assistant 03,https://www.youtube.com/
