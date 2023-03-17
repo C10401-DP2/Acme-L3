@@ -1,0 +1,4 @@
+key,key:assistant,key:course,code,title,an-abstract,goals,draft-mode
+tutorial-01,assistant-01,course-01,A1001,Tutorial 01,This is the first tutorial,Learn to initialize the proyect,0
+tutorial-02,assistant-02,course-02,A1002,Tutorial 02,This is the second tutorial,Learn to update the proyect,0
+tutorial-03,assistant-03,course-02,A1003,Tutorial 03,This is the third tutorial,Learn to finish the proyect,0
