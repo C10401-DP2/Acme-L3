@@ -17,11 +17,11 @@ public class LecturerDashboard extends AbstractForm {
 	Map<ActivityType, Integer>	totalTheoryAndHandson;
 	Double						averageLearningTimeLectures;
 	Double						desviationLearningTimeLectures;
-	Integer						minLearningTimeLectures;
-	Integer						maxLearningTimeLectures;
+	Double						minLearningTimeLectures;
+	Double						maxLearningTimeLectures;
 	Double						averageLearningTimeCourses;
 	Double						desviationLearningTimeCourses;
-	Integer						minLearningTimeCourses;
-	Integer						maxLearningTimeCourses;
+	Double						minLearningTimeCourses;
+	Double						maxLearningTimeCourses;
 
 }

@@ -1287,15 +1287,15 @@ bg=green</panel_attributes>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 LecturerDashboard
 --
-+ totalTheoryAndHandson: Map&lt;ActivityType, Integer&gt;	
++ totalTheoryAndHandson: Map&lt;ActivityType, Double&gt;	
 + averageLearningTimeLectures: Double						
 + desviationLearningTimeLectures: Double						
-+ minLearningTimeLectures:Integer						
-+ maxLearningTimeLectures:Integer						
++ minLearningTimeLectures:Double						
++ maxLearningTimeLectures:Double						
 + averageLearningTimeCourses:Double						
 + desviationLearningTimeCourses:Double						
-+ minLearningTimeCourses:Integer						
-+ maxLearningTimeCourses:Integer						
++ minLearningTimeCourses:Double						
++ maxLearningTimeCourses:Double						
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
