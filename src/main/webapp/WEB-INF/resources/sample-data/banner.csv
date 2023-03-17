@@ -1,0 +1,10 @@
+key,title,moment,initial-display,final-display,image,slogan,document-link
+banner-01,este es el titulo de un banner,2021/01/01 00:00,2021/01/02 23:59,2021/01/10 00:00,null,este slogan es muy pegadizo,null  
+banner-02,este es el titulo de un banner mucho mas largo de lo normal,2021/01/01 00:00,2021/01/02 23:59,2021/01/10 00:00,http://ev.us.es/i.jpeg ,este slogan es muy pegadizo,null  
+banner-03,banner corto,2021/01/01 00:00,2021/01/02 23:59,2021/01/10 00:00,null,este slogan es muy pegadizo,http://ev.us.es 
+banner-04,este es el titulo de un banner con caráctérés 3xtr@ñ&s,2021/01/01 00:00,2021/01/02 23:59,2021/01/10 00:00,http://ev.us.es/i.jpeg ,este slogan es muy pegadizo,null  
+banner-05,este es el titulo de un banner normal y corriente,2021/01/01 00:00,2021/01/02 23:59,2021/01/10 00:00,null,este slogan es muy pegadizo,http://ev.us.es   
+banner-06,banner un de titulo el es este,2021/11/11 22:22,2021/01/02 23:59,2021/01/10 00:00,null,este slogan es muy pegadizo,http://ev.us.es   
+banner-07,etse se le olutit ed nu rennab,2021/02/20 11:11,2021/01/02 23:59,2021/01/10 00:00,http://ev.us.es/i.jpeg ,este slogan es muy pegadizo,http://ev.us.es   
+banner-08,etse se le olutit ed nu rennab muy largo para estar girado,2021/12/19 01:00,2021/01/02 23:59,2021/01/10 00:00,http://ev.us.es/i.jpeg ,este slogan es muy pegadizo,null  
+banner-09,ésté és él títúló dé ún bánnér,2020/10/11 11:21,2021/01/02 23:59,2021/01/10 00:00,null,este slogan es muy pegadizo,http://ev.us.es   
