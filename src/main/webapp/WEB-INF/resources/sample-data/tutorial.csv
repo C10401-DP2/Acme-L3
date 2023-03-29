@@ -1,25 +1,4 @@
-key,code,title,an-abstract,goals,key:assistant,key:course,draftMode
-tutorial-01,TUT001,How to publish an offert.,In this tutorial it is explained how to create an offer.,"goal-1, goal-2, goal-3",assistant-01,course-01,false
-tutorial-02,TU002,How to publish a note.,In this tutorial it is explained how to create a note.,"goal-1, goal-2, goal-3",assistant-01,course-01,false
-tutorial-03,T003,How to publish a course.,In this tutorial it is explained how to create a course.,"goal-1, goal-2, goal-3",assistant-01,course-01,false
-tutorial-04,T004,This title is going to reach exactly 75chr so the restriction can be proved,In this tutorial it is explained how to create a course.,"goal-1, goal-2, goal-3",assistant-01,course-02,false
-tutorial-05,T005,This title will reach exactly 75 - 1 char so the restriction can be proved,In this tutorial it is explained how to create a course.,"goal-1, goal-2, goal-3",assistant-01,course-02,false
-tutorial-06,T006,T,In this tutorial it is explained how to create a course.,"goal-1, goal-2, goal-3",assistant-01,course-02,false
-tutorial-07,T007,T1,In this tutorial it is explained how to create a course.,"goal-1, goal-2, goal-3",assistant-02,course-01,false
-tutorial-08,T008,<title>ExampleHTML</title>,In this tutorial it is explained how to create a course.,"goal-1, goal-2, goal-3",assistant-02,course-01,false
-tutorial-09,T009,<script>alert('exampleJS');</script>,In this tutorial it is explained how to create a course.,"goal-1, goal-2, goal-3",assistant-02,course-01,false
-tutorial-10,T010,示例文本。,In this tutorial it is explained how to create a course.,"goal-1, goal-2, goal-3",assistant-02,course-02,false
-tutorial-11,T011,How to publish a bulletin.,This explanation is going to reach 100 charac so the restriction can be proved in the maximum value.,"goal-1, goal-2, goal-3",assistant-02,course-02,false
-tutorial-12,T012,How to publish a tutorial.,This explanation is going to reach 100-1 chars so the restriction can be proved in the max-1 value.,"goal-1, goal-2, goal-3",assistant-02,course-03,false
-tutorial-13,T013,How to publish a video.,T,"goal-1, goal-2, goal-3",assistant-02,course-03,false
-tutorial-14,T014,How to open the app.,T1,"goal-1, goal-2, goal-3",assistant-02,course-03,false
-tutorial-15,T015,How to log-in.,<title>ExampleHTML</title>,"goal-1, goal-2, goal-3",assistant-01,course-01,false
-tutorial-16,T016,How to sign up.,<script>alert('exampleJS');</script>,"goal-1, goal-2, goal-3",assistant-01,course-01,false
-tutorial-17,T017,How to log out.,Образец текста.,"goal-1, goal-2, goal-3",assistant-01,course-01,false
-tutorial-18,T018,How to edit a profile.,Example abstract.,This text for goals will reach 100 characters so the restriction can be proved in the maximum value.,assistant-01,course-02,false
-tutorial-19,T019,How to delete a profile.,Example abstract.,This text for goals will reach 100 - 1 chars so the restriction can be proved in the max - 1 value.,assistant-01,course-02,false
-tutorial-20,T020,How to edit an offer.,Example abstract.,T,assistant-01,course-02,false
-tutorial-21,T021,How to publish a publication.,Example abstract.,T1,assistant-02,course-03,false
-tutorial-22,T022,How to publish a peep.,Example abstract.,<title>ExampleHTML</title>,assistant-02,course-03,false
-tutorial-23,T023,How to publish a practicum.,Example abstract.,<script>alert('exampleJS');</script>,assistant-02,course-03,false
-tutorial-24,T024,How to publish a banner.,Example abstract.,ข้อความตัวอย่าง.,assistant-02,course-01,false
+key,key:assistant,key:course,code,title,an-abstract,goals,draft-mode
+tutorial-01,assistant-01,course-01,A1001,Tutorial 01,This is the first tutorial,Learn to initialize the proyect,0
+tutorial-02,assistant-02,course-02,A1002,Tutorial 02,This is the second tutorial,Learn to update the proyect,0
+tutorial-03,assistant-03,course-02,A1003,Tutorial 03,This is the third tutorial,Learn to finish the proyect,0

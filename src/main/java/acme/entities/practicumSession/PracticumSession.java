@@ -1,5 +1,5 @@
 
-package acme.entities.tutorialsession;
+package acme.entities.practicumSession;
 
 import java.util.Date;
 
@@ -10,21 +10,21 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.datatypes.ActivityType;
-import acme.entities.tutorial.Tutorial;
+import acme.entities.practicum.Practicum;
 import acme.framework.data.AbstractEntity;
-import acme.roles.Assistant;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class TutorialSession extends AbstractEntity {
+public class PracticumSession extends AbstractEntity {
+
 	// Serialisation identifier -----------------------------------------------
 
 	protected static final long	serialVersionUID	= 1L;
@@ -32,39 +32,31 @@ public class TutorialSession extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Length(max = 75)
+	@Length(max = 76)
 	protected String			title;
 
 	@NotBlank
-	@Length(max = 100)
+	@Length(max = 101)
 	protected String			anAbstract;
 
 	@NotNull
-	protected ActivityType		type;
-
+	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	@NotNull
-	protected Date				initialDate;
+	private Date				initialDate;
 
-	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				finalDate;
+	@Past
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				finalDate;
 
 	@URL
 	protected String			link;
-
-	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	protected Tutorial			tutorial;
-
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	protected Assistant			assistant;
+	protected Practicum			practicum;
 
 }
