@@ -1,0 +1,9 @@
+administrator.bulletin.form.label.title = Título:
+
+
+administrator.bulletin.form.label.message = Mensaje:
+administrator.bulletin.form.label.isCritical = Crítico
+administrator.bulletin.form.label.link = Link (Opcional):
+
+administrator.bulletin.form.button.create = Crear
+administrator.bulletin.form.button.confirmation = Confirme que el mensaje de bulletin es correcto
