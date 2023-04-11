@@ -12,18 +12,24 @@
 
 master.menu.home = Inicio
 master.menu.sign-up = Registrarse
-master.menu.sign-in = Entrar
+master.menu.sign-in = Iniciar sesión
 master.menu.sign-out = Salir
 
 # master.menu.anonymous #######################################################
 
-
 master.menu.anonymous = Anónimo
-master.menu.anonymous.favourite-link1 = 20090433W: García Aguilar, Javier 
-master.menu.anonymous.favourite-link2 = 47347286S: Cuenca Perez, Pablo
-master.menu.anonymous.favourite-link3 = 45969301Y: Del Hoyo Carcaboso, David
-master.menu.anonymous.favourite-link4 = 45970129Y: Zarandieta Ortiz, David
-master.menu.anonymous.favourite-link5 = 45968205Z: García Chavero, Adrián
+master.menu.anonymous.courses = Cursos
+master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.anonymous.favourite-link-1 = 20605558L: Barrera García, Ismael
+master.menu.anonymous.favourite-link-2 = 77824267H: Oliva Alonso, Virgilio
+master.menu.anonymous.favourite-link-3 = 32100382H: Arriaza Arriaza, Daniel
+master.menu.anonymous.favourite-link-4 = 53986326J: Alcobendas Santos, José Javier 
+master.menu.anonymous.favourite-link-5 = 21154958H: González Castillero, Rafael
+
+# master.menu.authenticated ###################################################
+
+master.menu.authenticated = Autenticado
+master.menu.authenticated.tutorials = Todos los tutoriales
 
 # master.menu.administrator ###################################################
 
@@ -34,14 +40,25 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 
+# master.menu.lecturer ###################################################
+
+master.menu.lecturer= Profesorado
+master.menu.lecturer.courses = Mis cursos
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
-master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.provider.favourite-link = Enlace favorito
+
 # master.menu.consumer ##########################################################
 
-master.menu.consumer = consumidor
-master.menu.consumer.favourite-link = enlace favorito
+master.menu.consumer = Consumidor
+master.menu.consumer.favourite-link = Enlace favorito
+
+# master.menu.assistant ####################################################
+
+master.menu.assistant = Asistente
+master.menu.assistant.tutorials.mine = Mis tutoriales
 
 # master.menu.user-account ####################################################
 
@@ -51,3 +68,9 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.assistant = Datos de asistente
+master.menu.user-account.become-assistant = Hazte asistente
+master.menu.user-account.lecturer = Datos de profesor
+master.menu.user-account.become-lecturer = Hazte profesor
+master.menu.user-account.become-auditor = Hazte auditor
+master.menu.user-account.auditor = Datos de Auditor
