@@ -82,7 +82,7 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 		courseId = super.getRequest().getData("course", int.class);
 		course = this.repository.findOneCourseById(courseId);
 
-		super.bind(object, "code", "title", "abstraction", "goals", "draftMode");
+		super.bind(object, "code", "title", "anAbstract", "goals", "draftMode");
 		object.setCourse(course);
 	}
 
@@ -111,7 +111,7 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "name", object.getCourse());
 
-		tuple = super.unbind(object, "code", "title", "abstraction", "goals", "draftMode");
+		tuple = super.unbind(object, "code", "title", "anAbstract", "goals", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 

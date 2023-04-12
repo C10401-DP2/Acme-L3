@@ -69,7 +69,7 @@ public class AuthenticatedTutorialShowService extends AbstractService<Authentica
 
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
-		tuple = super.unbind(object, "code", "title", "abstraction", "goals", "draftMode", "assistant.supervisor", "assistant.expertises", "assistant.resume", "assistant.link");
+		tuple = super.unbind(object, "code", "title", "anAbstract", "goals", "draftMode", "assistant.supervisor", "assistant.expertiseFields", "assistant.resume", "assistant.link");
 
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("choices", choices);
