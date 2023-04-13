@@ -9,6 +9,9 @@
 	<acme:input-textarea code="authenticated.note.form.label.message" path="message"/>
 	<acme:input-email code="authenticated.note.form.label.email" path="email"/>
 	<acme:input-url code="authenticated.note.form.label.link" path="link"/>
+	<acme:input-checkbox code="authenticate.note.form.button.confirmation" path="confirmation"/>
+	<acme:hidden-data path= "id"/>
+	<acme:hidden-data path= "instMoment"/>
 	
 	
 	

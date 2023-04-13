@@ -50,7 +50,7 @@ public class AuthenticatedNoteCreateServices extends AbstractService<Authenticat
 	public void bind(final Note object) {
 		assert object != null;
 
-		super.bind(object, "title", "message", "isCritical", "link");
+		super.bind(object, "title", "author", "message", "instMoment", "link");
 	}
 
 	@Override

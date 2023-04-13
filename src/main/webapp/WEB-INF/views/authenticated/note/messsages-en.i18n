@@ -13,5 +13,21 @@ authenticated.note.form.label.author = Author
 authenticated.note.form.label.message = Message
 authenticated.note.form.label.email = Email (Optional)
 authenticated.note.form.label.link = Link (Optional)
+authenticate.note.form.button.confirmation = Confirm that everything is correct
 
 authenticated.note.form.button.create = Create
+
+authenticated.note.list.label.title = Title
+authenticated.note.list.label.author = Author
+authenticated.note.list.label.message = Message
+authenticated.note.list.label.link = Email
+authenticated.note.list.label.email = Link
+
+
+
+
+
+
+
+
+
