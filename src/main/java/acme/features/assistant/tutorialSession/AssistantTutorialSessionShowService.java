@@ -71,13 +71,19 @@ public class AssistantTutorialSessionShowService extends AbstractService<Assista
 	public void unbind(final TutorialSession object) {
 		assert object != null;
 
+		int tutorialSessionId;
+		Tutorial tutorial;
 		Tuple tuple;
 		SelectChoices choices;
+
+		tutorialSessionId = super.getRequest().getData("id", int.class);
+		tutorial = this.repository.findOneTutorialByTutorialSessionId(tutorialSessionId);
 
 		choices = SelectChoices.from(ActivityType.class, object.getType());
 
 		tuple = super.unbind(object, "title", "anAbstract", "type", "initialDate", "finalDate", "link");
 		tuple.put("masterId", object.getTutorial().getId());
+		tuple.put("draftMode", tutorial.getDraftMode());
 		tuple.put("types", choices);
 
 		super.getResponse().setData(tuple);
