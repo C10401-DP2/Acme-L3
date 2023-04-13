@@ -18,7 +18,6 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
-		<acme:menu-option code="master.menu.courses" action="/any/course/list"/>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link1" action="https://you.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link2" action="https://es.coppermind.net/wiki/Coppermind:Bienvenidos"/>
