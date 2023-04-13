@@ -18,13 +18,11 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.anonymous.courses = Cursos
-master.menu.anonymous.favourite-link = Enlace favorito
-master.menu.anonymous.favourite-link-1 = 20605558L: Barrera García, Ismael
-master.menu.anonymous.favourite-link-2 = 77824267H: Oliva Alonso, Virgilio
-master.menu.anonymous.favourite-link-3 = 32100382H: Arriaza Arriaza, Daniel
-master.menu.anonymous.favourite-link-4 = 53986326J: Alcobendas Santos, José Javier 
-master.menu.anonymous.favourite-link-5 = 21154958H: González Castillero, Rafael
+master.menu.anonymous.favourite-link1 = 20090433W: García Aguilar, Javier 
+master.menu.anonymous.favourite-link2 = 47347286S: Cuenca Perez, Pablo
+master.menu.anonymous.favourite-link3 = 45969301Y: Del Hoyo Carcaboso, David
+master.menu.anonymous.favourite-link4 = 45970129Y: Zarandieta Ortiz, David
+master.menu.anonymous.favourite-link5 = 45968205Z: García Chavero, Adrián
 
 # master.menu.authenticated ###################################################
 
@@ -39,11 +37,6 @@ master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
-
-# master.menu.lecturer ###################################################
-
-master.menu.lecturer= Profesorado
-master.menu.lecturer.courses = Mis cursos
 
 # master.menu.provider ########################################################
 

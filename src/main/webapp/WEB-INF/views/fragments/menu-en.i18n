@@ -20,12 +20,11 @@ master.menu.sign-out = Sign out
 
 master.menu.anonymous = Anonymous
 master.menu.anonymous.favourite-link = Favourite link
-master.menu.anonymous.favourite-link-1 = 20605558L: Barrera García, Ismael
-master.menu.anonymous.favourite-link-2 = 77824267H: Oliva Alonso, Virgilio
-master.menu.anonymous.favourite-link-3 = 32100382H: Arriaza Arriaza, Daniel
-master.menu.anonymous.favourite-link-4 = 53986326J: Alcobendas Santos, José Javier 
-master.menu.anonymous.favourite-link-5 = 21154958H: González Castillero, Rafael 
-
+master.menu.anonymous.favourite-link1 = 20090433W: García Aguilar, Javier 
+master.menu.anonymous.favourite-link2 = 47347286S: Cuenca Perez, Pablo
+master.menu.anonymous.favourite-link3 = 45969301Y: Del Hoyo Carcaboso, David
+master.menu.anonymous.favourite-link4 = 45970129Y: Zarandieta Ortiz, David
+master.menu.anonymous.favourite-link5 = 45968205Z: García Chavero, Adrián
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Authenticated
@@ -39,11 +38,6 @@ master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
-
-# master.menu.lecturer ###################################################
-
-master.menu.lecturer= Lecturer
-master.menu.lecturer.courses = My courses
 
 # master.menu.provider ########################################################
 
