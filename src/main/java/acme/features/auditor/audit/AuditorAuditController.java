@@ -1,6 +1,8 @@
 
 package acme.features.auditor.audit;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -29,6 +31,7 @@ public class AuditorAuditController extends AbstractController<Auditor, Audit> {
 
 
 	// Constructors
+	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("create", this.createService);

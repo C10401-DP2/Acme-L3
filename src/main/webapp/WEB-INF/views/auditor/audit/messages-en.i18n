@@ -17,6 +17,8 @@ auditor.audit.form.button.create = Create
 auditor.audit.form.button.update = Update
 auditor.audit.form.button.delete = Delete
 
+auditor.audit.form.error.duplicated = This code has already been used.
+
 auditor.audit.list.label.code = Code
 auditor.audit.list.label.conclusion = Conclusion
 
