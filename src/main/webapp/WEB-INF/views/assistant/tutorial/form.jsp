@@ -19,12 +19,15 @@
 	<acme:input-textbox code="assistant.tutorial.form.label.code" path="code"/>
 	<acme:input-select code="assistant.tutorial.form.label.course" path="course" choices="${courses}"/>	
 	<acme:input-textbox code="assistant.tutorial.form.label.title" path="title"/>
-	<acme:input-textarea code="assistant.tutorial.form.label.abstraction" path="abstraction"/>
+	<acme:input-textarea code="assistant.tutorial.form.label.abstraction" path="anAbstract"/>
 	<acme:input-textarea code="assistant.tutorial.form.label.goals" path="goals"/>
 	<acme:hidden-data path="id"/>
 	<acme:hidden-data path="draftMode"/>
 
-	<jstl:choose>	 
+	<jstl:choose>
+		<jstl:when test="${_command == 'show' && draftMode == false}">
+			<acme:button code="assistant.tutorial.form.button.sessions" action="/assistant/tutorial-session/list?masterId=${id}"/>			
+		</jstl:when>	 
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 			<acme:submit code="assistant.tutorial.form.button.update" action="/assistant/tutorial/update"/>
 			<acme:submit code="assistant.tutorial.form.button.delete" action="/assistant/tutorial/delete"/>

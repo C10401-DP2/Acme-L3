@@ -1,5 +1,5 @@
 
-package acme.features.assistant;
+package acme.features.assistant.tutorial;
 
 import java.util.Collection;
 
@@ -38,9 +38,11 @@ public class AssistantTutorialUpdateService extends AbstractService<Assistant, T
 		boolean status;
 		int masterId;
 		Tutorial tutorial;
+		Assistant assistant;
 
 		masterId = super.getRequest().getData("id", int.class);
 		tutorial = this.repository.findOneTutorialById(masterId);
+		assistant = tutorial == null ? null : tutorial.getAssistant();
 		status = tutorial != null && //
 			tutorial.getDraftMode() && //
 			super.getRequest().getPrincipal().hasRole(tutorial.getAssistant()) && //
