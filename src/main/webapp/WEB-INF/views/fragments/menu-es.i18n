@@ -44,6 +44,11 @@ master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.consumer = consumidor
 master.menu.consumer.favourite-link = enlace favorito
 
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.audits.mine = Mis auditorías
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta

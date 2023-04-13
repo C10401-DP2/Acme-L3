@@ -42,8 +42,13 @@ master.menu.provider.favourite-link = favourite-link
 
 # master.menu.consumer ##########################################################
 
-master.menu.consumer = consumer
+master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = favourite-link
+
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.audits.mine = My audits
 
 # master.menu.user-account ####################################################
 
