@@ -34,6 +34,8 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.offer.list" action="/administrator/offer/list"/>			
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.createBulletin" action="/administrator/bulletin/create"/>
+			<acme:menu-separator/>			
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
 
