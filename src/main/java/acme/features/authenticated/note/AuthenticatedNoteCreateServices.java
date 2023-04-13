@@ -40,8 +40,8 @@ public class AuthenticatedNoteCreateServices extends AbstractService<Authenticat
 		object.setTitle("");
 		object.setMessage("");
 		object.setAuthor("");
-		object.setEmail("");
-		object.setLink("");
+		object.setEmail(null);
+		object.setLink(null);
 
 		super.getBuffer().setData(object);
 	}
@@ -64,11 +64,6 @@ public class AuthenticatedNoteCreateServices extends AbstractService<Authenticat
 	@Override
 	public void perform(final Note object) {
 		assert object != null;
-
-		final Date moment;
-
-		moment = MomentHelper.getCurrentMoment();
-		object.setInstMoment(moment);
 		this.repository.save(object);
 	}
 
@@ -78,9 +73,7 @@ public class AuthenticatedNoteCreateServices extends AbstractService<Authenticat
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "title", "message", "isCritical", "link");
-		tuple.put("confirmation", true);
-		tuple.put("readonly", false);
+		tuple = super.unbind(object, "title", "author", "message", "instMoment", "email", "link");
 
 		super.getResponse().setData(tuple);
 	}
