@@ -1,5 +1,16 @@
+/*
+ * EmployerJobPublishService.java
+ *
+ * Copyright (C) 2012-2023 Rafael Corchuelo.
+ *
+ * In keeping with the traditional purpose of furthering education and research, it is
+ * the policy of the copyright owner to permit non-commercial use and redistribution of
+ * this software. It has been tested carefully, but it is not guaranteed for any particular
+ * purposes. The copyright owner does not offer any warranties or representations, nor do
+ * they accept any liabilities with respect to them.
+ */
 
-package acme.features.assistant;
+package acme.features.assistant.tutorial;
 
 import java.util.Collection;
 
@@ -14,7 +25,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
 @Service
-public class AssistantTutorialShowService extends AbstractService<Assistant, Tutorial> {
+public class AssistantTutorialPublishService extends AbstractService<Assistant, Tutorial> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -36,14 +47,14 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
+		int tutorialId;
 		Tutorial tutorial;
 		Assistant assistant;
 
-		masterId = super.getRequest().getData("id", int.class);
-		tutorial = this.repository.findOneTutorialById(masterId);
+		tutorialId = super.getRequest().getData("id", int.class);
+		tutorial = this.repository.findOneTutorialById(tutorialId);
 		assistant = tutorial == null ? null : tutorial.getAssistant();
-		status = tutorial != null && //
+		status = tutorial != null && tutorial.getDraftMode() && //
 			super.getRequest().getPrincipal().hasRole(assistant) && //
 			tutorial.getAssistant().getId() == super.getRequest().getPrincipal().getActiveRoleId();
 
@@ -62,18 +73,48 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 	}
 
 	@Override
+	public void bind(final Tutorial object) {
+		assert object != null;
+
+		int courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findOneCourseById(courseId);
+
+		super.bind(object, "code", "title", "anAbstract", "goals", "draftMode");
+		object.setCourse(course);
+	}
+
+	@Override
+	public void validate(final Tutorial object) {
+		assert object != null;
+
+	}
+
+	@Override
+	public void perform(final Tutorial object) {
+		assert object != null;
+
+		object.setDraftMode(false);
+		this.repository.save(object);
+	}
+
+	@Override
 	public void unbind(final Tutorial object) {
 		assert object != null;
 
-		Tuple tuple;
+		Collection<Course> courses;
 		SelectChoices choices;
-		final Collection<Course> courses = this.repository.findAllCourses();
+		Tuple tuple;
 
+		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
 		tuple = super.unbind(object, "code", "title", "anAbstract", "goals", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
+
 		super.getResponse().setData(tuple);
 	}
 
