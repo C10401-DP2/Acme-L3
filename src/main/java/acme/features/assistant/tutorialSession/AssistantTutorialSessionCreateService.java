@@ -94,7 +94,7 @@ public class AssistantTutorialSessionCreateService extends AbstractService<Assis
 		if (!super.getBuffer().getErrors().hasErrors("initialDate")) {
 			boolean inititalDateError;
 
-			inititalDateError = MomentHelper.isBefore(object.getInitialDate(), MomentHelper.deltaFromCurrentMoment(1l, ChronoUnit.DAYS));
+			inititalDateError = MomentHelper.isAfter(object.getInitialDate(), MomentHelper.deltaFromCurrentMoment(1l, ChronoUnit.DAYS));
 
 			super.state(inititalDateError, "initialDate", "assistant.tutorial-session.form.error.at-least-one-day-ahead");
 		}
@@ -102,10 +102,10 @@ public class AssistantTutorialSessionCreateService extends AbstractService<Assis
 		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
 			boolean finalDateErrorDuration;
 
-			finalDateErrorDuration = !MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), 1l, ChronoUnit.HOURS);
+			finalDateErrorDuration = MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), 1l, ChronoUnit.HOURS);
 
-			if (!finalDateErrorDuration)
-				finalDateErrorDuration = MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), (long) 5 * 3600 + 1, ChronoUnit.SECONDS);
+			if (finalDateErrorDuration)
+				finalDateErrorDuration = !MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), (long) 5 * 3600 + 1, ChronoUnit.SECONDS);
 
 			super.state(finalDateErrorDuration, "finalDate", "assistant.tutorial-session.form.error.duration");
 		}
@@ -141,7 +141,7 @@ public class AssistantTutorialSessionCreateService extends AbstractService<Assis
 
 		masterId = super.getRequest().getData("masterId", int.class);
 
-		tuple = super.unbind(object, "title", "abstract$", "type", "inititalDate", "finalDate", "link");
+		tuple = super.unbind(object, "title", "anAbstract", "type", "initialDate", "finalDate", "link");
 		tuple.put("masterId", masterId);
 		tuple.put("types", choices);
 
