@@ -20,12 +20,11 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.courses" action="/any/course/list"/>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link-1" action="https://www.youtube.com/watch?v=_y9Hc5xKc0Y"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link-2" action="https://www.youtube.com/watch?v=oftolPu9qp4"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link-3" action="https://www.ogsbrand.com/es/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link-4" action="https://monkey.com/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link-5" action="https://www.youtube.com/watch?v=dsjub5bfwLk"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link1" action="https://you.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link2" action="https://es.coppermind.net/wiki/Coppermind:Bienvenidos"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link3" action="https://animista.net/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link4" action="https://www.realmadrid.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link5" action="https://www.youtube.com/"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
@@ -42,7 +41,7 @@
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.lecturer" access="hasRole('Lecturer')">
-			<acme:menu-suboption code="master.menu.lecturer.courses" action="http://localhost:8080/Acme-L3-D03/lecturer/course/list"/>
+			<acme:menu-suboption code="master.menu.lecturer.courses" action="/lecturer/course/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
