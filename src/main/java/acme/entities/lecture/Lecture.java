@@ -30,7 +30,7 @@ public class Lecture extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 101)
-	protected String			anAbstract;
+	protected String			ananact;
 
 	@Min(0)
 	@NotNull
