@@ -109,7 +109,7 @@ public class AssistantTutorialSessionUpdateService extends AbstractService<Assis
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("type"))
-			super.state(!object.getType().equals(ActivityType.BALANCED), "type", "assistant.tutorial-session.form.error.nature-balanced");
+			super.state(!object.getType().equals(ActivityType.BALANCED), "type", "assistant.tutorial-session.form.error.type-balanced");
 
 	}
 
