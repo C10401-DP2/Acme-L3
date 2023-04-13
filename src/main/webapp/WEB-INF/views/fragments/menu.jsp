@@ -18,23 +18,37 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
+		<acme:menu-option code="master.menu.courses" action="/any/course/list"/>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link1" action="https://you.com/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link2" action="https://es.coppermind.net/wiki/Coppermind:Bienvenidos"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link3" action="https://animista.net/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link4" action="https://www.realmadrid.com/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link5" action="https://www.youtube.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-1" action="https://www.youtube.com/watch?v=_y9Hc5xKc0Y"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-2" action="https://www.youtube.com/watch?v=oftolPu9qp4"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-3" action="https://www.ogsbrand.com/es/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-4" action="https://monkey.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-5" action="https://www.youtube.com/watch?v=dsjub5bfwLk"/>
 		</acme:menu-option>
-
+		
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.tutorials" action="/authenticated/tutorial/list"/>
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
+			<acme:menu-suboption code="master.menu.administrator.banner" action="/administrator/banner/list"/>
+			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.offer.list" action="/administrator/offer/list"/>			
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.createBulletin" action="/administrator/bulletin/create"/>
 			<acme:menu-separator/>		
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.lecturer" access="hasRole('Lecturer')">
+			<acme:menu-suboption code="master.menu.lecturer.courses" action="http://localhost:8080/Acme-L3-D03/lecturer/course/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
@@ -43,6 +57,10 @@
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
+			<acme:menu-suboption code="master.menu.assistant.tutorials.mine" action="/assistant/tutorial/list-mine"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
@@ -58,6 +76,14 @@
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update" access="hasRole('Consumer')"/>
 			<acme:menu-suboption code="master.menu.authenticated.createNote" action="/authenticated/note/create"/>
 			<acme:menu-separator/>	
+			<acme:menu-suboption code="master.menu.user-account.become-assistant" action="/authenticated/assistant/create" access="!hasRole('Assistant')"/>
+			<acme:menu-suboption code="master.menu.user-account.assistant" action="/authenticated/assistant/update" access="hasRole('Assistant')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-lecturer" action="/authenticated/lecturer/create" access="!hasRole('Lecturer')"/>
+			<acme:menu-suboption code="master.menu.user-account.lecturer" action="/authenticated/lecturer/update" access="hasRole('Lecturer')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-auditor" action="/authenticated/auditor/create" access="!hasRole('Auditor')"/>
+			<acme:menu-suboption code="master.menu.user-account.auditor" action="/authenticated/auditor/update" access="hasRole('Auditor')"/>
+			<acme:menu-suboption code="master.menu.user-account.bulletin.list" action="/authenticated/bulletin/list"/>
+
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>
