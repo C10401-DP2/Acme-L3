@@ -1,6 +1,8 @@
 
 package acme.entities.course;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -14,6 +16,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.datatypes.ActivityType;
+import acme.entities.lecture.Lecture;
 import acme.framework.components.datatypes.Money;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Lecturer;
@@ -38,8 +41,9 @@ public class Course extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 101)
-	protected String			ananact;
+	protected String			anAbstract;
 
+	@NotNull
 	protected Money				retailPrice;
 
 	@URL
@@ -50,8 +54,24 @@ public class Course extends AbstractEntity {
 
 
 	@Transient
-	protected ActivityType activityType() {
-		return null;
+	public ActivityType activityType(final List<Lecture> lectures) {
+		ActivityType activityType = ActivityType.BALANCED;
+		if (!lectures.isEmpty()) {
+			int theory = 0;
+			int handsOn = 0;
+			for (final Lecture l : lectures)
+				if (l.getActivityType().equals(ActivityType.THEORY))
+					theory++;
+				else if (l.getActivityType().equals(ActivityType.HANDSON))
+					handsOn++;
+			if (theory > handsOn)
+				activityType = ActivityType.THEORY;
+			else if (handsOn > theory)
+				activityType = ActivityType.HANDSON;
+			else
+				activityType = ActivityType.BALANCED;
+		}
+		return activityType;
 	}
 
 

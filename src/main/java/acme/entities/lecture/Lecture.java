@@ -30,7 +30,7 @@ public class Lecture extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 101)
-	protected String			ananact;
+	protected String			anAbstract;
 
 	@Min(0)
 	@NotNull
@@ -44,6 +44,9 @@ public class Lecture extends AbstractEntity {
 
 	@URL
 	protected String			link;
+
+	@NotNull
+	protected Boolean			draftMode;
 
 	@NotNull
 	@Valid

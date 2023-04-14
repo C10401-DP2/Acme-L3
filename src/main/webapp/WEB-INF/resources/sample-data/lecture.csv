@@ -1,9 +1,9 @@
-key,title,an-abstract,learning-time,body,activity-type,link,key:lecturer
-lecture-01,matemáticas,derivadas,1.0,Tablas de derivadas,THEORY,http://alguadaira.es/mates,lecturer-01
-lecture-02,lengua,sintaxis,1.0,Oraciones subordinadas,THEORY,http://alguadaira.es/lengua,lecturer-02
-lecture-03,Introducción a la Ingeniería del Software y Sistemas de Información,sintaxis,1.8,Proyecto de base de datos en SQL con codificación UTF-8 para usar la ñ,HANDSON,http://ev.us.es/IISSI,lecturer-02
-lecture-04,TIC,Tecnologías Informáticas Computacionales,1.5,Maquetación de página web con HTML y CSS,HANDSON,http://alguadaira.es/tic,lecturer-01
-lecture-05,Historia de España,Historia de una nación & país,1.35,vj no puedo más!! ksnac,THEORY,http://alguadaira.es/history,lecturer-01
-lecture-06,Economía $€,ADE,1.1,Clases de problemas,HANDSON,http://ev.us.es/ae,lecturer-02
-lecture-07,Estadística & Probabilidad,F,2.3,Short,HANDSON,http://ev.us.es/estadistica,lecturer-02
-lecture-08,Fraçais,2º idioma,0.7,Idioma francés de Francia país cercano a España y perteneciente a Europa,THEORY,https://alguadaira.es/frances,lecturer-01
+key,title,an-abstract,learning-time,body,activity-type,link,draft-mode,key:lecturer
+lecture-01,matemáticas,derivadas,1.0,Tablas de derivadas,THEORY,http://alguadaira.es/mates,true,lecturer-01
+lecture-02,lengua,sintaxis,1.0,Oraciones subordinadas,THEORY,http://alguadaira.es/lengua,true,lecturer-02
+lecture-03,Introducción a la Ingeniería del Software y Sistemas de Información,sintaxis,1.8,Proyecto de base de datos en SQL con codificación UTF-8 para usar la ñ,HANDSON,http://ev.us.es/IISSI,true,lecturer-02
+lecture-04,TIC,Tecnologías Informáticas Computacionales,1.5,Maquetación de página web con HTML y CSS,HANDSON,http://alguadaira.es/tic,true,lecturer-01
+lecture-05,Historia de España,Historia de una nación & país,1.35,vj no puedo más!! ksnac,THEORY,http://alguadaira.es/history,true,lecturer-01
+lecture-06,Economía $€,ADE,1.1,Clases de problemas,HANDSON,http://ev.us.es/ae,true,lecturer-02
+lecture-07,Estadística & Probabilidad,F,2.3,Short,HANDSON,http://ev.us.es/estadistica,true,lecturer-02
+lecture-08,Fraçais,2º idioma,0.7,Idioma francés de Francia país cercano a España y perteneciente a Europa,THEORY,https://alguadaira.es/frances,true,lecturer-01
