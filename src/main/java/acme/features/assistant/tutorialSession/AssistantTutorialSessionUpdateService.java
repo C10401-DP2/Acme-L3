@@ -92,7 +92,7 @@ public class AssistantTutorialSessionUpdateService extends AbstractService<Assis
 		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
 			boolean finalDateError;
 
-			finalDateError = MomentHelper.isBefore(object.getInitialDate(), object.getFinalDate());
+			finalDateError = !MomentHelper.isBefore(object.getFinalDate(), object.getInitialDate());
 
 			super.state(finalDateError, "finalDate", "assistant.tutorial-session.form.error.end-before-start");
 		}

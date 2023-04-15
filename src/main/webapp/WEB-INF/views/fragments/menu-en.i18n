@@ -53,6 +53,7 @@ master.menu.consumer.favourite-link = Favourite link
 
 master.menu.assistant = Assistant
 master.menu.assistant.tutorials.mine = My tutorials
+master.menu.assistant.show-dashboard = Assistant dashboard
 
 # master.menu.user-account ####################################################
 

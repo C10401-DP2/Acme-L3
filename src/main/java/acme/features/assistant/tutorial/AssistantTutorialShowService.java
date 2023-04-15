@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
 import acme.entities.tutorial.Tutorial;
+import acme.entities.tutorialsession.TutorialSession;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -68,12 +69,21 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 		Tuple tuple;
 		SelectChoices choices;
 		final Collection<Course> courses = this.repository.findAllCourses();
+		Collection<TutorialSession> tutorialSessions;
+		Double estimatedTotalTime;
+
+		tutorialSessions = this.repository.findManySessionsByTutorialId(object.getId());
+		estimatedTotalTime = 0.;
+
+		for (final TutorialSession ts : tutorialSessions)
+			estimatedTotalTime += ts.getDurationInHours();
 
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
 		tuple = super.unbind(object, "code", "title", "anAbstract", "goals", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
+		tuple.put("estimatedTotalTime", estimatedTotalTime);
 		super.getResponse().setData(tuple);
 	}
 
