@@ -38,6 +38,14 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.peep" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.any.all-peeps" action="/any/peep/list"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.peep" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.any.all-peeps" action="/any/peep/list"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.lecturer" access="hasRole('Lecturer')">
 			<acme:menu-suboption code="master.menu.lecturer.courses" action="/lecturer/course/list"/>
