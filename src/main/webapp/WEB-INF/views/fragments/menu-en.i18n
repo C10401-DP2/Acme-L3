@@ -42,6 +42,11 @@ master.menu.administrator.offer.list = Offers listing
 master.menu.administrator.createBulletin = Create Bulletin
 master.menu.administrator.shut-down = Shut down
 
+# master.menu.peep ########################################################
+
+master.menu.peep = Peeps
+master.menu.any.all-peeps = Lista de peeps
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
@@ -56,6 +61,7 @@ master.menu.consumer.favourite-link = Favourite link
 
 master.menu.assistant = Assistant
 master.menu.assistant.tutorials.mine = My tutorials
+master.menu.assistant.show-dashboard = Assistant dashboard
 
 # master.menu.user-account ####################################################
 

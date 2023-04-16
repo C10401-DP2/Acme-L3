@@ -67,25 +67,24 @@ public class AssistantTutorialUpdateService extends AbstractService<Assistant, T
 		assert object != null;
 
 		int courseId;
+		final int code;
+		Tutorial sameTuto;
 		Course course;
+		int id;
 
+		id = super.getRequest().getData("id", int.class);
+		sameTuto = this.repository.findOneTutorialById(id);
 		courseId = super.getRequest().getData("course", int.class);
 		course = this.repository.findOneCourseById(courseId);
 
-		super.bind(object, "code", "title", "anAbstract", "goals", "draftMode");
+		super.bind(object, "title", "anAbstract", "goals", "draftMode");
 		object.setCourse(course);
+		object.setCode(sameTuto.getCode());
 	}
 
 	@Override
 	public void validate(final Tutorial object) {
 		assert object != null;
-
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Tutorial existing;
-
-			existing = this.repository.findOneTutorialByCode(object.getCode());
-			super.state(existing == null || existing.getId() == object.getId(), "code", "assistant.tutorial.form.error.duplicated");
-		}
 	}
 
 	@Override

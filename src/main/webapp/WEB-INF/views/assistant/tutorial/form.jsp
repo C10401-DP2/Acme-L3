@@ -15,12 +15,20 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
-<acme:form> 
-	<acme:input-textbox code="assistant.tutorial.form.label.code" path="code"/>
+<acme:form>
+	<jstl:choose>
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">
+			<acme:input-textbox code="assistant.tutorial.form.label.code" path="code" readonly="true"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'create'}">
+			<acme:input-textbox code="assistant.tutorial.form.label.code" path="code" placeholder="AAA1111"/>
+		</jstl:when>
+	</jstl:choose>
 	<acme:input-select code="assistant.tutorial.form.label.course" path="course" choices="${courses}"/>	
 	<acme:input-textbox code="assistant.tutorial.form.label.title" path="title"/>
 	<acme:input-textarea code="assistant.tutorial.form.label.abstraction" path="anAbstract"/>
 	<acme:input-textarea code="assistant.tutorial.form.label.goals" path="goals"/>
+	<acme:input-double code="assistant.tutorial.form.label.estimated-total-time" path="estimatedTotalTime" readonly="true"/>
 	<acme:hidden-data path="id"/>
 	<acme:hidden-data path="draftMode"/>
 
