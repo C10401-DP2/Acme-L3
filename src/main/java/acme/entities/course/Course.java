@@ -15,7 +15,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.datatypes.ActivityType;
+import acme.datatypes.CourseType;
 import acme.entities.lecture.Lecture;
 import acme.framework.components.datatypes.Money;
 import acme.framework.data.AbstractEntity;
@@ -54,24 +54,24 @@ public class Course extends AbstractEntity {
 
 
 	@Transient
-	public ActivityType activityType(final List<Lecture> lectures) {
-		ActivityType activityType = ActivityType.BALANCED;
+	public CourseType courseType(final List<Lecture> lectures) {
+		CourseType courseType = CourseType.BALANCED;
 		if (!lectures.isEmpty()) {
 			int theory = 0;
 			int handsOn = 0;
 			for (final Lecture l : lectures)
-				if (l.getActivityType().equals(ActivityType.THEORY))
+				if (l.getActivityType().equals(CourseType.THEORY))
 					theory++;
-				else if (l.getActivityType().equals(ActivityType.HANDSON))
+				else if (l.getActivityType().equals(CourseType.HANDSON))
 					handsOn++;
 			if (theory > handsOn)
-				activityType = ActivityType.THEORY;
+				courseType = CourseType.THEORY;
 			else if (handsOn > theory)
-				activityType = ActivityType.HANDSON;
+				courseType = CourseType.HANDSON;
 			else
-				activityType = ActivityType.BALANCED;
+				courseType = CourseType.BALANCED;
 		}
-		return activityType;
+		return courseType;
 	}
 
 

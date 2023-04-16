@@ -1,17 +1,20 @@
 
 package acme.features.lecturer.course;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.configuration.Configuration;
 import acme.entities.course.Course;
+import acme.entities.lecture.Lecture;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-public class LecturerCourseCreateServices extends AbstractService<Lecturer, Course> {
+public class LecturerCoursePublishServices extends AbstractService<Lecturer, Course> {
 
 	@Autowired
 	protected LecturerCourseRepository repository;
@@ -19,14 +22,25 @@ public class LecturerCourseCreateServices extends AbstractService<Lecturer, Cour
 
 	@Override
 	public void check() {
-		super.getResponse().setChecked(true);
+		boolean status;
+
+		status = super.getRequest().hasData("id", int.class);
+
+		super.getResponse().setChecked(status);
 	}
 
 	@Override
 	public void authorise() {
-		boolean status;
+		final boolean status;
+		int courseId;
+		Course course;
+		Lecturer lecturer;
 
-		status = super.getRequest().getPrincipal().hasRole(Lecturer.class);
+		courseId = super.getRequest().getData("id", int.class);
+		course = this.repository.findOneCourseById(courseId);
+		lecturer = course == null ? null : course.getLecturer();
+		final Collection<Lecture> lectures = this.repository.findManyLecturesByCourseId(courseId);
+		status = course != null && course.getDraftMode() && super.getRequest().getPrincipal().hasRole(lecturer) && !lectures.isEmpty();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -34,12 +48,10 @@ public class LecturerCourseCreateServices extends AbstractService<Lecturer, Cour
 	@Override
 	public void load() {
 		Course object;
-		Lecturer lecturer;
+		int id;
 
-		object = new Course();
-		lecturer = this.repository.findOneLecturerById(super.getRequest().getPrincipal().getActiveRoleId());
-		object.setLecturer(lecturer);
-		object.setDraftMode(true);
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findOneCourseById(id);
 
 		super.getBuffer().setData(object);
 	}
@@ -58,9 +70,14 @@ public class LecturerCourseCreateServices extends AbstractService<Lecturer, Cour
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Course existing;
 
-			existing = this.repository.findOneCourseByCode(object.getCode());
+			existing = this.repository.findOneCourseByCodeAndDistinctId(object.getCode(), object.getId());
 
 			super.state(existing == null, "code", "lecturer.course.form.error.duplicated");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("lecture")) {
+			final Collection<Lecture> lectures = this.repository.findManyLecturesByCourseId(object.getId());
+			super.state(lectures.isEmpty(), "lecture", "lecturer.course.form.error.not-lectures");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("price")) {
@@ -74,14 +91,14 @@ public class LecturerCourseCreateServices extends AbstractService<Lecturer, Cour
 			super.state(object.getRetailPrice().getAmount() >= 0., "retailPrice", "lecturer.course.negative-price");
 
 		if (!super.getBuffer().getErrors().hasErrors("price"))
-			super.state(object.getRetailPrice().getAmount() <= 1000000, "retailPrice", "lecturer.course.too-much-price");
-
+			super.state(object.getRetailPrice().getAmount() <= 1000000, "reatilPrice", "lecturer.course.too-much-price");
 	}
 
 	@Override
 	public void perform(final Course object) {
 		assert object != null;
 
+		object.setDraftMode(false);
 		this.repository.save(object);
 	}
 
@@ -95,5 +112,4 @@ public class LecturerCourseCreateServices extends AbstractService<Lecturer, Cour
 
 		super.getResponse().setData(tuple);
 	}
-
 }

@@ -54,7 +54,7 @@ public class AnyCourseShowServices extends AbstractService<Any, Course> {
 		assert object != null;
 		final Tuple tuple = super.unbind(object, "code", "title", "anAbstract", "retailPrice", "link");
 		final List<Lecture> lectures = this.repository.findLecturesByCourse(object.getId()).stream().collect(Collectors.toList());
-		tuple.put("activityType", object.activityType(lectures));
+		tuple.put("courseType", object.courseType(lectures));
 
 		super.getResponse().setData(tuple);
 	}
