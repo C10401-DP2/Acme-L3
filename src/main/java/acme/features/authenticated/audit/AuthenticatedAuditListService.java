@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.audit.Audit;
+import acme.entities.course.Course;
 import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -43,8 +44,12 @@ public class AuthenticatedAuditListService extends AbstractService<Authenticated
 		assert object != null;
 
 		Tuple tuple;
+		Course course;
+
+		course = object.getCourse();
 
 		tuple = super.unbind(object, "code", "conclusion");
+		tuple.put("course", course.getTitle());
 
 		super.getResponse().setData(tuple);
 	}

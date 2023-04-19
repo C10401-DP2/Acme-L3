@@ -15,7 +15,6 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.audit.Audit;
-import acme.entities.course.Course;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -58,9 +57,6 @@ public class AuditingRecord extends AbstractEntity {
 	// Derived attributes
 
 	// Relationships
-
-	@ManyToOne
-	protected Course			course;
 
 	@ManyToOne
 	protected Audit				audit;
