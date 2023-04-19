@@ -11,9 +11,9 @@
 any.peep.form.label.title = Títle:
 any.peep.form.label.moment = Moment:
 any.peep.form.label.nick = Nick:
-any.peep.form.button.message = Message:
-any.peep.form.button.email = Email:
-any.peep.form.button.link = Link: (Opcional)
+any.peep.form.label.message = Message:
+any.peep.form.label.email = Email:
+any.peep.form.label.link = Link: (Opcional)
  
 any.peep.list.label.title = Títle
 any.peep.list.label.moment = Moment
