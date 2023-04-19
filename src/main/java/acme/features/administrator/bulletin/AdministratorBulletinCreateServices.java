@@ -1,5 +1,5 @@
 
-package acme.features.administrator.bulletins;
+package acme.features.administrator.bulletin;
 
 import java.util.Date;
 
