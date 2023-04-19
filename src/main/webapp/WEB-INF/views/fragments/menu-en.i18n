@@ -35,8 +35,11 @@ master.menu.authenticated.tutorials = All tutorials
 master.menu.administrator = Administrator
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
+master.menu.administrator.banner = Banner
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
+master.menu.administrator.offer.list = Offers listing
+master.menu.administrator.createBulletin = Create Bulletin
 master.menu.administrator.shut-down = Shut down
 
 # master.menu.peep ########################################################
@@ -68,10 +71,15 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
 master.menu.user-account.assistant = Assistant data
 master.menu.user-account.become-assistant = Become an assistant
 master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Become a lecturer
 master.menu.user-account.become-auditor = Become an auditor
+master.menu.authenticated.createNote = Create note
+master.menu.authenticated.listNote = Show note list
 master.menu.user-account.auditor = Auditor data
+
+master.menu.user-account.bulletin.list = Bulletin listing
 
