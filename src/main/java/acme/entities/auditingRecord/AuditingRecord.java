@@ -51,6 +51,9 @@ public class AuditingRecord extends AbstractEntity {
 	@NotNull
 	protected Mark				mark;
 
+	@NotNull
+	protected Correction		correction;
+
 	@URL
 	protected String			link;
 

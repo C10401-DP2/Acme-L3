@@ -73,16 +73,6 @@ public class AuditorAuditDeleteService extends AbstractService<Auditor, Audit> {
 	@Override
 	public void validate(final Audit object) {
 		assert object != null;
-
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Audit existing;
-
-			existing = this.repository.findAuditByCode(object.getCode());
-			super.state(existing == null, "code", "auditor.audit.form.error.duplicated");
-		}
-
-		if (!super.getBuffer().getErrors().hasErrors("course"))
-			super.state(!(object.getCourse() == null), "course", "auditor.audit.form.error.course-not-null");
 	}
 
 	@Override
@@ -107,7 +97,7 @@ public class AuditorAuditDeleteService extends AbstractService<Auditor, Audit> {
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
-		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints");
+		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 
