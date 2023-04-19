@@ -17,3 +17,4 @@ authenticated.audit.form.label.auditor = Auditor
 authenticated.audit.list.label.code = Código
 authenticated.audit.list.label.conclusion = Conclusión
 authenticated.audit.list.label.course = Curso
+authenticated.audit.list.label.mode = Moda

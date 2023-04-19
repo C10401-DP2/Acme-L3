@@ -12,14 +12,18 @@ auditor.audit.form.label.code = Code
 auditor.audit.form.label.conclusion = Conclusion
 auditor.audit.form.label.strong-points = Strong Points
 auditor.audit.form.label.weak-points = Weak Points
+auditor.audit.form.label.course = Course
 
 auditor.audit.form.button.create = Create
 auditor.audit.form.button.update = Update
 auditor.audit.form.button.delete = Delete
+auditor.audit.form.button.auditing-records = Auditing Records
 
-auditor.audit.form.error.duplicated = This code has already been used.
+auditor.audit.form.error.duplicated = This code has already been used
+auditor.audit.form.error.course-not-null = Course can not be blank
 
 auditor.audit.list.label.code = Code
 auditor.audit.list.label.conclusion = Conclusion
+auditor.audit.list.label.mode = Mode
 
 auditor.audit.list.button.create = Create

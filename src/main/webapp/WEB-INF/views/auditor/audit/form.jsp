@@ -20,11 +20,16 @@
 	<acme:input-textarea code="auditor.audit.form.label.conclusion" path="conclusion"/>	
 	<acme:input-textarea code="auditor.audit.form.label.strong-points" path="strongPoints"/>
 	<acme:input-textarea code="auditor.audit.form.label.weak-points" path="weakPoints"/>
+	<acme:input-select code="auditor.audit.form.label.course" path="course" choices="${courses}"/>
 	<acme:hidden-data path="id"/>
 	<acme:hidden-data path="draftMode"/>
 
-	<jstl:choose>	 
+	<jstl:choose>
+		<jstl:when test="${_command == 'show' && draftMode == false}">
+			<acme:button code="auditor.audit.form.button.auditing-records" action="/auditor/auditing-record/list?masterId=${id}"/>
+		</jstl:when> 
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
+			<acme:button code="auditor.audit.form.button.auditing-records" action="/auditor/auditing-record/list?masterId=${id}"/>
 			<acme:submit code="auditor.audit.form.button.update" action="/auditor/audit/update"/>
 			<acme:submit code="auditor.audit.form.button.delete" action="/auditor/audit/delete"/>
 		</jstl:when>
