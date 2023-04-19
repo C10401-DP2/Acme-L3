@@ -1,5 +1,5 @@
 
-package acme.features.assistant;
+package acme.features.assistant.tutorial;
 
 import java.util.Collection;
 
@@ -8,13 +8,14 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
 import acme.entities.tutorial.Tutorial;
+import acme.entities.tutorialsession.TutorialSession;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
 @Service
-public class AssistantTutorialUpdateService extends AbstractService<Assistant, Tutorial> {
+public class AssistantTutorialShowService extends AbstractService<Assistant, Tutorial> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -38,12 +39,13 @@ public class AssistantTutorialUpdateService extends AbstractService<Assistant, T
 		boolean status;
 		int masterId;
 		Tutorial tutorial;
+		Assistant assistant;
 
 		masterId = super.getRequest().getData("id", int.class);
 		tutorial = this.repository.findOneTutorialById(masterId);
+		assistant = tutorial == null ? null : tutorial.getAssistant();
 		status = tutorial != null && //
-			tutorial.getDraftMode() && //
-			super.getRequest().getPrincipal().hasRole(tutorial.getAssistant()) && //
+			super.getRequest().getPrincipal().hasRole(assistant) && //
 			tutorial.getAssistant().getId() == super.getRequest().getPrincipal().getActiveRoleId();
 
 		super.getResponse().setAuthorised(status);
@@ -61,52 +63,27 @@ public class AssistantTutorialUpdateService extends AbstractService<Assistant, T
 	}
 
 	@Override
-	public void bind(final Tutorial object) {
-		assert object != null;
-
-		int courseId;
-		Course course;
-
-		courseId = super.getRequest().getData("course", int.class);
-		course = this.repository.findOneCourseById(courseId);
-
-		super.bind(object, "code", "title", "anAbstract", "goals", "draftMode");
-		object.setCourse(course);
-	}
-
-	@Override
-	public void validate(final Tutorial object) {
-		assert object != null;
-
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Tutorial existing;
-
-			existing = this.repository.findOneTutorialByCode(object.getCode());
-			super.state(existing == null || existing.getId() == object.getId(), "code", "assistant.tutorial.form.error.duplicated");
-		}
-	}
-
-	@Override
-	public void perform(final Tutorial object) {
-		assert object != null;
-
-		this.repository.save(object);
-	}
-
-	@Override
 	public void unbind(final Tutorial object) {
 		assert object != null;
 
-		Collection<Course> courses;
-		SelectChoices choices;
 		Tuple tuple;
+		SelectChoices choices;
+		final Collection<Course> courses = this.repository.findAllCourses();
+		Collection<TutorialSession> tutorialSessions;
+		Double estimatedTotalTime;
 
-		courses = this.repository.findAllCourses();
+		tutorialSessions = this.repository.findManySessionsByTutorialId(object.getId());
+		estimatedTotalTime = 0.;
+
+		for (final TutorialSession ts : tutorialSessions)
+			estimatedTotalTime += ts.getDurationInHours();
+
 		choices = SelectChoices.from(courses, "title", object.getCourse());
+
 		tuple = super.unbind(object, "code", "title", "anAbstract", "goals", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
-
+		tuple.put("estimatedTotalTime", estimatedTotalTime);
 		super.getResponse().setData(tuple);
 	}
 

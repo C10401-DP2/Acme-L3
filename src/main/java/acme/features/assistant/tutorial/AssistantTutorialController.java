@@ -1,5 +1,5 @@
 
-package acme.features.assistant;
+package acme.features.assistant.tutorial;
 
 import javax.annotation.PostConstruct;
 

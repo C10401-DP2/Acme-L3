@@ -19,7 +19,8 @@ master.menu.sign-out = Sign out
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anonymous
-master.menu.anonymous.favourite-link1 = 20090433W: García Aguilar, Javier
+master.menu.anonymous.favourite-link = Favourite link
+master.menu.anonymous.favourite-link1 = 20090433W: García Aguilar, Javier 
 master.menu.anonymous.favourite-link2 = 47347286S: Cuenca Perez, Pablo
 master.menu.anonymous.favourite-link3 = 45969301Y: Del Hoyo Carcaboso, David
 master.menu.anonymous.favourite-link4 = 45970129Y: Zarandieta Ortiz, David
@@ -43,11 +44,10 @@ master.menu.administrator.offer.list = Offers listing
 master.menu.administrator.createBulletin = Create Bulletin
 master.menu.administrator.shut-down = Shut down
 
-# master.menu.lecturer ###################################################
+# master.menu.peep ########################################################
 
-master.menu.lecturer= Lecturer
-master.menu.lecturer.course = My courses
-master.menu.lecturer.lectureMine = My lectures
+master.menu.peep = Peeps
+master.menu.any.all-peeps = Lista de peeps
 
 # master.menu.provider ########################################################
 
@@ -59,10 +59,17 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+# master.menu.lecturer ##########################################################
+
+master.menu.lecturer= Lecturer
+master.menu.lecturer.course = My courses
+master.menu.lecturer.lectureMine = My lectures
+
 # master.menu.assistant ####################################################
 
 master.menu.assistant = Assistant
 master.menu.assistant.tutorials.mine = My tutorials
+master.menu.assistant.show-dashboard = Assistant dashboard
 
 # master.menu.user-account ####################################################
 
@@ -78,6 +85,8 @@ master.menu.user-account.become-assistant = Become an assistant
 master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Become a lecturer
 master.menu.user-account.become-auditor = Become an auditor
+master.menu.authenticated.createNote = Create note
+master.menu.authenticated.listNote = Show note list
 master.menu.user-account.auditor = Auditor data
 
 master.menu.user-account.bulletin.list = Bulletin listing

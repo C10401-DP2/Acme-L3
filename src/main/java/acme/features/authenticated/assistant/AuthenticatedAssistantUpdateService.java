@@ -83,7 +83,7 @@ public class AuthenticatedAssistantUpdateService extends AbstractService<Authent
 
 		Tuple tuple;
 
-		tuple = BinderHelper.unbind(object, "supervisor", "expertises", "resume", "link");
+		tuple = BinderHelper.unbind(object, "supervisor", "expertiseFields", "resume", "link");
 		super.getResponse().setData(tuple);
 	}
 
