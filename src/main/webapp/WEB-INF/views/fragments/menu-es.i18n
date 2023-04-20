@@ -11,12 +11,12 @@
 ﻿# master.menu #################################################################
 
 master.menu.home = Inicio
+master.menu.courses = Cursos
 master.menu.sign-up = Registrarse
-master.menu.sign-in = Entrar
+master.menu.sign-in = Iniciar sesión
 master.menu.sign-out = Salir
 
 # master.menu.anonymous #######################################################
-
 
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link1 = 20090433W: García Aguilar, Javier 
@@ -25,23 +25,55 @@ master.menu.anonymous.favourite-link3 = 45969301Y: Del Hoyo Carcaboso, David
 master.menu.anonymous.favourite-link4 = 45970129Y: Zarandieta Ortiz, David
 master.menu.anonymous.favourite-link5 = 45968205Z: García Chavero, Adrián
 
+# master.menu.authenticated ###################################################
+
+master.menu.authenticated = Autenticado
+master.menu.authenticated.course-list = Cursos
+master.menu.authenticated.tutorials = Todos los tutoriales
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.banner = Banner
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
+master.menu.administrator.offer.list = Listado de ofertas
+master.menu.administrator.createBulletin = Crear Boletín
 master.menu.administrator.shut-down = Parar el sistema
+
+# master.menu.peep ########################################################
+
+master.menu.peep = Peeps
+master.menu.any.all-peeps = Lista de peeps
 
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
-master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.provider.favourite-link = Enlace favorito
+
 # master.menu.consumer ##########################################################
 
-master.menu.consumer = consumidor
-master.menu.consumer.favourite-link = enlace favorito
+master.menu.consumer = Consumidor
+master.menu.consumer.favourite-link = Enlace favorito
+
+# master.menu.lecturer ########################################################
+
+master.menu.lecturer= Profesorado
+master.menu.lecturer.course = Mis cursos
+master.menu.lecturer.lectureMine = Mis lecciones
+
+# master.menu.assistant ####################################################
+
+master.menu.assistant = Asistente
+master.menu.assistant.tutorials.mine = Mis tutoriales
+master.menu.assistant.show-dashboard = Panel del asistente
+
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.audits.mine = Mis auditorías
 
 # master.menu.user-account ####################################################
 
@@ -51,3 +83,25 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+
+master.menu.user-account.audit.list = Listado de auditorías
+
+master.menu.user-account.assistant = Datos de asistente
+master.menu.user-account.become-assistant = Hazte asistente
+master.menu.user-account.lecturer = Datos de profesor
+master.menu.user-account.become-lecturer = Hazte profesor
+master.menu.user-account.become-auditor = Hazte auditor
+master.menu.authenticated.createNote = Crear una nota
+master.menu.authenticated.listNote = Lista de notas
+master.menu.user-account.auditor = Datos de Auditor
+
+
+master.menu.user-account.bulletin.list = Listado de boletines
+
+# master.menu.student ####################################################
+
+master.menu.student = Estudiante
+master.menu.student.enrolments.list = Inscripcion
+master.menu.student.activities.list = Acitividades
+
+

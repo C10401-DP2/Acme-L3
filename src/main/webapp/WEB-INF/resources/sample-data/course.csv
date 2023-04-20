@@ -1,10 +1,10 @@
 key,code,title,an-abstract,retail-price,link,draft-mode,key:lecturer
-course-01,A000,Primero de bachillerato,Curso académico post obligatorio,EUR 300.0,http://ev.us.es,0,lecturer-01
-course-02,AAA001,Primero de bachillerato,Curso académico post obligatorio,USD 120.0,http://alguadira.es,0,lecturer-02
-course-03,ZZZ999,Idiomas idiomas idiomas idiomas idiomasidiomasidiomas,Curso académico idiomas sins isifcne ia,EUR 392.5,http://ev.us.es,0,lecturer-02
-course-04,AB302,PriKASNCI KAS´ Ñ 123NK %& -_,Curs,GBP 30.0,http://ev.us.es,0,lecturer-01
-course-05,CNP109,AHHHHHHHHAAHAHAHHA,SÍ SON MUCHOS CSV,EUR 3000.0,http://ev.us.es,0,lecturer-02
-course-06,NA113,PROEOA KMADV SKNJABISA ENICNAS OJC A,Curso académico post obligatorio,USD 99.9,http://alguadira.es,0,lecturer-01
-course-07,JHD928,Pr favor al siguiente + es mejor,Curso académico post obligatorio,EUR 300.0,http://alguadira.es,0,lecturer-02
-course-08,J112,Será un problema del futuro poner mejores nombres no pasa nada,Curso académico post obligatorio,GBP 300.0,http://ev.us.es,0,lecturer-01
-course-09,P029,No peta,Informática,EUR 300.21,http://alguadira.es,0,lecturer-02
+course-01,A000,Primero de bachillerato,Curso académico post obligatorio,EUR 300.0,http://ev.us.es,false,lecturer-01
+course-02,AAA001,Primero de bachillerato,Curso académico post obligatorio,USD 120.0,http://alguadira.es,false,lecturer-02
+course-03,ZZZ999,Idiomas idiomas idiomas idiomas idiomasidiomasidiomas,Curso académico idiomas sins isifcne ia,EUR 392.5,http://ev.us.es,false,lecturer-02
+course-04,AB302,PriKASNCI KAS´ Ñ 123NK %& -_,Curs,GBP 30.0,http://ev.us.es,true,lecturer-01
+course-05,CNP109,AHHHHHHHHAAHAHAHHA,SÍ SON MUCHOS CSV,EUR 3000.0,http://ev.us.es,true,lecturer-02
+course-06,NA113,PROEOA KMADV SKNJABISA ENICNAS OJC A,Curso académico post obligatorio,USD 99.9,http://alguadira.es,true,lecturer-01
+course-07,JHD928,Pr favor al siguiente + es mejor,Curso académico post obligatorio,EUR 300.0,http://alguadira.es,true,lecturer-02
+course-08,J112,Será un problema del futuro poner mejores nombres no pasa nada,Curso académico post obligatorio,GBP 300.0,http://ev.us.es,true,lecturer-01
+course-09,P029,No peta,Informática,EUR 300.21,http://alguadira.es,true,lecturer-02

@@ -1,6 +1,9 @@
 
 package acme.forms;
 
+import java.util.Map;
+
+import acme.datatypes.ActivityType;
 import acme.framework.data.AbstractForm;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +17,7 @@ public class AssistantDashboard extends AbstractForm {
 	protected static final long	serialVersionUID	= 1L;
 
 	//Atributes ---------------------------------------------------------------
-	Integer						totalTutorials;
+	Map<ActivityType, Integer>	totalTutorials;
 	Double						averageTimeTutorialSessions;
 	Double						standardDesviationTimeTutorialSessions;
 	Double						minTimeTutorialSessions;

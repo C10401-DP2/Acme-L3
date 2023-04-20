@@ -1,18 +1,12 @@
 
 package acme.entities.enrolment;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -47,39 +41,26 @@ public class Enrolment extends AbstractEntity {
 	@Length(max = 101)
 	protected String			goals;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@NotNull
-	@Past
-	protected Date				initialDate;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@NotNull
-	@Past
-	protected Date				finalDate;
-
 	@NotNull
 	protected Boolean			draftMode;
 
+	protected String			creditCardNumber;
+
+	protected String			holder;
+
 	// Derived attributes -----------------------------------------------------
 
-
-	@Transient
-	public Integer totalTime() {
-		final long tiempoTotal = this.finalDate.getTime() - this.initialDate.getTime();
-		return (int) (tiempoTotal / 3600000);
-
-	}
+	protected Integer			totalTime;
 
 	//Relationships -----------------------------------------------------------
 
+	@Valid
+	@NotNull
+	@ManyToOne(optional = false)
+	protected Student			student;
 
 	@Valid
 	@NotNull
 	@ManyToOne(optional = false)
-	protected Student	student;
-
-	@Valid
-	@NotNull
-	@ManyToOne(optional = false)
-	protected Course	course;
+	protected Course			course;
 }
