@@ -25,9 +25,11 @@ master.menu.anonymous.favourite-link2 = 47347286S: Cuenca Perez, Pablo
 master.menu.anonymous.favourite-link3 = 45969301Y: Del Hoyo Carcaboso, David
 master.menu.anonymous.favourite-link4 = 45970129Y: Zarandieta Ortiz, David
 master.menu.anonymous.favourite-link5 = 45968205Z: García Chavero, Adrián
+
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Authenticated
+master.menu.authenticated.course-list = Courses
 master.menu.authenticated.tutorials = All tutorials
 
 # master.menu.administrator ###################################################
@@ -57,6 +59,12 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 
 master.menu.consumer.favourite-link = Favourite link
+
+# master.menu.lecturer ##########################################################
+
+master.menu.lecturer= Lecturer
+master.menu.lecturer.course = My courses
+master.menu.lecturer.lectureMine = My lectures
 
 # master.menu.assistant ####################################################
 
