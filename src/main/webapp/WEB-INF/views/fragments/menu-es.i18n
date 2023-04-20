@@ -62,6 +62,11 @@ master.menu.assistant = Asistente
 master.menu.assistant.tutorials.mine = Mis tutoriales
 master.menu.assistant.show-dashboard = Panel del asistente
 
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.audits.mine = Mis auditorías
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
@@ -70,6 +75,8 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+
+master.menu.user-account.audit.list = Listado de auditorías
 
 master.menu.user-account.assistant = Datos de asistente
 master.menu.user-account.become-assistant = Hazte asistente
