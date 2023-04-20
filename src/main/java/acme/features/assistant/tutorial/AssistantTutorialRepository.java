@@ -1,5 +1,5 @@
 
-package acme.features.assistant;
+package acme.features.assistant.tutorial;
 
 import java.util.Collection;
 
@@ -27,7 +27,7 @@ public interface AssistantTutorialRepository extends AbstractRepository {
 	@Query("SELECT c FROM Course c WHERE c.id = :id")
 	Course findOneCourseById(int id);
 
-	@Query("SELECT c FROM Course c")
+	@Query("SELECT c FROM Course c WHERE c.draftMode = false")
 	Collection<Course> findAllCourses();
 
 	@Query("SELECT s FROM TutorialSession s WHERE s.tutorial.id = :id")
