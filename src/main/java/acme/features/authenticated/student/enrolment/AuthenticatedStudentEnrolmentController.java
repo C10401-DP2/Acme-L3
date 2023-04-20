@@ -38,12 +38,12 @@ public class AuthenticatedStudentEnrolmentController extends AbstractController<
 
 	@PostConstruct
 	protected void initialise() {
-		super.addBasicCommand("list", this.listService);
+		super.addCustomCommand("list-mine", "list", this.listService);
 		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("update", this.updateService);
 		super.addBasicCommand("delete", this.deleteService);
 		super.addBasicCommand("create", this.createService);
-		super.addBasicCommand("finalise", this.finaliseService);
+		//super.addBasicCommand("finalise", this.finaliseService);
 
 	}
 }

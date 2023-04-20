@@ -10,6 +10,8 @@ import acme.entities.course.Course;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
+import acme.framework.controllers.HttpMethod;
+import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
@@ -25,26 +27,13 @@ public class AuthenticatedStudentEnrolmentDeleteService extends AbstractService<
 
 	@Override
 	public void check() {
-		boolean status;
 
-		status = super.getRequest().hasData("id", int.class);
-
-		super.getResponse().setChecked(status);
+		super.getResponse().setChecked(true);
 	}
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int enrolmentId;
-		Enrolment enrolment;
-		int StudentId;
-
-		enrolmentId = super.getRequest().getData("id", int.class);
-		enrolment = this.repository.findEnrolmentById(enrolmentId);
-		StudentId = super.getRequest().getPrincipal().getActiveRoleId();
-
-		status = super.getRequest().getPrincipal().hasRole(Student.class) && StudentId == enrolment.getStudent().getId() && enrolment != null && enrolment.getDraftMode();
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
@@ -61,14 +50,7 @@ public class AuthenticatedStudentEnrolmentDeleteService extends AbstractService<
 	@Override
 	public void bind(final Enrolment object) {
 		assert object != null;
-		int courseId;
-		Course course;
-
-		courseId = super.getRequest().getData("course", int.class);
-		course = this.repository.findCourseById(courseId);
-
-		super.bind(object, "code", "motivation", "goals");
-		object.setCourse(course);
+		super.bind(object, "code", "motivation", "goals", "totalTime");
 	}
 
 	@Override
@@ -94,10 +76,16 @@ public class AuthenticatedStudentEnrolmentDeleteService extends AbstractService<
 		courses = this.repository.findCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
-		tuple = super.unbind(object, "code", "motivation", "goals", "draftMode");
+		tuple = super.unbind(object, "code", "motivation", "goals", "totalTime", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
 
 		super.getResponse().setData(tuple);
 	}
 
+	@Override
+	public void onSuccess() {
+		if (super.getRequest().getMethod().equals(HttpMethod.POST))
+			PrincipalHelper.handleUpdate();
+	}
 }

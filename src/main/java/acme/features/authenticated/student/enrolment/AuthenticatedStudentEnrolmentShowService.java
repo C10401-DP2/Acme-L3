@@ -22,17 +22,14 @@ public class AuthenticatedStudentEnrolmentShowService extends AbstractService<St
 
 	@Override
 	public void check() {
-		boolean status;
-		status = super.getRequest().hasData("id", int.class);
-		super.getResponse().setChecked(status);
+
+		super.getResponse().setChecked(true);
 	}
 
 	@Override
 	public void authorise() {
-		boolean status;
 
-		status = super.getRequest().getPrincipal().hasRole(Student.class);
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
@@ -52,7 +49,7 @@ public class AuthenticatedStudentEnrolmentShowService extends AbstractService<St
 
 		Tuple tuple = null;
 
-		tuple = super.unbind(object, "code", "motivation", "goals", "initialDate", "finalDate");
+		tuple = super.unbind(object, "code", "motivation", "goals", "totalTime");
 
 		super.getResponse().setData(tuple);
 	}

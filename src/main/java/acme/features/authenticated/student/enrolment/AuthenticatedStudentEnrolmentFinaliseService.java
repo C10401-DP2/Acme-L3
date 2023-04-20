@@ -1,10 +1,15 @@
 
 package acme.features.authenticated.student.enrolment;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.course.Course;
 import acme.entities.enrolment.Enrolment;
+import acme.framework.components.jsp.SelectChoices;
+import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
@@ -21,10 +26,7 @@ public class AuthenticatedStudentEnrolmentFinaliseService extends AbstractServic
 
 	@Override
 	public void check() {
-		boolean status;
-
-		status = super.getRequest().hasData("id", int.class);
-		super.getResponse().setChecked(status);
+		super.getResponse().setChecked(true);
 	}
 
 	@Override
@@ -51,6 +53,74 @@ public class AuthenticatedStudentEnrolmentFinaliseService extends AbstractServic
 		object = this.repository.findEnrolmentById(id);
 
 		super.getBuffer().setData(object);
+	}
+
+	@Override
+	public void validate(final Enrolment object) {
+		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("holder")) {
+			String holder;
+			holder = object.getHolder();
+
+			super.state(holder.length() != 0, "holder", "student.enrolment.error.holder");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("creditCardNumber")) {
+			String creditCardNumber;
+			creditCardNumber = object.getCreditCardNumber();
+
+			super.state(creditCardNumber.length() != 0, "creditCardNumber", "student.enrolment.error.lowerNibble.null");
+			super.state(creditCardNumber.length() == 16, "creditCardNumber", "student.enrolment.error.lowerNibble.notValidNumber");
+		}
+
+	}
+
+	@Override
+	public void perform(final Enrolment object) {
+		assert object != null;
+
+		object.setDraftMode(false);
+
+		final String creditCardNumber = super.getRequest().getData("creditCardNumber", String.class);
+		object.setCreditCardNumber(creditCardNumber.substring(12, 16));
+
+		final String holder = super.getRequest().getData("holder", String.class);
+		object.setHolder(holder);
+
+		this.repository.save(object);
+	}
+
+	@Override
+	public void bind(final Enrolment object) {
+		assert object != null;
+		int courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findCourseById(courseId);
+
+		super.bind(object, "code", "motivation", "goal", "holder", "creditCardNumber");
+		object.setCourse(course);
+
+	}
+
+	@Override
+	public void unbind(final Enrolment object) {
+		assert object != null;
+
+		Collection<Course> courses;
+		SelectChoices choices;
+
+		courses = this.repository.findCourses();
+		choices = SelectChoices.from(courses, "code", object.getCourse());
+
+		Tuple tuple;
+
+		tuple = super.unbind(object, "code", "motivation", "goals", "holder", "creditCardNumber", "draftMode");
+		tuple.put("courses", choices);
+
+		super.getResponse().setData(tuple);
 	}
 
 }

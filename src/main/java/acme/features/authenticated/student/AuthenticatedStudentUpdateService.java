@@ -2,6 +2,7 @@
 package acme.features.authenticated.student;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.features.authenticated.provider.AuthenticatedProviderRepository;
 import acme.framework.components.accounts.Authenticated;
@@ -13,6 +14,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Provider;
 import acme.roles.Student;
 
+@Service
 public class AuthenticatedStudentUpdateService extends AbstractService<Authenticated, Student> {
 
 	// Internal state ---------------------------------------------------------

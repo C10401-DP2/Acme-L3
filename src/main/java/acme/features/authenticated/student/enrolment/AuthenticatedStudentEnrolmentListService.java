@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.enrolment.Enrolment;
-import acme.framework.components.accounts.Principal;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
@@ -24,10 +23,7 @@ public class AuthenticatedStudentEnrolmentListService extends AbstractService<St
 
 	@Override
 	public void check() {
-		boolean status;
-
-		status = super.getRequest().hasData("masterId", int.class);
-		super.getResponse().setChecked(status);
+		super.getResponse().setChecked(true);
 	}
 
 	@Override
@@ -40,13 +36,10 @@ public class AuthenticatedStudentEnrolmentListService extends AbstractService<St
 
 	@Override
 	public void load() {
-
-		Principal principal;
 		int userAccountId;
 
-		final Collection<Enrolment> objects;
-		principal = super.getRequest().getPrincipal();
-		userAccountId = principal.getAccountId();
+		Collection<Enrolment> objects;
+		userAccountId = super.getRequest().getPrincipal().getActiveRoleId();
 
 		objects = this.repository.findAllEnrolmentOfStudent(userAccountId);
 		super.getBuffer().setData(objects);
@@ -58,7 +51,7 @@ public class AuthenticatedStudentEnrolmentListService extends AbstractService<St
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "code", "motivation", "goals", "initialDate", "finalDate");
+		tuple = super.unbind(object, "code", "motivation", "goals", "totalTime");
 		super.getResponse().setData(tuple);
 	}
 
