@@ -19,8 +19,6 @@ import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.accounts.UserAccount;
 import acme.framework.components.models.Tuple;
-import acme.framework.controllers.HttpMethod;
-import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Provider;
 
@@ -51,10 +49,10 @@ public class AuthenticatedProviderCreateService extends AbstractService<Authenti
 
 	@Override
 	public void load() {
-		Provider	object;
-		Principal	principal;
-		int			userAccountId;
-		UserAccount	userAccount;
+		Provider object;
+		Principal principal;
+		int userAccountId;
+		UserAccount userAccount;
 
 		principal = super.getRequest().getPrincipal();
 		userAccountId = principal.getAccountId();
@@ -92,12 +90,6 @@ public class AuthenticatedProviderCreateService extends AbstractService<Authenti
 		tuple = super.unbind(object, "company", "sector");
 
 		super.getResponse().setData(tuple);
-	}
-
-	@Override
-	public void onSuccess() {
-		if (super.getRequest().getMethod().equals(HttpMethod.POST))
-			PrincipalHelper.handleUpdate();
 	}
 
 }

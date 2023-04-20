@@ -90,3 +90,11 @@ master.menu.authenticated.listNote = Show note list
 master.menu.user-account.auditor = Auditor data
 
 master.menu.user-account.bulletin.list = Bulletin listing
+
+
+# master.menu.student ####################################################
+
+master.menu.student = Student
+master.menu.student.enrolments.list = Enrolments
+master.menu.student.activities.list = Acitivites
+
