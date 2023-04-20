@@ -28,22 +28,21 @@ public class Banner extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@NotBlank
-	@Length(max = 76)
-	protected String			title;
-
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	@NotNull
 	protected Date				moment;
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	private Date				initialDisplay;
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	private Date				finalDisplay;
 
 	@URL
+	@NotBlank
 	protected String			image;
 
 	@NotBlank
@@ -51,6 +50,7 @@ public class Banner extends AbstractEntity {
 	protected String			slogan;
 
 	@URL
+	@NotBlank
 	protected String			documentLink;
 
 }
