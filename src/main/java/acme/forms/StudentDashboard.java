@@ -3,7 +3,7 @@ package acme.forms;
 
 import java.util.Map;
 
-import acme.entities.activities.Activity;
+import acme.entities.activity.Activity;
 import acme.framework.data.AbstractForm;
 
 public class StudentDashboard extends AbstractForm {

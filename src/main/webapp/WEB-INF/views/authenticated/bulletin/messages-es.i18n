@@ -10,10 +10,12 @@
 
 authenticated.bulletin.form.label.moment = Momento
 authenticated.bulletin.form.label.title = Título
+authenticated.bulletin.form.label.message = Mensaje
 authenticated.bulletin.form.label.isCritical = Es crítico?
 authenticated.bulletin.form.label.link = Enlace
 
 authenticated.bulletin.list.label.moment = Momento
 authenticated.bulletin.list.label.title = Título
+authenticated.bulletin.list.label.message = Mensaje
 authenticated.bulletin.list.label.isCritical = Es crítico?
 authenticated.bulletin.list.label.link = Enlace

@@ -27,6 +27,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.course-list" action="/any/course/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.tutorials" action="/authenticated/tutorial/list"/>
 		</acme:menu-option>
 		
@@ -54,7 +55,8 @@
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.lecturer" access="hasRole('Lecturer')">
-			<acme:menu-suboption code="master.menu.lecturer.courses" action="/lecturer/course/list"/>
+			<acme:menu-suboption code="master.menu.lecturer.course" action="/lecturer/course/list"/>
+			<acme:menu-suboption code="master.menu.lecturer.lectureMine" action="/lecturer/lecture/list-mine"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
@@ -65,10 +67,22 @@
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 		
+
+		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
+			<acme:menu-suboption code="master.menu.auditor.audits.mine" action="/auditor/audit/list-mine"/>
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
 			<acme:menu-suboption code="master.menu.assistant.tutorials.mine" action="/assistant/tutorial/list-mine"/>
 			<acme:menu-suboption code="master.menu.assistant.show-dashboard" action="/assistant/assistant-dashboard/show"/>
+
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.student" access="hasRole('Student')">
+			<acme:menu-suboption code="master.menu.student.enrolments.list" action="/student/enrolment/list-mine"/>
+			<acme:menu-suboption code="master.menu.student.activities.list" action="/student/activity/list-mine"/>
+		</acme:menu-option>
+		
 	</acme:menu-left>
 
 	<acme:menu-right>
@@ -90,6 +104,8 @@
 			<acme:menu-suboption code="master.menu.user-account.become-auditor" action="/authenticated/auditor/create" access="!hasRole('Auditor')"/>
 			<acme:menu-suboption code="master.menu.user-account.auditor" action="/authenticated/auditor/update" access="hasRole('Auditor')"/>
 			<acme:menu-suboption code="master.menu.user-account.bulletin.list" action="/authenticated/bulletin/list"/>
+
+      <acme:menu-suboption code="master.menu.user-account.audit.list" action="/authenticated/audit/list"/>
 
 		</acme:menu-option>
 

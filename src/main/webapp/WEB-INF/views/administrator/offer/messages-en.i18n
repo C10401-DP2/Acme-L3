@@ -8,7 +8,6 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.offer.form.label.moment = Moment
 administrator.offer.form.label.heading = Heading
 administrator.offer.form.label.summary = Summary
 administrator.offer.form.label.initialDate = Initial Date
@@ -16,7 +15,17 @@ administrator.offer.form.label.finalDate = Final Date
 administrator.offer.form.label.price = Price
 administrator.offer.form.label.link = Link
 
+administrator.offer.form.button.create = Create
+administrator.offer.form.button.update = Update
+administrator.offer.form.button.delete = Delete
+
+administrator.offer.form.error.end-before-start = The final date can not be before the initial date
+administrator.offer.form.error.duration = The duration must be at least one week long
+administrator.offer.form.error.one-day-after = The initial date must be one day after the instantiation moment
+
 administrator.offer.list.label.moment = Moment
 administrator.offer.list.label.heading = Heading
-administrator.offer.list.label.summary = Summary
 administrator.offer.list.label.price = Price
+administrator.offer.list.label.period = Availability Period
+
+administrator.offer.list.button.create = Create

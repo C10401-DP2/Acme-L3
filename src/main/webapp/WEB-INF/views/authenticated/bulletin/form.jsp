@@ -18,6 +18,7 @@
 <acme:form>
 	<acme:input-moment code="authenticated.bulletin.form.label.moment" path="moment"/>	
 	<acme:input-textbox code="authenticated.bulletin.form.label.title" path="title"/>
+	<acme:input-textarea code="authenticated.bulletin.form.label.message" path="message"/>
 	<acme:input-textbox code="authenticated.bulletin.form.label.isCritical" path="isCritical"/>
 	<acme:input-url code="authenticated.bulletin.form.label.link" path="link"/>
 </acme:form>

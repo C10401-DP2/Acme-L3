@@ -14,20 +14,30 @@ import acme.framework.controllers.AbstractController;
 public class AdministratorOfferController extends AbstractController<Administrator, Offer> {
 
 	// Internal state
+	@Autowired
+	protected AdministratorOfferListService		listService;
 
 	@Autowired
-	AdministratorOfferListService	listService;
+	protected AdministratorOfferShowService		showService;
 
 	@Autowired
-	AdministratorOfferShowService	showService;
+	protected AdministratorOfferCreateService	createService;
+
+	@Autowired
+	protected AdministratorOfferUpdateService	updateService;
+
+	@Autowired
+	protected AdministratorOfferDeleteService	deleteService;
+
 
 	// Constructors
-
-
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
+		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("update", this.updateService);
+		super.addBasicCommand("delete", this.deleteService);
 	}
 
 }
