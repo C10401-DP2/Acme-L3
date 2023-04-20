@@ -1,0 +1,17 @@
+administrator.banner.list.label.initialDisplay = Inicio
+administrator.banner.list.label.finalDisplay = Fin
+administrator.banner.list.label.slogan = Eslogan
+
+administrator.banner.list.button.create = Crear
+
+administrator.banner.form.label.initialDisplay = Inicio:
+administrator.banner.form.label.finalDisplay = Fin:
+administrator.banner.form.label.slogan = Eslogan:
+administrator.banner.form.label.image = Imagen:
+administrator.banner.form.label.documentLink = Enlace al documento:
+
+administrator.banner.form.button.create = Crear
+administrator.banner.form.button.update = Actualizar
+administrator.banner.form.button.delete = Eliminar
+
+administrator.banner.form.error-dates = La fecha de inicio debe ser anterior a la final
