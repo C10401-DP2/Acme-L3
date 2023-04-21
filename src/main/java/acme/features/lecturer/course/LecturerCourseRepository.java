@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.datatypes.ActivityType;
-import acme.datatypes.CourseType;
 import acme.entities.configuration.Configuration;
 import acme.entities.course.Course;
 import acme.entities.courselecture.CourseLecture;
@@ -35,17 +34,6 @@ public interface LecturerCourseRepository extends AbstractRepository {
 
 	@Query("select count(cl) from CourseLecture cl where cl.course.id = :courseId and cl.lecture.activityType = :activityType")
 	Integer findCountLecturesByCourseIdAndActivityType(int courseId, ActivityType activityType);
-
-	default CourseType findCourseType(final Integer courseId) {
-		final Integer countTheoretical = this.findCountLecturesByCourseIdAndActivityType(courseId, ActivityType.THEORY);
-		final Integer countHandsOn = this.findCountLecturesByCourseIdAndActivityType(courseId, ActivityType.HANDSON);
-		if (countTheoretical > countHandsOn)
-			return CourseType.THEORY;
-		else if (countTheoretical < countHandsOn)
-			return CourseType.HANDSON;
-		else
-			return CourseType.BALANCED;
-	}
 
 	@Query("select l from Lecturer l where l.id = :id")
 	Lecturer findOneLecturerById(int id);

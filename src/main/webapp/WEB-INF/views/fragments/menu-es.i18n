@@ -48,6 +48,7 @@ master.menu.administrator.shut-down = Parar el sistema
 master.menu.lecturer= Profesorado
 master.menu.lecturer.course = Mis cursos
 master.menu.lecturer.lectureMine = Mis lecciones
+master.menu.lecturer.courseLecture = Añadir lecciones al curso
 
 # master.menu.provider ########################################################
 

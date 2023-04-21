@@ -2,5 +2,5 @@
 package acme.datatypes;
 
 public enum CourseType {
-	THEORY, HANDSON, BALANCED
+	THEORY, HANDSON, BALANCED, NONE
 }

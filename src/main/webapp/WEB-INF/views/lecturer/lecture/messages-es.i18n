@@ -13,3 +13,4 @@ lecturer.lecture.form.label.learningTime = Tiempo de lección
 lecturer.lecture.form.label.anAbstract = Resumen
 lecturer.lecture.list.label.lecturer = Profesor
 lecturer.lecture.form.error.not-belong = No te pertenece
+lecturer.courseLecture.list.button.create = Añadir lección

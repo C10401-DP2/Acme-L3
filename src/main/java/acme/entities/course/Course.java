@@ -1,7 +1,7 @@
 
 package acme.entities.course;
 
-import java.util.List;
+import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -54,15 +54,15 @@ public class Course extends AbstractEntity {
 
 
 	@Transient
-	public CourseType courseType(final List<Lecture> lectures) {
-		CourseType courseType = CourseType.BALANCED;
+	public CourseType courseType(final Collection<Lecture> lectures) {
+		CourseType courseType = CourseType.NONE;
 		if (!lectures.isEmpty()) {
 			int theory = 0;
 			int handsOn = 0;
 			for (final Lecture l : lectures)
-				if (l.getActivityType().equals(CourseType.THEORY))
+				if (l.getActivityType().toString().equals(CourseType.THEORY.toString()))
 					theory++;
-				else if (l.getActivityType().equals(CourseType.HANDSON))
+				else if (l.getActivityType().toString().equals(CourseType.HANDSON.toString()))
 					handsOn++;
 			if (theory > handsOn)
 				courseType = CourseType.THEORY;
