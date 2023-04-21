@@ -21,7 +21,7 @@ public class AdministratorOfferShowService extends AbstractService<Administrator
 	@Override
 	public void check() {
 		boolean status;
-		
+
 		status = super.getRequest().hasData("id", int.class);
 		super.getResponse().setChecked(status);
 	}
@@ -38,6 +38,7 @@ public class AdministratorOfferShowService extends AbstractService<Administrator
 
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findOfferById(id);
+
 		super.getBuffer().setData(object);
 	}
 
@@ -45,7 +46,7 @@ public class AdministratorOfferShowService extends AbstractService<Administrator
 	public void unbind(final Offer object) {
 		assert object != null;
 		Tuple tuple;
-		
+
 		tuple = super.unbind(object, "moment", "heading", "summary", "initialDate", "finalDate", "price", "link");
 		super.getResponse().setData(tuple);
 	}

@@ -19,7 +19,7 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.anonymous.favourite-link1 = 20090433W: García Aguilar, Javier
+master.menu.anonymous.favourite-link1 = 20090433W: García Aguilar, Javier 
 master.menu.anonymous.favourite-link2 = 47347286S: Cuenca Perez, Pablo
 master.menu.anonymous.favourite-link3 = 45969301Y: Del Hoyo Carcaboso, David
 master.menu.anonymous.favourite-link4 = 45970129Y: Zarandieta Ortiz, David
@@ -43,12 +43,10 @@ master.menu.administrator.offer.list = Listado de ofertas
 master.menu.administrator.createBulletin = Crear Boletín
 master.menu.administrator.shut-down = Parar el sistema
 
-# master.menu.lecturer ###################################################
+# master.menu.peep ########################################################
 
-master.menu.lecturer= Profesorado
-master.menu.lecturer.course = Mis cursos
-master.menu.lecturer.lectureMine = Mis lecciones
-master.menu.lecturer.courseLecture = Añadir lecciones al curso
+master.menu.peep = Peeps
+master.menu.any.all-peeps = Lista de peeps
 
 # master.menu.provider ########################################################
 
@@ -60,10 +58,23 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.lecturer ########################################################
+
+master.menu.lecturer= Profesorado
+master.menu.lecturer.course = Mis cursos
+master.menu.lecturer.lectureMine = Mis lecciones
+master.menu.lecturer.courseLecture = Añadir lecciones al curso
+
 # master.menu.assistant ####################################################
 
 master.menu.assistant = Asistente
 master.menu.assistant.tutorials.mine = Mis tutoriales
+master.menu.assistant.show-dashboard = Panel del asistente
+
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.audits.mine = Mis auditorías
 
 # master.menu.user-account ####################################################
 
@@ -74,12 +85,24 @@ master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 
+master.menu.user-account.audit.list = Listado de auditorías
+
 master.menu.user-account.assistant = Datos de asistente
 master.menu.user-account.become-assistant = Hazte asistente
 master.menu.user-account.lecturer = Datos de profesor
 master.menu.user-account.become-lecturer = Hazte profesor
 master.menu.user-account.become-auditor = Hazte auditor
+master.menu.authenticated.createNote = Crear una nota
+master.menu.authenticated.listNote = Lista de notas
 master.menu.user-account.auditor = Datos de Auditor
 
+
 master.menu.user-account.bulletin.list = Listado de boletines
+
+# master.menu.student ####################################################
+
+master.menu.student = Estudiante
+master.menu.student.enrolments.list = Inscripcion
+master.menu.student.activities.list = Acitividades
+
 

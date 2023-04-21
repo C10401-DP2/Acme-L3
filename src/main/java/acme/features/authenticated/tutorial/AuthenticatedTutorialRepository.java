@@ -19,6 +19,9 @@ public interface AuthenticatedTutorialRepository extends AbstractRepository {
 	@Query("SELECT t FROM Tutorial t WHERE t.id = :id")
 	Tutorial findOneTutorialById(int id);
 
+	@Query("select t from Tutorial t where t.course.id = :courseId")
+	Collection<Tutorial> findAllCourseTutorials(int courseId);
+
 	@Query("SELECT c FROM Course c")
 	Collection<Course> findAllCourses();
 
