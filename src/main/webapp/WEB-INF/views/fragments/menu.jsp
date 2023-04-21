@@ -18,17 +18,9 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
-		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link1" action="https://you.com/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link2" action="https://es.coppermind.net/wiki/Coppermind:Bienvenidos"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link3" action="https://animista.net/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link4" action="https://www.realmadrid.com/"/>
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link5" action="https://www.youtube.com/"/>
-		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.course-list" action="/any/course/list"/>
-			<acme:menu-suboption code="master.menu.authenticated.tutorials" action="/authenticated/tutorial/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
