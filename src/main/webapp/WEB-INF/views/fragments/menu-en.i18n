@@ -78,6 +78,7 @@ master.menu.assistant.show-dashboard = Assistant dashboard
 
 master.menu.auditor = Auditor
 master.menu.auditor.audits.mine = My audits
+master.menu.auditor.show-dashboard = Auditor dashboard
 
 # master.menu.user-account ####################################################
 

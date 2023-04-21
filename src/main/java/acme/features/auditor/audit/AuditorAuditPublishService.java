@@ -14,7 +14,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Auditor;
 
 @Service
-public class AuditorAuditUpdateService extends AbstractService<Auditor, Audit> {
+public class AuditorAuditPublishService extends AbstractService<Auditor, Audit> {
 
 	// Internal state
 	@Autowired
@@ -81,6 +81,7 @@ public class AuditorAuditUpdateService extends AbstractService<Auditor, Audit> {
 	public void perform(final Audit object) {
 		assert object != null;
 
+		object.setDraftMode(false);
 		this.repository.save(object);
 	}
 
