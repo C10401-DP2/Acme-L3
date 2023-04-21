@@ -17,7 +17,7 @@ public class CompanyDashboard extends AbstractForm {
 
 	//Atributes ---------------------------------------------------------------
 	Map<String, Integer>		totalHandsOnPracticumByMonth;
-    Map<String, Integer>		totalPracticePracticumByMonth;
+	Map<String, Integer>		totalPracticePracticumByMonth;
 	Map<String, Double>			averagePracticumSessions;
 	Map<String, Double>			standardDesviationPracticumSessions;
 	Map<String, Double>			minTimePracticumSessions;
