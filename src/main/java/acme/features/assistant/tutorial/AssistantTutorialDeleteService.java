@@ -64,7 +64,7 @@ public class AssistantTutorialDeleteService extends AbstractService<Assistant, T
 	public void bind(final Tutorial object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "anAbstract", "goals", "draftMode");
+		super.bind(object, "title", "anAbstract", "goals");
 	}
 
 	@Override
