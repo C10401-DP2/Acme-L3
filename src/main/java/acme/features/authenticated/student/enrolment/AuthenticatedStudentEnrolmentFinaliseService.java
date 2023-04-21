@@ -59,18 +59,10 @@ public class AuthenticatedStudentEnrolmentFinaliseService extends AbstractServic
 	public void validate(final Enrolment object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("holder")) {
-			String holder;
-			holder = object.getHolder();
-
-			super.state(holder.length() != 0, "holder", "student.enrolment.error.holder");
-		}
-
 		if (!super.getBuffer().getErrors().hasErrors("creditCardNumber")) {
 			String creditCardNumber;
 			creditCardNumber = object.getCreditCardNumber();
 
-			super.state(creditCardNumber.length() != 0, "creditCardNumber", "student.enrolment.error.lowerNibble.null");
 			super.state(creditCardNumber.length() == 16, "creditCardNumber", "student.enrolment.error.lowerNibble.notValidNumber");
 		}
 
