@@ -19,10 +19,6 @@
 	<acme:list-column code="assistant.tutorial.list.label.code" path="code" width="10%"/>
 	<acme:list-column code="assistant.tutorial.list.label.title" path="title" width="10%"/>
 	<acme:list-column code="assistant.tutorial.list.label.course.title" path="course.title" width="80%"/>	
-</acme:list>
-
-<jstl:if test="${_command == 'list-mine'}">
-	<acme:button code="assistant.tutorial.form.button.create" action="/assistant/tutorial/create"/>
-</jstl:if>		
+</acme:list>		
 	
 

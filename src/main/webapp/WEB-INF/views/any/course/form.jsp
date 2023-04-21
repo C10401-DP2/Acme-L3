@@ -10,5 +10,12 @@
 	<acme:input-textbox code="any.course.form.label.retailPrice" path="retailPrice"/>	
 	<acme:input-textbox code="any.course.form.label.link" path="link"/>	
 	<acme:input-textbox code="any.course.form.label.activityType" path="activityType"/>
+
+	<acme:check-access test="isAuthenticated()">
+		<acme:button code="any.course.form.button.tutorials-list" action="/authenticated/tutorial/list?courseId=${id}"/>
+	</acme:check-access>
+	<acme:check-access test="hasRole('Assistant')">
+		<acme:button code="any.course.form.button.tutorials-create" action="/assistant/tutorial/create?courseId=${id}"/>
+	</acme:check-access>
 	
 </acme:form>
