@@ -17,10 +17,10 @@ public class AuditorDashboard extends AbstractForm {
 
 	Integer						totalAudits;
 
-	Integer						averageAuditingRecordsPerAudit;
-	Integer						deviationAuditingRecordsPerAudit;
-	Integer						minimumAuditingRecordsPerAudit;
-	Integer						maximumAuditingRecordsPerAudit;
+	Double						averageAuditingRecords;
+	Double						deviationAuditingRecords;
+	Double						minimumAuditingRecords;
+	Double						maximumAuditingRecords;
 
 	Double						averagePeriodLengthPerAuditingRecord;
 	Double						deviationPeriodLengthPerAuditingRecord;

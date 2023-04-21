@@ -68,15 +68,13 @@
 
 		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
 			<acme:menu-suboption code="master.menu.auditor.audits.mine" action="/auditor/audit/list-mine"/>
-<<<<<<< HEAD
-			<acme:menu-suboption code="master.menu.auditor.show-dashboard" action="/auditor/auditor-dashboard/show"/>
-=======
+			<%--<acme:menu-suboption code="master.menu.auditor.show-dashboard" action="/auditor/auditor-dashboard/show"/>--%>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
 			<acme:menu-suboption code="master.menu.assistant.tutorials.mine" action="/assistant/tutorial/list-mine"/>
 			<acme:menu-suboption code="master.menu.assistant.show-dashboard" action="/assistant/assistant-dashboard/show"/>
 
->>>>>>> refs/remotes/origin/adrgarcha
 		</acme:menu-option>
 	</acme:menu-left>
 
