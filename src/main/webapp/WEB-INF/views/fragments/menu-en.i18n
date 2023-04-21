@@ -78,6 +78,12 @@ master.menu.assistant.show-dashboard = Assistant dashboard
 
 master.menu.auditor = Auditor
 master.menu.auditor.audits.mine = My audits
+master.menu.auditor.show-dashboard = Auditor dashboard
+
+# master.menu.company ##########################################################
+
+master.menu.company = Company
+master.menu.company.practicum = My practicums
 
 # master.menu.user-account ####################################################
 
@@ -86,6 +92,8 @@ master.menu.user-account.general-data = General data
 master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
+master.menu.user-account.become-company = Become an company
+master.menu.user-account.company = Company data
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.audit.list = Audit listing
 

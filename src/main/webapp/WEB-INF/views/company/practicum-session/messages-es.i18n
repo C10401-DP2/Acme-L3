@@ -1,0 +1,15 @@
+company.session.list.label.title= T�tulo
+company.session.list.label.abstraction= Resumen
+company.session.list.label.startDate= Fecha de inicio
+company.session.list.label.finishDate= Fecha de final
+company.session.list.label.link= Link
+
+company.session.form.label.title= T�tulo
+company.session.form.label.abstraction= Resumen
+company.session.form.label.startDate= Fecha de inicio
+company.session.form.label.finishDate= Fecha de final
+company.session.form.label.link= Link
+company.session.form.button.delete= Borrar
+company.session.form.button.update= Actualizar
+company.session.form.button.create= Crear Sesión
+company.practicum.list.label.course= Curso

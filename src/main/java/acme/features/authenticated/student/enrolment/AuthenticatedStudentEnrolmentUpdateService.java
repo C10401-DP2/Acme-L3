@@ -32,7 +32,10 @@ public class AuthenticatedStudentEnrolmentUpdateService extends AbstractService<
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRole(Student.class);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -50,7 +53,7 @@ public class AuthenticatedStudentEnrolmentUpdateService extends AbstractService<
 	public void bind(final Enrolment object) {
 		assert object != null;
 
-		super.bind(object, "code", "motivation", "goals", "totalTime", "initialDate", "finalDate");
+		super.bind(object, "code", "motivation", "goals");
 	}
 
 	@Override
@@ -76,7 +79,7 @@ public class AuthenticatedStudentEnrolmentUpdateService extends AbstractService<
 		courses = this.repository.findCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
-		tuple = super.unbind(object, "code", "motivation", "goals", "totalTime", "draftMode");
+		tuple = super.unbind(object, "code", "motivation", "goals", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 
