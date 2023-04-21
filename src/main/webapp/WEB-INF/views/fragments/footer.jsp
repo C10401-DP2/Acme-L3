@@ -40,5 +40,20 @@
 
 </acme:footer-panel>
 
+<div style="text-align: center; margin-top: 10px;">
+<jstl:if test="${banner.documentLink != null}">
+		<a href="${banner.documentLink}" style="text-decoration: none; color: #000000;">
+	</jstl:if>
+	<jstl:choose>
+		<jstl:when test="${banner.image != null}">
+			<img src="${banner.image}" alt="${banner.slogan}" class="img-fluid rounded" style="max-width: 300px;max-height: 120px;"/>
+			<acme:print value="${banner.slogan}"/>
+		</jstl:when>
+		<jstl:otherwise>
+			<acme:print value="${banner.slogan}"/>
+		</jstl:otherwise>
+	</jstl:choose>
+</div>
+
 
 

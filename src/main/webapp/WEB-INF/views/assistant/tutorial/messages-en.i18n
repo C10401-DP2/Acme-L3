@@ -28,3 +28,4 @@ assistant.tutorial.form.button.publish = Publish
 assistant.tutorial.form.button.create = Create
 
 assistant.tutorial.form.error.duplicated = This code is taken
+assistant.tutorial.form.error.no-sessions = There are no sessions in this tutorial

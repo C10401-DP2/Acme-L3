@@ -68,6 +68,7 @@ master.menu.company.practicum = Mis práticas
 master.menu.lecturer= Profesorado
 master.menu.lecturer.course = Mis cursos
 master.menu.lecturer.lectureMine = Mis lecciones
+master.menu.lecturer.courseLecture = Añadir lecciones al curso
 
 # master.menu.assistant ####################################################
 
@@ -79,6 +80,7 @@ master.menu.assistant.show-dashboard = Panel del asistente
 
 master.menu.auditor = Auditor
 master.menu.auditor.audits.mine = Mis auditorías
+master.menu.auditor.show-dashboard = Panel del auditor
 
 # master.menu.user-account ####################################################
 

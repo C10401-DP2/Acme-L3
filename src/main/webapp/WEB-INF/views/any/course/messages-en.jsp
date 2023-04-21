@@ -8,3 +8,6 @@ authenticated.course.list.label.code = Code
 authenticated.course.list.label.title = Title
 authenticated.course.list.label.retailPrice = Retail price
 authenticated.course.list.label.link = Link
+
+any.course.form.button.tutorials-list = Tutorials
+any.course.form.button.tutorials-create = Create a tutorial

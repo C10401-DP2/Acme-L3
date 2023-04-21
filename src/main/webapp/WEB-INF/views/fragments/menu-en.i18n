@@ -65,6 +65,8 @@ master.menu.consumer.favourite-link = Favourite link
 master.menu.lecturer= Lecturer
 master.menu.lecturer.course = My courses
 master.menu.lecturer.lectureMine = My lectures
+master.menu.lecturer.courseLecture = Add lectures to course
+
 
 # master.menu.assistant ####################################################
 
@@ -76,6 +78,7 @@ master.menu.assistant.show-dashboard = Assistant dashboard
 
 master.menu.auditor = Auditor
 master.menu.auditor.audits.mine = My audits
+master.menu.auditor.show-dashboard = Auditor dashboard
 
 # master.menu.company ##########################################################
 

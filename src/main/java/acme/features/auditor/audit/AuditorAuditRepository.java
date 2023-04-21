@@ -33,7 +33,7 @@ public interface AuditorAuditRepository extends AbstractRepository {
 	@Query("SELECT c FROM Course c WHERE c.id = :id")
 	Course findCourseById(int id);
 
-	@Query("SELECT c FROM Course c")
+	@Query("SELECT c FROM Course c WHERE c.draftMode = false")
 	Collection<Course> findAllCourses();
 
 }

@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.CourseType;
 import acme.entities.configuration.Configuration;
 import acme.entities.course.Course;
 import acme.entities.lecture.Lecture;
@@ -60,7 +61,7 @@ public class LecturerCoursePublishServices extends AbstractService<Lecturer, Cou
 	public void bind(final Course object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "anAbstract", "retailPrice", "link");
+		super.bind(object, "code", "title", "anAbstract", "retailPrice", "courseType", "link");
 	}
 
 	@Override
@@ -75,11 +76,10 @@ public class LecturerCoursePublishServices extends AbstractService<Lecturer, Cou
 			super.state(existing == null, "code", "lecturer.course.form.error.duplicated");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("lecture")) {
+		if (!super.getBuffer().getErrors().hasErrors("courseType")) {
 			final Collection<Lecture> lectures = this.repository.findManyLecturesByCourseId(object.getId());
-			super.state(lectures.isEmpty(), "lecture", "lecturer.course.form.error.not-lectures");
+			super.state(object.courseType(lectures).equals(CourseType.THEORY), "courseType", "lecturer.course.form.error.courseType");
 		}
-
 		if (!super.getBuffer().getErrors().hasErrors("price")) {
 			Configuration config;
 			config = this.repository.findConfiguration();
@@ -108,8 +108,7 @@ public class LecturerCoursePublishServices extends AbstractService<Lecturer, Cou
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "code", "title", "anAbstract", "retailPrice", "link", "draftMode");
-
+		tuple = super.unbind(object, "code", "title", "anAbstract", "retailPrice", "courseType", "link", "draftMode");
 		super.getResponse().setData(tuple);
 	}
 }

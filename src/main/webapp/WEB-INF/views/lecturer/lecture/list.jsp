@@ -12,4 +12,9 @@
 		</jstl:when>
 	</jstl:choose>
 </acme:list>
-<acme:button code="lecturer.lecture.form.button.create" action="/lecturer/lecture/create"/>
+<jstl:choose>
+	<jstl:when test="${!acme:anyOf(_command, 'list-mine')}">
+		<acme:button test="${showAddLecture}" code="lecturer.courseLecture.list.button.create" action="/lecturer/course-lecture/create?masterId=${masterId}"/>
+	</jstl:when>
+</jstl:choose>
+<acme:button test="${showAddLecture}" code="lecturer.lecture.form.button.create" action="/lecturer/lecture/create"/>
