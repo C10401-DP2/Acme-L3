@@ -20,7 +20,10 @@ public class LecturerLectureCreateServices extends AbstractService<Lecturer, Lec
 
 	@Override
 	public void check() {
-		super.getResponse().setChecked(true);
+		boolean status;
+		status = super.getRequest().getPrincipal().hasRole(Lecturer.class);
+
+		super.getResponse().setChecked(status);
 	}
 
 	@Override
