@@ -1,5 +1,5 @@
 
-package acme.entities.activities;
+package acme.entities.activity;
 
 import java.util.Date;
 
@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -51,10 +52,20 @@ public class Activity extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				finalDate;
 
+
+	@Transient
+	public Integer totalTime() {
+		long total;
+		total = this.getInitialDate().getTime() - this.getFinalDate().getTime();
+
+		return (int) total / 3600000;
+	}
+
 	// Relationships
+
 
 	@Valid
 	@NotNull
 	@ManyToOne(optional = false)
-	protected Enrolment			enrolment;
+	protected Enrolment enrolment;
 }

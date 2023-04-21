@@ -11,6 +11,7 @@
 ﻿# master.menu #################################################################
 
 master.menu.home = Inicio
+master.menu.courses = Cursos
 master.menu.sign-up = Registrarse
 master.menu.sign-in = Iniciar sesión
 master.menu.sign-out = Salir
@@ -27,6 +28,7 @@ master.menu.anonymous.favourite-link5 = 45968205Z: García Chavero, Adrián
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Autenticado
+master.menu.authenticated.course-list = Cursos
 master.menu.authenticated.tutorials = Todos los tutoriales
 
 # master.menu.administrator ###################################################
@@ -55,6 +57,13 @@ master.menu.provider.favourite-link = Enlace favorito
 
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
+
+# master.menu.lecturer ########################################################
+
+master.menu.lecturer= Profesorado
+master.menu.lecturer.course = Mis cursos
+master.menu.lecturer.lectureMine = Mis lecciones
+master.menu.lecturer.courseLecture = Añadir lecciones al curso
 
 # master.menu.assistant ####################################################
 
@@ -90,3 +99,11 @@ master.menu.user-account.auditor = Datos de Auditor
 
 
 master.menu.user-account.bulletin.list = Listado de boletines
+
+# master.menu.student ####################################################
+
+master.menu.student = Estudiante
+master.menu.student.enrolments.list = Inscripcion
+master.menu.student.activities.list = Acitividades
+
+

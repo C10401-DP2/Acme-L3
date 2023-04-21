@@ -1,0 +1,29 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+student.activities.form.label.title = Titulo
+student.activities.form.label.aType = Tipo de actividad
+student.activities.form.label.enrolment = A que inscripcion pertenece
+student.activities.form.label.abstrat = Abstracto
+student.activities.form.label.initialDate = Fecha inicial
+student.activities.form.label.finalDate = Fecha final
+student.activities.form.label.link = enlace
+
+student.activities.list.label.title = Titulo
+student.activities.list.label.abstrat = Abstracto
+student.activities.list.label.aType = Tipo de actividad
+student.activities.list.label.initialDate = Fecha inicial
+student.activities.list.label.finalDate = Fecha final
+
+student.activities.list.button.create = Crear
+
+student.activities.form.button.update = Actualizar
+student.activities.form.button.delete = Eliminar
+student.activities.form.button.create = Crear

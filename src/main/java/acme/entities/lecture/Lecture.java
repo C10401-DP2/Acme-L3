@@ -40,10 +40,14 @@ public class Lecture extends AbstractEntity {
 	@Length(max = 101)
 	protected String			body;
 
+	@NotNull
 	protected ActivityType		activityType;
 
 	@URL
 	protected String			link;
+
+	@NotNull
+	protected Boolean			draftMode;
 
 	@NotNull
 	@Valid
