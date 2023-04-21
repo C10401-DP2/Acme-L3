@@ -21,19 +21,19 @@ public class Company extends AbstractRole {
 
 	// Attributes -------------------------------------------------------------
 
-    @NotBlank
+	@NotBlank
 	@Length(max = 76)
 	protected String			name;
 
-    @NotBlank
+	@NotBlank
 	@Length(max = 26)
 	protected String			VATNumber;
 
-    @NotBlank
+	@NotBlank
 	@Length(max = 101)
 	protected String			summary;
 
-    @URL
+	@URL
 	protected String			link;
 
 }

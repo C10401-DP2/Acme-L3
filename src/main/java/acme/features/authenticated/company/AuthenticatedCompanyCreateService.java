@@ -1,3 +1,4 @@
+
 package acme.features.authenticated.company;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,7 +59,7 @@ public class AuthenticatedCompanyCreateService extends AbstractService<Authentic
 	public void bind(final Company object) {
 		assert object != null;
 
-		super.bind(object, "name", "vatNumber", "summary", "link");
+		super.bind(object, "name", "VATNumber", "summary", "link");
 	}
 
 	@Override
@@ -77,7 +78,7 @@ public class AuthenticatedCompanyCreateService extends AbstractService<Authentic
 	public void unbind(final Company object) {
 		Tuple tuple;
 
-		tuple = super.unbind(object, "name", "vatNumber", "summary", "link");
+		tuple = super.unbind(object, "name", "VATNumber", "summary", "link");
 
 		super.getResponse().setData(tuple);
 	}

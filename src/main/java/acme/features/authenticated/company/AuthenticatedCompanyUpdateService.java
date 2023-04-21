@@ -1,3 +1,4 @@
+
 package acme.features.authenticated.company;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +14,10 @@ import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
 @Service
+
 public class AuthenticatedCompanyUpdateService extends AbstractService<Authenticated, Company> {
 
-	// Internal state ---------------------------------------------------------
+	//Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected AuthenticatedCompanyRepository repository;
@@ -50,7 +52,7 @@ public class AuthenticatedCompanyUpdateService extends AbstractService<Authentic
 	public void bind(final Company object) {
 		assert object != null;
 
-		super.bind(object, "name", "vatNumber", "summary", "link");
+		super.bind(object, "name", "VATNumber", "summary", "link");
 	}
 
 	@Override
@@ -71,7 +73,7 @@ public class AuthenticatedCompanyUpdateService extends AbstractService<Authentic
 
 		Tuple tuple;
 
-		tuple = BinderHelper.unbind(object, "name", "vatNumber", "summary", "link");
+		tuple = BinderHelper.unbind(object, "name", "VATNumber", "summary", "link");
 		super.getResponse().setData(tuple);
 	}
 
