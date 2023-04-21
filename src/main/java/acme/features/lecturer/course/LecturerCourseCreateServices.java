@@ -48,7 +48,7 @@ public class LecturerCourseCreateServices extends AbstractService<Lecturer, Cour
 	public void bind(final Course object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "anAbstract", "retailPrice", "link");
+		super.bind(object, "code", "title", "anAbstract", "retailPrice", "link", "draftMode");
 	}
 
 	@Override

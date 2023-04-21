@@ -58,12 +58,11 @@ public class LecturerCourseShowServices extends AbstractService<Lecturer, Course
 		assert object != null;
 		Tuple tuple;
 		final Collection<Lecture> lectures = this.repository.findManyLecturesByCourseId(object.getId());
-		final boolean isPublished = !lectures.isEmpty() && object.getDraftMode();
-		final CourseType courseType = this.repository.findCourseType(object.getId());
+		final CourseType courseType = object.courseType(lectures);
+		final boolean canPublish = !lectures.isEmpty();
 		tuple = super.unbind(object, "code", "title", "anAbstract", "retailPrice", "link", "draftMode");
 		tuple.put("courseType", courseType);
-		tuple.put("isPublished", isPublished);
-
+		tuple.put("canPublish", canPublish);
 		super.getResponse().setData(tuple);
 	}
 }

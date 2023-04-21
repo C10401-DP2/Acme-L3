@@ -63,6 +63,7 @@ master.menu.consumer.favourite-link = Enlace favorito
 master.menu.lecturer= Profesorado
 master.menu.lecturer.course = Mis cursos
 master.menu.lecturer.lectureMine = Mis lecciones
+master.menu.lecturer.courseLecture = Añadir lecciones al curso
 
 # master.menu.assistant ####################################################
 
