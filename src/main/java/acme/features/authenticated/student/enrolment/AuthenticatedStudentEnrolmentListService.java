@@ -51,7 +51,7 @@ public class AuthenticatedStudentEnrolmentListService extends AbstractService<St
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "code", "motivation", "goals", "totalTime");
+		tuple = super.unbind(object, "code", "motivation", "goals");
 		super.getResponse().setData(tuple);
 	}
 
