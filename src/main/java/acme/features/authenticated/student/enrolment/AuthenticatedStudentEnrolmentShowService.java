@@ -29,7 +29,10 @@ public class AuthenticatedStudentEnrolmentShowService extends AbstractService<St
 	@Override
 	public void authorise() {
 
-		super.getResponse().setAuthorised(true);
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRole(Student.class);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -49,7 +52,7 @@ public class AuthenticatedStudentEnrolmentShowService extends AbstractService<St
 
 		Tuple tuple = null;
 
-		tuple = super.unbind(object, "code", "motivation", "goals", "totalTime");
+		tuple = super.unbind(object, "code", "motivation", "goals");
 
 		super.getResponse().setData(tuple);
 	}

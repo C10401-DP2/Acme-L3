@@ -27,7 +27,10 @@ public class AuthenticatedStudentEnrolmentCreateService extends AbstractService<
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRole(Student.class);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -39,11 +42,9 @@ public class AuthenticatedStudentEnrolmentCreateService extends AbstractService<
 	public void load() {
 		Enrolment object;
 		Student student;
-		final Integer totalTime = 0;
 
 		object = new Enrolment();
 		student = this.repository.findStudentById(super.getRequest().getPrincipal().getActiveRoleId());
-		object.setTotalTime(totalTime);
 		object.setStudent(student);
 		object.setDraftMode(true);
 		object.setMotivation("");
@@ -61,7 +62,7 @@ public class AuthenticatedStudentEnrolmentCreateService extends AbstractService<
 		courseId = super.getRequest().getData("course", int.class);
 		course = this.repository.findCourseById(courseId);
 
-		super.bind(object, "code", "motivation", "goals", "totalTime");
+		super.bind(object, "code", "motivation", "goals");
 		object.setCourse(course);
 	}
 
@@ -88,7 +89,7 @@ public class AuthenticatedStudentEnrolmentCreateService extends AbstractService<
 		courses = this.repository.findCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
-		tuple = super.unbind(object, "code", "motivation", "goals", "totalTime", "draftMode");
+		tuple = super.unbind(object, "code", "motivation", "goals", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 

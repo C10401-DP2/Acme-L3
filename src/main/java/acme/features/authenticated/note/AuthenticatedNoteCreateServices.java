@@ -48,7 +48,7 @@ public class AuthenticatedNoteCreateServices extends AbstractService<Authenticat
 		object.setInstMoment(moment);
 		object.setTitle("");
 		object.setMessage("");
-		object.setAuthor(userAccount.getIdentity().getFullName());
+		object.setAuthor(userAccount.getUsername() + " - " + userAccount.getIdentity().getFullName());
 		object.setEmail(null);
 		object.setLink(null);
 
