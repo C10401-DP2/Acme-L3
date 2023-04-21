@@ -1,0 +1,17 @@
+lecturer.lecture.list.label.title = Título
+lecturer.lecture.list.label.learningTime = Tiempo de lección
+lecturer.lecture.form.button.create = Crear
+lecturer.lecture.form.label.title = Título
+lecturer.lecture.form.button.create = Crear
+lecturer.lecture.form.button.publish = Publicar
+lecturer.lecture.form.button.delete = Borrar
+lecturer.lecture.form.button.update = Actualizar
+lecturer.lecture.form.label.link = Enlace
+lecturer.lecture.form.label.activityType = Tipo de actividad
+lecturer.lecture.form.label.body = Contenido
+lecturer.lecture.form.label.learningTime = Tiempo de lección
+lecturer.lecture.form.label.anAbstract = Resumen
+lecturer.lecture.list.label.lecturer = Profesor
+lecturer.lecture.form.error.not-belong = No te pertenece
+lecturer.courseLecture.list.button.create = Añadir lección
+lecturer.courseLecture.list.button.delete = Borrar lección

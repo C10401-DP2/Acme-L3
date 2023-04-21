@@ -1,0 +1,24 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+assistant.dashboard.form.title.general-indicators = Assistant dashboard
+
+assistant.dashboard.form.label.title-sessions = Tutorial sessions
+assistant.dashboard.form.label.average-time-sessions = Average time of sessions
+assistant.dashboard.form.label.deviation-time-sessions = Deviation time of sessions
+assistant.dashboard.form.label.min-time-sessions = Minimum time of sessions
+assistant.dashboard.form.label.max-time-sessions = Maximum time of sessions
+
+assistant.dashboard.form.label.title-tutorial = Tutorials
+assistant.dashboard.form.label.average-time-tutorials = Average time of tutorials
+assistant.dashboard.form.label.deviation-time-tutorials = Deviation time of tutorials
+assistant.dashboard.form.label.min-time-tutorials = Minimum time of tutorials
+assistant.dashboard.form.label.max-time-tutorials = Maximum time of tutorials
+assistant.dashboard.form.label.number-of-tutorials-by-type = Number of tutorials by type

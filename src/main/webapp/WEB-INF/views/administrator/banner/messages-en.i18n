@@ -1,0 +1,17 @@
+administrator.banner.list.label.initialDisplay = Start
+administrator.banner.list.label.finalDisplay = End
+administrator.banner.list.label.slogan = Slogan
+
+administrator.banner.list.button.create = Create
+
+administrator.banner.form.label.initialDisplay = Start:
+administrator.banner.form.label.finalDisplay = End:
+administrator.banner.form.label.slogan = Slogan:
+administrator.banner.form.label.image = Image:
+administrator.banner.form.label.documentLink = Document Link:
+
+administrator.banner.form.button.create = Create
+administrator.banner.form.button.update = Update
+administrator.banner.form.button.delete = Delete
+
+administrator.banner.form.error-dates = Initial display must be before to final display

@@ -25,9 +25,11 @@ master.menu.anonymous.favourite-link2 = 47347286S: Cuenca Perez, Pablo
 master.menu.anonymous.favourite-link3 = 45969301Y: Del Hoyo Carcaboso, David
 master.menu.anonymous.favourite-link4 = 45970129Y: Zarandieta Ortiz, David
 master.menu.anonymous.favourite-link5 = 45968205Z: García Chavero, Adrián
+
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Authenticated
+master.menu.authenticated.course-list = Courses
 master.menu.authenticated.tutorials = All tutorials
 
 # master.menu.administrator ###################################################
@@ -35,9 +37,17 @@ master.menu.authenticated.tutorials = All tutorials
 master.menu.administrator = Administrator
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
+master.menu.administrator.banner = Banner
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
+master.menu.administrator.offer.list = Offers listing
+master.menu.administrator.createBulletin = Create Bulletin
 master.menu.administrator.shut-down = Shut down
+
+# master.menu.peep ########################################################
+
+master.menu.peep = Peeps
+master.menu.any.all-peeps = Lista de peeps
 
 # master.menu.provider ########################################################
 
@@ -47,12 +57,27 @@ master.menu.provider.favourite-link = Favourite link
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumer
+
 master.menu.consumer.favourite-link = Favourite link
+
+# master.menu.lecturer ##########################################################
+
+master.menu.lecturer= Lecturer
+master.menu.lecturer.course = My courses
+master.menu.lecturer.lectureMine = My lectures
+master.menu.lecturer.courseLecture = Add lectures to course
+
 
 # master.menu.assistant ####################################################
 
 master.menu.assistant = Assistant
 master.menu.assistant.tutorials.mine = My tutorials
+master.menu.assistant.show-dashboard = Assistant dashboard
+
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.audits.mine = My audits
 
 # master.menu.user-account ####################################################
 
@@ -62,10 +87,24 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.audit.list = Audit listing
+
+
 master.menu.user-account.assistant = Assistant data
 master.menu.user-account.become-assistant = Become an assistant
 master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Become a lecturer
 master.menu.user-account.become-auditor = Become an auditor
+master.menu.authenticated.createNote = Create note
+master.menu.authenticated.listNote = Show note list
 master.menu.user-account.auditor = Auditor data
+
+master.menu.user-account.bulletin.list = Bulletin listing
+
+
+# master.menu.student ####################################################
+
+master.menu.student = Student
+master.menu.student.enrolments.list = Enrolments
+master.menu.student.activities.list = Acitivites
 

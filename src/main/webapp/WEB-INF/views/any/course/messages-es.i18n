@@ -1,0 +1,13 @@
+any.course.form.label.code = Código	
+any.course.form.label.title = Título	
+any.course.form.label.anAbstract = Resumen
+any.course.form.label.retailPrice = Precio	
+any.course.form.label.link = Enlace
+any.course.form.label.activityType = Tipo de curso
+authenticated.course.list.label.code = Código
+authenticated.course.list.label.title = Título
+authenticated.course.list.label.retailPrice = Precio
+authenticated.course.list.label.link = Enlace
+
+any.course.form.button.tutorials-list = Tutoriales
+any.course.form.button.tutorials-create = Crear tutorial

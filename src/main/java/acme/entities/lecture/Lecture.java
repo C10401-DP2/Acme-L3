@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.datatypes.ActivityType;
+import acme.datatypes.ActivityTypeLecture;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Lecturer;
 import lombok.Getter;
@@ -22,32 +22,36 @@ import lombok.Setter;
 @Setter
 public class Lecture extends AbstractEntity {
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long		serialVersionUID	= 1L;
 
 	@NotBlank
 	@Length(max = 76)
-	protected String			title;
+	protected String				title;
 
 	@NotBlank
 	@Length(max = 101)
-	protected String			anAbstract;
+	protected String				anAbstract;
 
 	@Min(0)
 	@NotNull
-	protected Double			learningTime;
+	protected Double				learningTime;
 
 	@NotBlank
 	@Length(max = 101)
-	protected String			body;
+	protected String				body;
 
-	protected ActivityType		activityType;
+	@NotNull
+	protected ActivityTypeLecture	activityType;
 
 	@URL
-	protected String			link;
+	protected String				link;
+
+	@NotNull
+	protected Boolean				draftMode;
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	protected Lecturer			lecturer;
+	protected Lecturer				lecturer;
 
 }

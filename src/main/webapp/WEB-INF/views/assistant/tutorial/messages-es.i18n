@@ -19,7 +19,8 @@ assistant.tutorial.form.label.course = Curso:
 assistant.tutorial.form.label.title = Título:
 assistant.tutorial.form.label.abstraction = Resumen:
 assistant.tutorial.form.label.goals = Objetivos:
-		
+assistant.tutorial.form.label.estimated-total-time: Tiempo total estimado:
+
 assistant.tutorial.form.button.sessions = Sesiones del tutorial
 assistant.tutorial.form.button.update = Actualizar
 assistant.tutorial.form.button.delete = Borrar
@@ -27,3 +28,4 @@ assistant.tutorial.form.button.publish = Publicar
 assistant.tutorial.form.button.create = Crear
 
 assistant.tutorial.form.error.duplicated = Este código no está libre
+assistant.tutorial.form.error.no-sessions = No hay sesiones para este tutorial

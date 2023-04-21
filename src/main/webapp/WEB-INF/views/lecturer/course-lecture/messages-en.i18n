@@ -1,0 +1,13 @@
+lecturer.course-lecture.form.error = DraftMode must be true
+
+lecturer.course.lecture.list.label.lecture = Lecture
+lecturer.course.lecture.list.label.course = Course
+
+lecturer.course.lecture.form.label.course = Course:
+lecturer.course.lecture.form.label.lecture = Lecture:
+
+lecturer.course.lecture.form.button.create = Create
+lecturer.course.lecture.form.button.delete = Delete
+
+lecturer.courseLecture.form.button.create = Add lecture
+lecturer.courseLecture.form.label.lecture = Lectures
