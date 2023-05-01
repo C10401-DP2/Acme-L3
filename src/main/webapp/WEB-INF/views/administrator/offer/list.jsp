@@ -16,8 +16,12 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="administrator.offer.list.label.moment" path="moment" width="10%"/>
+	<acme:list-column code="administrator.offer.list.label.moment" path="moment" width="20%"/>
 	<acme:list-column code="administrator.offer.list.label.heading" path="heading" width="30%"/>
-	<acme:list-column code="administrator.offer.list.label.summary" path="summary" width="50%"/>	
-	<acme:list-column code="administrator.offer.list.label.price" path="price" width="10%"/>
+	<acme:list-column code="administrator.offer.list.label.price" path="price" width="30%"/>
+	<acme:list-column code="administrator.offer.list.label.period" path="period" width="20%"/>
 </acme:list>
+
+<jstl:if test="${_command == 'list'}">
+	<acme:button code="administrator.offer.list.button.create" action="/administrator/offer/create"/>
+</jstl:if>

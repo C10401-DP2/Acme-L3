@@ -1,0 +1,15 @@
+company.session.list.label.title= Title
+company.session.list.label.abstraction= Abstraction
+company.session.list.label.startDate= Start date
+company.session.list.label.finishDate= Finish date
+company.session.list.label.link= Link
+
+company.session.form.label.title= Title
+company.session.form.label.abstraction= Abstraction
+company.session.form.label.startDate= Start date
+company.session.form.label.finishDate= Finish date
+company.session.form.label.link= Link
+company.session.form.button.delete= Delete
+company.session.form.button.update = Update
+company.session.form.button.create= Create Session
+company.practicum.list.label.course= Curse
