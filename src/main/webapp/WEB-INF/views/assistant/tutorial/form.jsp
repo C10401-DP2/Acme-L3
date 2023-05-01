@@ -24,13 +24,11 @@
 			<acme:input-textbox code="assistant.tutorial.form.label.code" path="code" placeholder="AAA1111"/>
 		</jstl:when>
 	</jstl:choose>
-	<acme:input-select code="assistant.tutorial.form.label.course" path="course" choices="${courses}"/>	
+	<acme:input-textbox code="assistant.tutorial.form.label.course" path="courseCode" readonly="true"/>	
 	<acme:input-textbox code="assistant.tutorial.form.label.title" path="title"/>
 	<acme:input-textarea code="assistant.tutorial.form.label.abstraction" path="anAbstract"/>
 	<acme:input-textarea code="assistant.tutorial.form.label.goals" path="goals"/>
 	<acme:input-double code="assistant.tutorial.form.label.estimated-total-time" path="estimatedTotalTime" readonly="true"/>
-	<acme:hidden-data path="id"/>
-	<acme:hidden-data path="draftMode"/>
 
 	<jstl:choose>
 		<jstl:when test="${_command == 'show' && draftMode == false}">
@@ -43,7 +41,7 @@
 			<acme:submit code="assistant.tutorial.form.button.publish" action="/assistant/tutorial/publish"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
-			<acme:submit code="assistant.tutorial.form.button.create" action="create"/>
+			<acme:submit code="assistant.tutorial.form.button.create" action="/assistant/tutorial/create?courseId=${course.id}"/>
 		</jstl:when>		
 	</jstl:choose>
 </acme:form>
