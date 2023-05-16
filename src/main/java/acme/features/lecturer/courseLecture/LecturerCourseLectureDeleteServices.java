@@ -15,7 +15,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-public class LecturerCourseLectureCreateServices extends AbstractService<Lecturer, CourseLecture> {
+public class LecturerCourseLectureDeleteServices extends AbstractService<Lecturer, CourseLecture> {
 
 	@Autowired
 	protected LecturerCourseLectureRepository repository;
@@ -70,17 +70,19 @@ public class LecturerCourseLectureCreateServices extends AbstractService<Lecture
 		Lecturer lecturer;
 		Course course;
 		final Lecture lecture;
-
-		super.bind(object, "courseLecture");
+		final CourseLecture courseLecture;
 
 		lecturerId = super.getRequest().getPrincipal().getActiveRoleId();
 		lecturer = this.repository.findOneLecturerById(lecturerId);
 		courseId = super.getRequest().getData("masterId", int.class);
 		course = this.repository.findOneCourseById(courseId);
-		object.setCourse(course);
 		lectureId = super.getRequest().getData("lecture", int.class);
 		lecture = this.repository.findOneLectureById(lectureId);
+		object.setCourse(course);
 		object.setLecture(lecture);
+
+		super.bind(object, "courseLecture");
+
 	}
 
 	@Override
@@ -92,7 +94,15 @@ public class LecturerCourseLectureCreateServices extends AbstractService<Lecture
 	public void perform(final CourseLecture object) {
 		assert object != null;
 
-		this.repository.save(object);
+		int courseId, lectureId;
+
+		Collection<CourseLecture> courseLectures;
+
+		courseId = super.getRequest().getData("masterId", int.class);
+		lectureId = super.getRequest().getData("lecture", int.class);
+		courseLectures = this.repository.findCourseLectureByIds(courseId, lectureId);
+
+		this.repository.deleteAll(courseLectures);
 	}
 
 	@Override
@@ -100,16 +110,13 @@ public class LecturerCourseLectureCreateServices extends AbstractService<Lecture
 		assert object != null;
 
 		int lecturerId;
-		Collection<Lecture> allLectures;
 		Collection<Lecture> courseLectures;
 		final SelectChoices choices;
 		final Tuple tuple;
 
 		lecturerId = super.getRequest().getPrincipal().getActiveRoleId();
-		allLectures = this.repository.findAllLecturesOfLecturerId(lecturerId);
 		courseLectures = this.repository.findLecturesOfCourseId(object.getCourse().getId());
-		allLectures.removeAll(courseLectures);
-		choices = SelectChoices.from(allLectures, "title", object.getLecture());
+		choices = SelectChoices.from(courseLectures, "title", object.getLecture());
 
 		tuple = super.unbind(object, "course");
 		tuple.put("masterId", object.getCourse().getId());
