@@ -13,3 +13,5 @@ lecturer.lecture.form.label.learningTime = Learning Time
 lecturer.lecture.form.label.anAbstract = Abstract
 lecturer.lecture.list.label.lecturer = Lecturer
 lecturer.lecture.form.error.not-belong = Not belong to you
+lecturer.courseLecture.list.button.create = Add lecture
+lecturer.courseLecture.list.button.delete = Delete lecture

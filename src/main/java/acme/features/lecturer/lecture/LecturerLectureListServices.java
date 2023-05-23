@@ -13,7 +13,6 @@ import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-
 public class LecturerLectureListServices extends AbstractService<Lecturer, Lecture> {
 
 	@Autowired
@@ -44,29 +43,36 @@ public class LecturerLectureListServices extends AbstractService<Lecturer, Lectu
 
 	@Override
 	public void load() {
-		int id;
+		int masterId;
 		Collection<Lecture> objects;
+		Course course;
+		final boolean showAddLecture;
 
-		id = super.getRequest().getData("masterId", int.class);
-		objects = this.repository.findManyLecturesByCourseId(id);
+		masterId = super.getRequest().getData("masterId", int.class);
+		objects = this.repository.findManyLecturesByCourseId(masterId);
+		course = this.repository.findOneCourseById(masterId);
+		showAddLecture = course.getDraftMode() && super.getRequest().getPrincipal().hasRole(course.getLecturer());
 
 		super.getBuffer().setData(objects);
+		super.getResponse().setGlobal("showAddLecture", showAddLecture);
+		super.getResponse().setGlobal("masterId", masterId);
 	}
 
 	@Override
 	public void unbind(final Lecture object) {
 		assert object != null;
 
-		int id;
+		int masterId;
 		final Tuple tuple;
 		Course course;
+		final boolean showAddLecture;
 
-		id = super.getRequest().getData("masterId", int.class);
-		course = this.repository.findOneCourseById(id);
+		masterId = super.getRequest().getData("masterId", int.class);
+		course = this.repository.findOneCourseById(masterId);
+		showAddLecture = course.getDraftMode() && super.getRequest().getPrincipal().hasRole(course.getLecturer());
 		tuple = super.unbind(object, "title", "anAbstract", "learningTime", "body", "activityType", "link", "draftMode");
 		tuple.put("lectureId", object.getId());
 		tuple.put("course", course);
-		tuple.put("courseDraftMode", course.getDraftMode());
 		tuple.put("lecturer", object.getLecturer().getUserAccount().getUsername());
 		super.getResponse().setData(tuple);
 	}

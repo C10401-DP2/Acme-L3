@@ -14,9 +14,11 @@ lecturer.course.form.button.update = Update
 lecturer.course.form.button.delete = Delete
 lecturer.course.form.button.publish = Publish
 lecturer.course.form.button.lectures = Lectures
+lecturer.courseLecture.form.addLecture = Add lectures
 
 lecturer.course.form.error.duplicated = Code cannot duplicated
 lecturer.course.negative-price = Price cannot be negative
 lecturer.course.too-much-price = Price cannot be more than 1000000
 lecturer.course.currency = Money cannot be accepted
-lecturer.course.form.error.not-lectures = This course must have lectures 
+lecturer.course.form.error.not-lectures = This course must have lectures
+lecturer.course.form.error.courseType = This course must not be THEORY

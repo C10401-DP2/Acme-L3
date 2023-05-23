@@ -1,0 +1,13 @@
+
+company.practicum.list.label.code = Code
+company.practicum.list.label.title = Title
+company.practicum.list.label.abstraction = Abstraction
+company.practicum.list.label.goals = Goals
+company.practicum.error.code.duplicated = Error, practicum code duplicated
+company.practicum.list.label.draftMode = Draft
+company.practicum.button.create= Create practicum
+company.practicum.button.update= Update
+company.practicum.button.delete= Delete
+company.practicum.button.publish= Publish
+practicum.practicum-session.button.practicum-sessionList= List of sessions
+company.practicum.error.course.unpublished= Error, unpublished course

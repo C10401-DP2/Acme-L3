@@ -19,7 +19,10 @@ public class LecturerCourseCreateServices extends AbstractService<Lecturer, Cour
 
 	@Override
 	public void check() {
-		super.getResponse().setChecked(true);
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRole(Lecturer.class);
+		super.getResponse().setChecked(status);
 	}
 
 	@Override
@@ -48,7 +51,8 @@ public class LecturerCourseCreateServices extends AbstractService<Lecturer, Cour
 	public void bind(final Course object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "anAbstract", "retailPrice", "link");
+		super.bind(object, "code", "title", "anAbstract", "retailPrice", "link", "draftMode");
+		object.setDraftMode(true);
 	}
 
 	@Override
