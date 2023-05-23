@@ -31,7 +31,7 @@ public class AssistantTutorialSessionUpdateTest extends TestHarness {
 
 		super.signIn("assistant1", "assistant1");
 
-		super.clickOnMenu("Assistant", "List my tutorials");
+		super.clickOnMenu("Assistant", "My tutorials");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 
@@ -79,7 +79,7 @@ public class AssistantTutorialSessionUpdateTest extends TestHarness {
 
 		super.signIn("assistant1", "assistant1");
 
-		super.clickOnMenu("Assistant", "List my tutorials");
+		super.clickOnMenu("Assistant", "My tutorials");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 

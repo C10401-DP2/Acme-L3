@@ -56,8 +56,7 @@ public class AssistantTutorialPublishTest extends TestHarness {
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.clickOnSubmit("Publish");
-		super.checkAlertExists(false);
+		super.checkNotSubmitExists("Publish");
 
 		super.signOut();
 	}

@@ -23,7 +23,7 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String title, final String anAbstract, final String goals, final String course) {
+	public void test100Positive(final int recordIndex, final String code, final String title, final String anAbstract, final String goals) {
 		// HINT: this test logs in as an assistant, lists his or her tutorials,
 		// HINT+ selects one of them, updates it, and then checks that
 		// HINT+ the update has actually been performed.
@@ -37,11 +37,9 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("anAbstract", anAbstract);
 		super.fillInputBoxIn("goals", goals);
-		super.fillInputBoxIn("course", course);
 		super.clickOnSubmit("Update");
 
 		super.clickOnMenu("Assistant", "My tutorials");
@@ -52,18 +50,16 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("anAbstract", anAbstract);
 		super.checkInputBoxHasValue("goals", goals);
-		super.checkInputBoxHasValue("course", course);
 
 		super.signOut();
 	}
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test200Negative(final int recordIndex, final String code, final String title, final String anAbstract, final String goals, final String course) {
+	public void test200Negative(final int recordIndex, final String code, final String title, final String anAbstract, final String goals) {
 		// HINT: this test attempts to update a tutorial with wrong data.
 
 		super.signIn("assistant1", "assistant1");
@@ -75,11 +71,9 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("anAbstract", anAbstract);
 		super.fillInputBoxIn("goals", goals);
-		super.fillInputBoxIn("course", course);
 		super.clickOnSubmit("Update");
 
 		super.checkErrorsExist();

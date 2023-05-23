@@ -38,7 +38,7 @@ public class AssistantTutorialShowTest extends TestHarness {
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("anAbstract", anAbstract);
 		super.checkInputBoxHasValue("goals", goals);
-		super.checkInputBoxHasValue("course", course);
+		super.checkInputBoxHasValue("courseCode", course);
 
 		super.signOut();
 	}

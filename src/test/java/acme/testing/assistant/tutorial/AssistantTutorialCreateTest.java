@@ -12,22 +12,23 @@ public class AssistantTutorialCreateTest extends TestHarness {
 	@ParameterizedTest
 
 	@CsvFileSource(resources = "/assistant/tutorial/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String title, final String anAbstract, final String goals, final String course) {
+	public void test100Positive(final int recordIndex, final String code, final String title, final String anAbstract, final String goals) {
 		// HINT: this test authenticates as an assistant and then lists his or her
 		// HINT: tutorials, creates a new one, and check that it's been created properly.
 
 		super.signIn("assistant1", "assistant1");
 
-		super.clickOnMenu("Assistant", "My tutorials");
+		super.clickOnMenu("Authenticated", "Courses");
 		super.checkListingExists();
+		super.sortListing(0, "asc");
+		super.clickOnListingRecord(0);
 
-		super.clickOnButton("Create");
+		super.clickOnButton("Create a tutorial");
 		super.checkFormExists();
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("anAbstract", anAbstract);
 		super.fillInputBoxIn("goals", goals);
-		super.fillInputBoxIn("course", course);
 		super.clickOnSubmit("Create");
 
 		super.clickOnMenu("Assistant", "My tutorials");
@@ -43,7 +44,6 @@ public class AssistantTutorialCreateTest extends TestHarness {
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("anAbstract", anAbstract);
 		super.checkInputBoxHasValue("goals", goals);
-		super.checkInputBoxHasValue("course", course);
 
 		super.clickOnButton("Tutorial sessions");
 		super.checkListingExists();
@@ -54,20 +54,22 @@ public class AssistantTutorialCreateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test200Negative(final int recordIndex, final String code, final String title, final String anAbstract, final String goals, final String course) {
+	public void test200Negative(final int recordIndex, final String code, final String title, final String anAbstract, final String goals) {
 		// HINT: this test attempts to create tutorials with incorrect data.
 
 		super.signIn("assistant1", "assistant1");
 
-		super.clickOnMenu("Assistant", "My tutorials");
-		super.clickOnButton("Create");
-		super.checkFormExists();
+		super.clickOnMenu("Authenticated", "Courses");
+		super.checkListingExists();
+		super.sortListing(0, "asc");
+		super.clickOnListingRecord(0);
 
+		super.clickOnButton("Create a tutorial");
+		super.checkFormExists();
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("anAbstract", anAbstract);
 		super.fillInputBoxIn("goals", goals);
-		super.fillInputBoxIn("course", course);
 		super.clickOnSubmit("Create");
 
 		super.checkErrorsExist();

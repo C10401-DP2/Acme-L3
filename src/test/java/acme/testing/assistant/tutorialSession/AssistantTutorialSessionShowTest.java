@@ -31,7 +31,7 @@ public class AssistantTutorialSessionShowTest extends TestHarness {
 
 		super.signIn("assistant1", "assistant1");
 
-		super.clickOnMenu("Assistant", "List my tutorials");
+		super.clickOnMenu("Assistant", "My tutorials");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(tutorialRecordIndex, 0, code);
