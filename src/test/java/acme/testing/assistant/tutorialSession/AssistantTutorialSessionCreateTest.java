@@ -38,6 +38,7 @@ public class AssistantTutorialSessionCreateTest extends TestHarness {
 		super.checkColumnHasValue(tutorialRecordIndex, 0, code);
 		super.checkColumnHasValue(tutorialRecordIndex, 1, tutorialTitle);
 		super.clickOnListingRecord(tutorialRecordIndex);
+		super.clickOnButton("Tutorial sessions");
 
 		super.clickOnButton("Create");
 		super.fillInputBoxIn("title", tutorialSessionTitle);
@@ -80,7 +81,7 @@ public class AssistantTutorialSessionCreateTest extends TestHarness {
 		super.checkColumnHasValue(tutorialRecordIndex, 0, code);
 		super.checkColumnHasValue(tutorialRecordIndex, 1, tutorialTitle);
 		super.clickOnListingRecord(tutorialRecordIndex);
-		super.clickOnButton("Sessions");
+		super.clickOnButton("Tutorial sessions");
 
 		super.clickOnButton("Create");
 		super.fillInputBoxIn("title", tutorialSessionTitle);

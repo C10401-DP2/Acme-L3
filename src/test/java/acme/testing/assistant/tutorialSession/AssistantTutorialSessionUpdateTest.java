@@ -86,7 +86,7 @@ public class AssistantTutorialSessionUpdateTest extends TestHarness {
 		super.checkColumnHasValue(tutorialRecordIndex, 0, code);
 		super.checkColumnHasValue(tutorialRecordIndex, 1, tutorialTitle);
 		super.clickOnListingRecord(tutorialRecordIndex);
-		super.clickOnButton("Sessions");
+		super.clickOnButton("Tutorial sessions");
 		super.checkListingExists();
 		super.clickOnListingRecord(tutorialSessionRecordIndex);
 		super.checkFormExists();
