@@ -23,12 +23,24 @@ public class LecturerCourseLectureCreateServices extends AbstractService<Lecture
 
 	@Override
 	public void check() {
-		super.getResponse().setChecked(true);
+		boolean status;
+
+		status = super.getRequest().hasData("masterId", int.class);
+
+		super.getResponse().setChecked(status);
 	}
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		int courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("masterId", int.class);
+		course = this.repository.findOneCourseById(courseId);
+		status = course != null && course.getDraftMode() && super.getRequest().getPrincipal().hasRole(course.getLecturer());
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -88,13 +100,16 @@ public class LecturerCourseLectureCreateServices extends AbstractService<Lecture
 		assert object != null;
 
 		int lecturerId;
-		Collection<Lecture> lectures;
+		Collection<Lecture> allLectures;
+		Collection<Lecture> courseLectures;
 		final SelectChoices choices;
 		final Tuple tuple;
 
 		lecturerId = super.getRequest().getPrincipal().getActiveRoleId();
-		lectures = this.repository.findAllLecturesOfLecturerIdAvailables(lecturerId);
-		choices = SelectChoices.from(lectures, "title", object.getLecture());
+		allLectures = this.repository.findAllLecturesOfLecturerId(lecturerId);
+		courseLectures = this.repository.findLecturesOfCourseId(object.getCourse().getId());
+		allLectures.removeAll(courseLectures);
+		choices = SelectChoices.from(allLectures, "title", object.getLecture());
 
 		tuple = super.unbind(object, "course");
 		tuple.put("masterId", object.getCourse().getId());

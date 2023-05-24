@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.feature.any.peep;
+package acme.features.any.peep;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
