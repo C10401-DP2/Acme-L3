@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.audit.Audit;
+import acme.entities.auditingRecord.AuditingRecord;
 import acme.entities.course.Course;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -39,7 +40,8 @@ public class AuditorAuditPublishService extends AbstractService<Auditor, Audit> 
 
 		id = super.getRequest().getData("id", int.class);
 		audit = this.repository.findAuditById(id);
-		status = audit != null && audit.getDraftMode() && super.getRequest().getPrincipal().hasRole(audit.getAuditor()) && audit.getAuditor().getId() == super.getRequest().getPrincipal().getActiveRoleId();
+		final Collection<AuditingRecord> auditingRecords = this.repository.findAuditingRecordsByAuditId(id);
+		status = audit != null && audit.getDraftMode() && super.getRequest().getPrincipal().hasRole(audit.getAuditor()) && audit.getAuditor().getId() == super.getRequest().getPrincipal().getActiveRoleId() && !auditingRecords.isEmpty();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -109,10 +111,13 @@ public class AuditorAuditPublishService extends AbstractService<Auditor, Audit> 
 
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
+		final Collection<AuditingRecord> auditingRecords = this.repository.findAuditingRecordsByAuditId(object.getId());
+		final boolean canPublish = !auditingRecords.isEmpty();
 
 		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
+		tuple.put("canPublish", canPublish);
 
 		super.getResponse().setData(tuple);
 	}

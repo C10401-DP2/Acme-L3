@@ -33,7 +33,7 @@
 			<acme:button code="auditor.audit.form.button.auditing-records" action="/auditor/auditing-record/list?masterId=${id}"/>
 			<acme:submit code="auditor.audit.form.button.update" action="/auditor/audit/update"/>
 			<acme:submit code="auditor.audit.form.button.delete" action="/auditor/audit/delete"/>
-			<acme:submit code="auditor.audit.form.button.publish" action="/auditor/audit/publish"/>
+			<acme:submit test="${canPublish}" code="auditor.audit.form.button.publish" action="/auditor/audit/publish"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:input-textbox code="auditor.audit.form.label.code" path="code"/>
