@@ -17,9 +17,8 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.course.Course;
 import acme.entities.tutorial.Tutorial;
-import acme.framework.components.jsp.SelectChoices;
+import acme.entities.tutorialsession.TutorialSession;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
@@ -76,14 +75,7 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 	public void bind(final Tutorial object) {
 		assert object != null;
 
-		int courseId;
-		Course course;
-
-		courseId = super.getRequest().getData("course", int.class);
-		course = this.repository.findOneCourseById(courseId);
-
-		super.bind(object, "code", "title", "anAbstract", "goals", "draftMode");
-		object.setCourse(course);
+		super.bind(object, "code", "title", "anAbstract", "goals");
 	}
 
 	@Override
@@ -96,6 +88,10 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 			existing = this.repository.findOneTutorialByCode(object.getCode());
 			super.state(existing == null || existing.getId() == object.getId(), "code", "assistant.tutorial.form.error.duplicated");
 		}
+
+		Collection<TutorialSession> sessions;
+		sessions = this.repository.findManySessionsByTutorialId(object.getId());
+		super.state(!sessions.isEmpty(), "*", "assistant.tutorial.form.error.no-sessions");
 
 	}
 
@@ -110,18 +106,18 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 	@Override
 	public void unbind(final Tutorial object) {
 		assert object != null;
-
-		Collection<Course> courses;
-		SelectChoices choices;
 		Tuple tuple;
+		Collection<TutorialSession> tutorialSessions;
+		Double estimatedTotalTime;
 
-		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", object.getCourse());
+		tutorialSessions = this.repository.findManySessionsByTutorialId(object.getId());
+		estimatedTotalTime = 0.;
 
+		for (final TutorialSession ts : tutorialSessions)
+			estimatedTotalTime += ts.getDurationInHours();
 		tuple = super.unbind(object, "code", "title", "anAbstract", "goals", "draftMode");
-		tuple.put("course", choices.getSelected().getKey());
-		tuple.put("courses", choices);
-
+		tuple.put("courseCode", this.repository.findCourseCodeByTutorialId(object.getId()));
+		tuple.put("estimatedTotalTime", estimatedTotalTime);
 		super.getResponse().setData(tuple);
 	}
 

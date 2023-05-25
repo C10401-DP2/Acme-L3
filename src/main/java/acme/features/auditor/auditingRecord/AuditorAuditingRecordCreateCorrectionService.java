@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.audit.Audit;
 import acme.entities.auditingRecord.AuditingRecord;
-import acme.entities.auditingRecord.Correction;
 import acme.entities.auditingRecord.Mark;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -63,6 +62,7 @@ public class AuditorAuditingRecordCreateCorrectionService extends AbstractServic
 		object.setAssessment("");
 		object.setInitialDate(MomentHelper.getCurrentMoment());
 		object.setFinalDate(MomentHelper.getCurrentMoment());
+		object.setIsCorrection(true);
 		object.setLink("");
 		object.setAudit(audit);
 
@@ -73,12 +73,16 @@ public class AuditorAuditingRecordCreateCorrectionService extends AbstractServic
 	public void bind(final AuditingRecord object) {
 		assert object != null;
 
-		super.bind(object, "subject", "assessment", "initialDate", "finalDate", "mark", "correction", "link");
+		super.bind(object, "subject", "assessment", "initialDate", "finalDate", "mark", "isCorrection", "link");
 	}
 
 	@Override
 	public void validate(final AuditingRecord object) {
 		assert object != null;
+		boolean confirmation;
+
+		confirmation = super.getRequest().getData("confirmation", boolean.class);
+		super.state(confirmation, "confirmation", "auditor.auditing-record.form.error.confirmation");
 
 		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
 			boolean finalDateError;
@@ -96,9 +100,6 @@ public class AuditorAuditingRecordCreateCorrectionService extends AbstractServic
 			super.state(finalDateErrorDuration, "finalDate", "auditor.auditing-record.form.error.duration");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("correction"))
-			super.state(!object.getCorrection().equals(Correction.NOTCORRECTED), "correction", "auditor.auditing-record.form.error.correction");
-
 	}
 
 	@Override
@@ -113,17 +114,15 @@ public class AuditorAuditingRecordCreateCorrectionService extends AbstractServic
 		assert object != null;
 
 		Tuple tuple;
-		SelectChoices choices1;
-		SelectChoices choices2;
+		SelectChoices choices;
 
-		choices1 = SelectChoices.from(Mark.class, object.getMark());
-		choices2 = SelectChoices.from(Correction.class, object.getCorrection());
+		choices = SelectChoices.from(Mark.class, object.getMark());
 
-		tuple = super.unbind(object, "subject", "assessment", "initialDate", "finalDate", "correction", "mark", "link");
+		tuple = super.unbind(object, "subject", "assessment", "initialDate", "finalDate", "isCorrection", "mark", "link");
 		tuple.put("masterId", super.getRequest().getData("masterId", int.class));
 		tuple.put("draftMode", object.getAudit().getDraftMode());
-		tuple.put("marks", choices1);
-		tuple.put("corrections", choices2);
+		tuple.put("marks", choices);
+		tuple.put("confirmation", true);
 
 		super.getResponse().setData(tuple);
 	}

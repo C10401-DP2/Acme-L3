@@ -52,7 +52,7 @@ public class AuditingRecord extends AbstractEntity {
 	protected Mark				mark;
 
 	@NotNull
-	protected Correction		correction;
+	protected Boolean			isCorrection;
 
 	@URL
 	protected String			link;

@@ -42,7 +42,7 @@
 
 <div style="text-align: center; margin-top: 10px;">
 <jstl:if test="${banner.documentLink != null}">
-		<a href="${banner.documentLink}" style="text-decoration: none; color: #000000;">
+		<a href="${banner.documentLink}" style="text-decoration: none; color: #000000;"></a>
 	</jstl:if>
 	<jstl:choose>
 		<jstl:when test="${banner.image != null}">

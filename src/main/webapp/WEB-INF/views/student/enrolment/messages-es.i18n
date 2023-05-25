@@ -12,8 +12,10 @@ student.enrolment.form.label.code = Codigo
 student.enrolment.form.label.motivation = Motivacion
 student.enrolment.form.label.goals = Objetivos
 student.enrolment.form.label.course = Curso
-student.enrolment.form.label.creditCardNumber = Numero de tarjeta
-student.enrolment.form.label.holder = Propietario
+student.enrolment.form.label.creditCardNumber = Numero de tarjeta (Opcional)
+student.enrolment.form.label.creditCardNumber.placeholder = Numero de tarjeta
+student.enrolment.form.label.holder = Propietario (Opcional)
+student.enrolment.form.label.totalTime = Tiempo total
 
 student.enrolment.form.button.update = Actualizar
 student.enrolment.form.button.delete = Eliminar
@@ -26,3 +28,4 @@ student.enrolment.list.label.goals = Objetivos
 student.enrolment.list.label.totalTime = Tiempo total
 
 student.enrolment.list.button.create = Crear
+student.enrolment.form.button.activities = Actividades
