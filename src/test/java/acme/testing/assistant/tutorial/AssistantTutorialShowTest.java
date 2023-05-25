@@ -24,8 +24,6 @@ public class AssistantTutorialShowTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final String code, final String title, final String anAbstract, final String goals, final String course) {
-		// HINT: this test signs in as an assistant, lists all of the tutorials, click on
-		// HINT+ one of them, and checks that the form has the expected data.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -45,13 +43,11 @@ public class AssistantTutorialShowTest extends TestHarness {
 
 	@Test
 	public void test200Negative() {
-		// HINT: there aren't any negative tests for this feature because it's a listing
-		// HINT+ that doesn't involve entering any data in any forms.
+
 	}
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to show an unpublished tutorial by someone who is not the principal.
 
 		Collection<Tutorial> tutorials;
 		String param;

@@ -24,9 +24,6 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final String code, final String title, final String anAbstract, final String goals) {
-		// HINT: this test logs in as an assistant, lists his or her tutorials,
-		// HINT+ selects one of them, updates it, and then checks that
-		// HINT+ the update has actually been performed.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -60,7 +57,6 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test200Negative(final int recordIndex, final String code, final String title, final String anAbstract, final String goals) {
-		// HINT: this test attempts to update a tutorial with wrong data.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -83,8 +79,6 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to update a tutorial with a role other than "Assistant",
-		// HINT+ or using an assistant who is not the owner.
 
 		Collection<Tutorial> tutorials;
 		String param;
@@ -132,7 +126,6 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 
 	@Test
 	public void test301Hacking() {
-		// HINT: this test attempts to update a tutorial that has been published.
 
 		Collection<Tutorial> tutorials;
 		String param;

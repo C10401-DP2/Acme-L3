@@ -8,8 +8,6 @@ tutorialRecordindex,code,tutorialTitle,tutorialSessionRecordIndex,tutorialSessio
 0,ABC1365,Tutorial 1,0,First session,This session will act as part of the tutorial 1 sample,BALANCED,2022/08/10 15:00,2022/08/10 17:00,http://Acme-L3.es/tutorial-sessions
 0,ABC1365,Tutorial 1,0,First session,This session will act as part of the tutorial 1 sample,THEORY,2022/07/30 00:00,2022/07/30 01:00,http://Acme-L3.es/tutorial-sessions
 0,ABC1365,Tutorial 1,1,First session,This session will act as part of the tutorial 1 sample,THEORY,2022/07/30 23:59,2022/07/31 01:00,http://Acme-L3.es/tutorial-sessions
-0,ABC1365,Tutorial 1,0,First session,This session will act as part of the tutorial 1 sample,THEORY,2100/12/31 23:59,2101/01/01 01:00,http://Acme-L3.es/tutorial-sessions
-0,ABC1365,Tutorial 1,0,First session,This session will act as part of the tutorial 1 sample,THEORY,2101/01/01 00:00,2101/01/01 01:00,http://Acme-L3.es/tutorial-sessions
 0,ABC1365,Tutorial 1,0,First session,This session will act as part of the tutorial 1 sample,THEORY,2022/08/10 00:00,2022/08/10 00:59,http://Acme-L3.es/tutorial-sessions
 0,ABC1365,Tutorial 1,0,First session,This session will act as part of the tutorial 1 sample,THEORY,2022/08/10 00:00,2022/08/10 05:01,http://Acme-L3.es/tutorial-sessions
 0,ABC1365,Tutorial 1,0,First session,This session will act as part of the tutorial 1 sample,THEORY,2022/08/10 00:00,2022/08/10 00:59,http://Acme-L3.es/tutorial-sessions

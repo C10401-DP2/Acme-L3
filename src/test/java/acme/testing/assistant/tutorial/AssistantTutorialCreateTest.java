@@ -13,8 +13,6 @@ public class AssistantTutorialCreateTest extends TestHarness {
 
 	@CsvFileSource(resources = "/assistant/tutorial/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final String code, final String title, final String anAbstract, final String goals) {
-		// HINT: this test authenticates as an assistant and then lists his or her
-		// HINT: tutorials, creates a new one, and check that it's been created properly.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -55,7 +53,6 @@ public class AssistantTutorialCreateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test200Negative(final int recordIndex, final String code, final String title, final String anAbstract, final String goals) {
-		// HINT: this test attempts to create tutorials with incorrect data.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -79,8 +76,6 @@ public class AssistantTutorialCreateTest extends TestHarness {
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to create a tutorial using principals with
-		// HINT+ inappropriate roles.
 
 		super.checkLinkExists("Sign in");
 		super.request("/assistant/tutorial/create");

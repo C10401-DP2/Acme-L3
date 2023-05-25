@@ -24,8 +24,6 @@ public class AssistantTutorialSessionListTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorialSession/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int tutorialRecordIndex, final String code, final String tutorialTitle, final int tutorialSessionRecordIndex, final String tutorialSessionTitle, final String type, final String initialDate) {
-		// HINT: this test authenticates as an assistant, then lists his or her tutorials,
-		// HINT+ selects one of them, and check that it has the expected duties.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -50,14 +48,11 @@ public class AssistantTutorialSessionListTest extends TestHarness {
 
 	@Test
 	public void test200Negative() {
-		// HINT: there's no negative test case for this listing, since it doesn't
-		// HINT+ involve filling in any forms.
+
 	}
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to list the duties of a tutorial that is unpublished
-		// HINT+ using a principal that didn't create it.
 
 		Collection<Tutorial> tutorials;
 		String param;

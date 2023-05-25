@@ -26,8 +26,6 @@ public class AssistantTutorialSessionShowTest extends TestHarness {
 	@CsvFileSource(resources = "/assistant/tutorialSession/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int tutorialRecordIndex, final String code, final String tutorialTitle, final int tutorialSessionRecordIndex, final String tutorialSessionTitle, final String anAbstract, final String type, final String initialDate,
 		final String finalDate, final String link) {
-		// HINT: this test signs in as an assistant, lists his or her tutorials, selects
-		// HINT+ one of them and checks that it's as expected.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -57,14 +55,11 @@ public class AssistantTutorialSessionShowTest extends TestHarness {
 
 	@Test
 	public void test200Negative() {
-		// HINT: there's no negative test case for this listing, since it doesn't
-		// HINT+ involve filling in any forms.
+
 	}
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to show a tutorialSession of a tutorial that is in draft mode or
-		// HINT+ not available, but wasn't published by the principal;
 
 		Collection<TutorialSession> duties;
 		String param;
