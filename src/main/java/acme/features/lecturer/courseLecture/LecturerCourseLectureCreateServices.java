@@ -33,12 +33,16 @@ public class LecturerCourseLectureCreateServices extends AbstractService<Lecture
 	@Override
 	public void authorise() {
 		boolean status;
-		int courseId;
+		int courseId, lecturerId;
 		Course course;
+		Collection<Lecture> lectures;
 
 		courseId = super.getRequest().getData("masterId", int.class);
 		course = this.repository.findOneCourseById(courseId);
-		status = course != null && course.getDraftMode() && super.getRequest().getPrincipal().hasRole(course.getLecturer());
+		lecturerId = super.getRequest().getPrincipal().getActiveRoleId();
+		lectures = this.repository.findAllLecturesOfLecturerId(lecturerId);
+
+		status = course != null && !lectures.isEmpty() && course.getDraftMode() && super.getRequest().getPrincipal().hasRole(course.getLecturer());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -67,14 +71,12 @@ public class LecturerCourseLectureCreateServices extends AbstractService<Lecture
 		assert object != null;
 
 		int lecturerId, courseId, lectureId;
-		Lecturer lecturer;
 		Course course;
 		final Lecture lecture;
 
 		super.bind(object, "courseLecture");
 
 		lecturerId = super.getRequest().getPrincipal().getActiveRoleId();
-		lecturer = this.repository.findOneLecturerById(lecturerId);
 		courseId = super.getRequest().getData("masterId", int.class);
 		course = this.repository.findOneCourseById(courseId);
 		object.setCourse(course);
