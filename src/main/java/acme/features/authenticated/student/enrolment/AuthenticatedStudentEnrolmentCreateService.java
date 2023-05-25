@@ -28,6 +28,7 @@ public class AuthenticatedStudentEnrolmentCreateService extends AbstractService<
 	@Override
 	public void authorise() {
 		boolean status;
+		final int enrolmentId = super.getRequest().getData("enrolmentId", int.class);
 
 		status = super.getRequest().getPrincipal().hasRole(Student.class);
 		super.getResponse().setAuthorised(status);
@@ -36,12 +37,14 @@ public class AuthenticatedStudentEnrolmentCreateService extends AbstractService<
 	@Override
 	public void check() {
 		super.getResponse().setChecked(true);
+
 	}
 
 	@Override
 	public void load() {
 		Enrolment object;
 		Student student;
+		final int enrolmentId = super.getRequest().getData("enrolmentId", int.class);
 
 		object = new Enrolment();
 		student = this.repository.findStudentById(super.getRequest().getPrincipal().getActiveRoleId());
@@ -69,6 +72,10 @@ public class AuthenticatedStudentEnrolmentCreateService extends AbstractService<
 	@Override
 	public void validate(final Enrolment object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("course"))
+			super.state(object.getCourse().getDraftMode() == true, "course", "student.enrolment.course.notDraftMode");
+
 	}
 
 	@Override
@@ -81,15 +88,16 @@ public class AuthenticatedStudentEnrolmentCreateService extends AbstractService<
 	@Override
 	public void unbind(final Enrolment object) {
 		assert object != null;
-
-		Tuple tuple;
 		Collection<Course> courses;
 		SelectChoices choices;
 
 		courses = this.repository.findCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
-		tuple = super.unbind(object, "code", "motivation", "goals", "draftMode");
+		Tuple tuple = null;
+
+		tuple = super.unbind(object, "code", "motivation", "goals");
+
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 

@@ -31,7 +31,6 @@ public class Activity extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes
-
 	@NotBlank
 	@Length(max = 76)
 	protected String			title;
@@ -46,9 +45,11 @@ public class Activity extends AbstractEntity {
 	@URL
 	protected String			link;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				initialDate;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				finalDate;
 
@@ -56,9 +57,13 @@ public class Activity extends AbstractEntity {
 	@Transient
 	public Integer totalTime() {
 		long total;
-		total = this.getInitialDate().getTime() - this.getFinalDate().getTime();
+		if (this.getInitialDate() == null || this.getFinalDate() == null)
+			return null;
+		else {
+			total = this.getFinalDate().getTime() - this.getInitialDate().getTime();
 
-		return (int) total / 3600000;
+			return (int) total / 3600000;
+		}
 	}
 
 	// Relationships
