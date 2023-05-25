@@ -60,7 +60,7 @@ public class AuthenticatedStudentEnrolmentUpdateService extends AbstractService<
 	public void validate(final Enrolment object) {
 		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("course"))
-			super.state(object.getCourse().getDraftMode() == true, "course", "student.enrolment.course.notDraftMode");
+			super.state(object.getCourse().getDraftMode() == false, "course", "student.enrolment.course.notDraftMode");
 
 	}
 

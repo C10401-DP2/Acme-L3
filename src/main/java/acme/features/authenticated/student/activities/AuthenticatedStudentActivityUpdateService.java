@@ -69,7 +69,6 @@ public class AuthenticatedStudentActivityUpdateService extends AbstractService<S
 	public void validate(final Activity object) {
 		assert object != null;
 
-		super.state(false, null, null, null);
 	}
 
 	@Override
