@@ -9,3 +9,5 @@
 	<acme:list-column code="company.session.list.label.startDate" path="initialDate" />
 	<acme:list-column code="company.session.list.label.finishDate" path="finalDate" />	
 </acme:list>
+
+<acme:button test="${showCreate && !draftMode}" code="company.sessionPracticum.list.button.create" action="/company/practicum-session/create?practicumId=${practicumId}"/>

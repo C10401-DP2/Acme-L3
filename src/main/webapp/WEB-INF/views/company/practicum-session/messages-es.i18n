@@ -1,15 +1,32 @@
-company.session.list.label.title= T�tulo
+company.session.list.label.title= Título
 company.session.list.label.abstraction= Resumen
 company.session.list.label.startDate= Fecha de inicio
 company.session.list.label.finishDate= Fecha de final
 company.session.list.label.link= Link
 
-company.session.form.label.title= T�tulo
-company.session.form.label.abstraction= Resumen
-company.session.form.label.startDate= Fecha de inicio
-company.session.form.label.finishDate= Fecha de final
-company.session.form.label.link= Link
-company.session.form.button.delete= Borrar
-company.session.form.button.update= Actualizar
-company.session.form.button.create= Crear Sesión
 company.practicum.list.label.course= Curso
+
+company.sessionPracticum.list.label.title = Título
+company.sessionPracticum.list.label.overview = Resumen
+company.sessionPracticum.list.label.practicum.title = Título de la Práctica
+
+company.sessionPracticum.form.label.title = Título
+company.sessionPracticum.form.label.overview = Resumen
+company.sessionPracticum.form.label.startDate = Fecha Inicial
+company.sessionPracticum.form.label.endDate = Fecha Final
+company.sessionPracticum.form.label.addendum = Estás seguro que quieres hacer de esta práctica un apéndice? (Solo podrás hacer uno por práctica)
+company.sessionPracticum.form.label.moreInfo = Más Info
+
+
+company.sessionPracticum.list.button.create = Crear Sesión
+
+
+company.sessionPracticum.form.button.update = Actualizar
+company.sessionPracticum.form.button.delete = Borrar
+company.sessionPracticum.form.button.create = Crear
+company.sessionPracticum.form.button.confirmation = Confirmar
+company.sessionPracticum.form.error.justOneAddendum = Ya hay un apéndice para ésta práctica
+company.sessionPracticum.form.error.endAfterStart = La fecha inicial debe ser antes de la final
+company.sessionPracticum.form.error.oneWeekAhead = La fecha inicial debe estar al menos una semana por delante de la actual
+company.sessionPracticum.form.error.oneWeekLong = El periodo debe durar una semana al menos
+company.sessionPracticum.form.error.confirmation = Debe confirmar la creacion del addendum
