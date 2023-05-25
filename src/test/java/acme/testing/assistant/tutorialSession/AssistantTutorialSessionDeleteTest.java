@@ -24,9 +24,6 @@ public class AssistantTutorialSessionDeleteTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorialSession/delete-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int tutorialRecordIndex, final String code, final String tutorialTitle, final int tutorialSessionRecordIndex, final String tutorialSessionTitle, final String type, final String initialDate) {
-		// HINT: this test authenticates as an assistant, list his or her tutorials, navigates
-		// HINT+ to a tutorial and lists its sessions. Then deletes one, and checks that it's 
-		// HINT+ been deleted properly.
 
 		String currentQuery;
 
@@ -61,14 +58,11 @@ public class AssistantTutorialSessionDeleteTest extends TestHarness {
 
 	@Test
 	public void test200Negative() {
-		// HINT: there aren't any negative tests for this feature because it's a delete
-		// HINT+ that doesn't involve entering any data in any forms.
+
 	}
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to delete a tutorialSession of a tutorial as a principal without
-		// HINT: the "Assistant" role.
 
 		Collection<Tutorial> tutorials;
 		String param;
@@ -110,8 +104,6 @@ public class AssistantTutorialSessionDeleteTest extends TestHarness {
 
 	@Test
 	public void test301Hacking() {
-		// HINT: this test tries to delete a tutorialSession of a published tutorial deleted by
-		// HINT+ the principal.
 
 		Collection<Tutorial> tutorials;
 		String param;
@@ -129,8 +121,6 @@ public class AssistantTutorialSessionDeleteTest extends TestHarness {
 
 	@Test
 	public void test302Hacking() {
-		// HINT: this test tries to delete tutorial sessions of tutorials that weren't deleted
-		// HINT+ by the principal.
 
 		Collection<Tutorial> tutorials;
 		String param;

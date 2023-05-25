@@ -25,9 +25,6 @@ public class AssistantTutorialSessionCreateTest extends TestHarness {
 	@CsvFileSource(resources = "/assistant/tutorialSession/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int tutorialRecordIndex, final String code, final String tutorialTitle, final int tutorialSessionRecordIndex, final String tutorialSessionTitle, final String anAbstract, final String type, final String initialDate,
 		final String finalDate, final String link) {
-		// HINT: this test authenticates as an assistant, list his or her tutorials, navigates
-		// HINT+ to a tutorial and lists its sessions. Then creates a new one, and check that it's 
-		// HINT+ been created properly.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -70,7 +67,6 @@ public class AssistantTutorialSessionCreateTest extends TestHarness {
 	@CsvFileSource(resources = "/assistant/tutorialSession/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test200Negative(final int tutorialRecordIndex, final String code, final String tutorialTitle, final int tutorialSessionRecordIndex, final String tutorialSessionTitle, final String anAbstract, final String type, final String initialDate,
 		final String finalDate, final String link) {
-		// HINT: this test attempts to create tutorial sessions using wrong data.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -98,8 +94,6 @@ public class AssistantTutorialSessionCreateTest extends TestHarness {
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to create a tutorialSession for a tutorial as a principal without
-		// HINT: the "Assistant" role.
 
 		Collection<Tutorial> tutorials;
 		String param;
@@ -141,8 +135,6 @@ public class AssistantTutorialSessionCreateTest extends TestHarness {
 
 	@Test
 	public void test301Hacking() {
-		// HINT: this test tries to create a tutorialSession for a published tutorial created by
-		// HINT+ the principal.
 
 		Collection<Tutorial> tutorials;
 		String param;
@@ -160,8 +152,6 @@ public class AssistantTutorialSessionCreateTest extends TestHarness {
 
 	@Test
 	public void test302Hacking() {
-		// HINT: this test tries to create tutorial sessions for tutorials that weren't created
-		// HINT+ by the principal.
 
 		Collection<Tutorial> tutorials;
 		String param;
