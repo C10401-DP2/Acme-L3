@@ -69,7 +69,7 @@ public class AuditorAuditCreateService extends AbstractService<Auditor, Audit> {
 			Audit existing;
 
 			existing = this.repository.findAuditByCode(object.getCode());
-			super.state(existing == null, "code", "auditor.audit.form.error.duplicated");
+			super.state(existing == null || existing.getId() == object.getId(), "code", "auditor.audit.form.error.duplicated");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("course"))

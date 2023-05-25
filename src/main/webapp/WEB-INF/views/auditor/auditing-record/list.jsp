@@ -16,12 +16,15 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="auditor.auditing-record.list.label.subject" path="subject" width="20%"/>	
-	<acme:list-column code="auditor.auditing-record.list.label.assessment" path="assessment" width="20%"/>
+	<acme:list-column code="auditor.auditing-record.list.label.subject" path="subject" width="30%"/>	
+	<acme:list-column code="auditor.auditing-record.list.label.assessment" path="assessment" width="30%"/>
 	<acme:list-column code="auditor.auditing-record.list.label.period" path="period" width="20%"/>
-	<acme:list-column code="auditor.auditing-record.list.label.correction" path="correction" width="20%"/>
 	<acme:list-column code="auditor.auditing-record.list.label.mark" path="mark" width="20%"/>
+	<acme:hidden-data path="isCorrection"/>
 </acme:list>
 
 <acme:button test="${showCreate}" code="auditor.auditing-record.list.button.create" action="/auditor/auditing-record/create?masterId=${masterId}"/>
 <acme:button test="${showCorrection}" code="auditor.auditing-record.list.button.correction" action="/auditor/auditing-record/create-correction?masterId=${masterId}"/>
+
+<acme:menu-separator></acme:menu-separator>
+<acme:message code="auditor.auditing-record.list.message.asterisk.info"></acme:message>

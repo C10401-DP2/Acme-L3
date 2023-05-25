@@ -19,17 +19,20 @@ auditor.auditing-record.form.label.correction = Corrected?
 auditor.auditing-record.form.button.update = Update
 auditor.auditing-record.form.button.delete = Delete
 auditor.auditing-record.form.button.create = Create
+auditor.auditing-record.form.button.confirmation = Confirm correction
 auditor.auditing-record.form.button.correction = Add correction
 
+auditor.auditing-record.form.error.confirmation = This field requires confirmation
 auditor.auditing-record.form.error.end-before-start = The final date can not be before the initial date
 auditor.auditing-record.form.error.duration = The duration must be at least one hour long
-auditor.auditing-record.form.error.correction = Select this auditing record as corrected
 
 auditor.auditing-record.list.label.subject = Subject
 auditor.auditing-record.list.label.assessment = Assessment
-auditor.auditing-record.list.label.period = Period
+auditor.auditing-record.list.label.period = Period (in hours)
 auditor.auditing-record.list.label.correction = Corrected?
 auditor.auditing-record.list.label.mark = Mark
 
 auditor.auditing-record.list.button.create = Create
 auditor.auditing-record.list.button.correction = Add correction
+
+auditor.auditing-record.list.message.asterisk.info = * Indicates that it is a correction auditing record.
