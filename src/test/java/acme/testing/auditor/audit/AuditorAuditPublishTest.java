@@ -39,9 +39,33 @@ public class AuditorAuditPublishTest extends TestHarness {
 		super.signOut();
 	}
 
-	@Test
-	public void test200Negative() {
+	@ParameterizedTest
+	@CsvFileSource(resources = "/auditor/audit/publish-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test200Negative(final int recordIndex, final String conclusion, final String strongPoints, final String weakPoints, final String course, final String code) {
+		super.signIn("auditor1", "auditor1");
 
+		super.clickOnMenu("Auditor", "My audits");
+		super.checkListingExists();
+
+		super.clickOnButton("Create");
+		super.fillInputBoxIn("conclusion", conclusion);
+		super.fillInputBoxIn("strongPoints", strongPoints);
+		super.fillInputBoxIn("weakPoints", weakPoints);
+		super.fillInputBoxIn("course", course);
+		super.fillInputBoxIn("code", code);
+		super.clickOnSubmit("Create");
+
+		super.clickOnMenu("Auditor", "My audits");
+		super.checkListingExists();
+		super.sortListing(0, "asc");
+		super.checkColumnHasValue(recordIndex, 0, code);
+
+		super.clickOnListingRecord(recordIndex);
+		super.checkFormExists();
+		super.clickOnSubmit("Publish");
+		super.checkPanicExists();
+
+		super.signOut();
 	}
 
 	@Test
