@@ -21,6 +21,7 @@
     <acme:input-moment code="company.sessionPracticum.form.label.startDate" path="initialDate"/>
     <acme:input-moment code="company.sessionPracticum.form.label.endDate" path="finalDate"/>
     <acme:input-url code="company.sessionPracticum.form.label.moreInfo" path="link"/>
+    <acme:input-checkbox code="company.sessionPracticum.form.label.addendum" path="addendum"/>
     <jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
 			<acme:submit code="company.sessionPracticum.form.button.update" action="/company/practicum-session/update"/>

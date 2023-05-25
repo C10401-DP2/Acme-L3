@@ -13,12 +13,14 @@ company.sessionPracticum.form.label.overview = Abstract
 company.sessionPracticum.form.label.startDate = Start Date
 company.sessionPracticum.form.label.endDate = End Date
 company.sessionPracticum.form.label.moreInfo = More Info
+company.sessionPracticum.form.label.addendum = Are you sure you want to make this session an addendum? (Just one per practicum)
 company.sessionPracticum.list.button.create = Create Session
 
 company.sessionPracticum.form.button.update = Update
 company.sessionPracticum.form.button.delete = Delete
 company.sessionPracticum.form.button.create = Create
 company.sessionPracticum.form.button.confirmation = Confirm
+company.sessionPracticum.form.error.justOneAddendum = This practicum already has an addendum.
 company.sessionPracticum.form.error.endAfterStart = The start date must be before the end date
 company.sessionPracticum.form.error.oneWeekAhead = The start date must be at least one week ahead from now
 company.sessionPracticum.form.error.oneWeekLong = The period must be at least one week long

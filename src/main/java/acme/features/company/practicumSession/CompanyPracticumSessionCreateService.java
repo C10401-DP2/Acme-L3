@@ -54,7 +54,7 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 	@Override
 	public void bind(final PracticumSession object) {
 		assert object != null;
-		super.bind(object, "title", "anAbstract", "initialDate", "finalDate", "link");
+		super.bind(object, "title", "anAbstract", "initialDate", "finalDate", "link", "addendum");
 	}
 
 	@Override
@@ -78,6 +78,11 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 			date = CompanyPracticumSessionCreateService.plusOneWeek(object.getInitialDate());
 			super.state(object.getInitialDate().equals(date) || object.getFinalDate().after(date), "finalDate", "company.sessionPracticum.form.error.oneWeekLong");
 		}
+		if (!super.getBuffer().getErrors().hasErrors("addendum")) {
+			final Boolean addendum = object.getAddendum();
+			final Integer practicumId = object.getPracticum().getId();
+			super.state(addendum && this.repository.findManyPracticumSessionsByPracticumIdAddendum(practicumId).size() == 1, "addendum", "company.sessionPracticum.form.error.justOneAddendum");
+		}
 
 	}
 
@@ -91,7 +96,7 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 	public void unbind(final PracticumSession object) {
 		assert object != null;
 		Tuple tuple;
-		tuple = super.unbind(object, "title", "anAbstract", "initialDate", "finalDate", "link");
+		tuple = super.unbind(object, "title", "anAbstract", "initialDate", "finalDate", "link", "addendum");
 		tuple.put("practicumId", super.getRequest().getData("practicumId", int.class));
 		tuple.put("draftMode", object.getPracticum().getDraftMode());
 		tuple.put("confirmation", false);

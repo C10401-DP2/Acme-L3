@@ -14,6 +14,7 @@ company.sessionPracticum.form.label.title = Título
 company.sessionPracticum.form.label.overview = Resumen
 company.sessionPracticum.form.label.startDate = Fecha Inicial
 company.sessionPracticum.form.label.endDate = Fecha Final
+company.sessionPracticum.form.label.addendum = Estás seguro que quieres hacer de esta práctica un apéndice? (Solo podrás hacer uno por práctica)
 company.sessionPracticum.form.label.moreInfo = Más Info
 
 
@@ -24,6 +25,7 @@ company.sessionPracticum.form.button.update = Actualizar
 company.sessionPracticum.form.button.delete = Borrar
 company.sessionPracticum.form.button.create = Crear
 company.sessionPracticum.form.button.confirmation = Confirmar
+company.sessionPracticum.form.error.justOneAddendum = Ya hay un apéndice para ésta práctica
 company.sessionPracticum.form.error.endAfterStart = La fecha inicial debe ser antes de la final
 company.sessionPracticum.form.error.oneWeekAhead = La fecha inicial debe estar al menos una semana por delante de la actual
 company.sessionPracticum.form.error.oneWeekLong = El periodo debe durar una semana al menos
