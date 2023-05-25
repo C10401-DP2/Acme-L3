@@ -1,8 +1,6 @@
 
 package acme.features.authenticated.student.activities;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +29,21 @@ public class AuthenticatedStudentActivityUpdateService extends AbstractService<S
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		final Enrolment enrolment;
+		int id1;
+		int id;
+
+		Activity object;
+		id1 = super.getRequest().getPrincipal().getAccountId();
+
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findActivityById(id);
+		enrolment = object.getEnrolment();
+
+		status = enrolment.getStudent().getUserAccount().getId() == id1 && enrolment.getDraftMode() == true;
+		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
@@ -56,6 +68,8 @@ public class AuthenticatedStudentActivityUpdateService extends AbstractService<S
 	@Override
 	public void validate(final Activity object) {
 		assert object != null;
+
+		super.state(false, null, null, null);
 	}
 
 	@Override
@@ -70,17 +84,13 @@ public class AuthenticatedStudentActivityUpdateService extends AbstractService<S
 		assert object != null;
 
 		Tuple tuple;
-		Collection<Enrolment> enrolments;
-		SelectChoices choices;
+
 		SelectChoices choices1;
 
-		enrolments = this.repository.findAllEnrolmentOfStudent(super.getRequest().getPrincipal().getActiveRoleId());
-		choices = SelectChoices.from(enrolments, "code", object.getEnrolment());
 		choices1 = SelectChoices.from(ActivityType.class, object.getAType());
 
 		tuple = super.unbind(object, "title", "abstrat", "aType", "link", "initialDate", "finalDate");
-		tuple.put("enrolment", choices.getSelected().getKey());
-		tuple.put("enrolments", choices);
+
 		tuple.put("activities", choices1);
 
 		super.getResponse().setData(tuple);

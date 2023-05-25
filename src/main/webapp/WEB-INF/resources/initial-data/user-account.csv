@@ -14,3 +14,5 @@ user-account-lecturer-01,true,"UserIdentity{name: 'Jane', surname: 'Doe', email:
 user-account-lecturer-02,true,"UserIdentity{name: 'Jane', surname: 'Doe', email: 'bdiasid@acme.com'}",lecturer2,lecturer2
 user-account-student-01, true,"UserIdentity{name: 'Pablo', surname: 'Cuenca', email: 'correofalso2@acme.com'}",student1,student1
 user-account-student-02, true,"UserIdentity{name: 'Javier', surname: 'Garcia', email: 'correofalso1@acme.com'}",student2,student2
+user-account-student-03, true,"UserIdentity{name: 'Pablo', surname: 'Cuenca2', email: 'correofalso1@acme.com'}",student3,student3
+user-account-student-04, true,"UserIdentity{name: 'Pablo', surname: 'Cuenca3', email: 'correofalso1@acme.com'}",student4,student4

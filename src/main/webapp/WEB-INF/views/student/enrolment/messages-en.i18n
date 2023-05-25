@@ -12,8 +12,10 @@ student.enrolment.form.label.code = Code
 student.enrolment.form.label.motivation = Motivation
 student.enrolment.form.label.goals = Goals
 student.enrolment.form.label.course = Course
-student.enrolment.form.label.creditCardNumber = Credit Card Number
-student.enrolment.form.label.holder = Holder
+student.enrolment.form.label.creditCardNumber = Credit Card Number (Optional)
+student.enrolment.form.label.creditCardNumber.placeholder = CreditCardNumber
+student.enrolment.form.label.holder = Holder (Optional)
+student.enrolment.form.label.totalTime = Total Time
 
 student.enrolment.form.button.update = Update
 student.enrolment.form.button.delete = Delete
@@ -26,3 +28,5 @@ student.enrolment.list.label.goals = Goals
 student.enrolment.list.label.totalTime = TotalTime
 
 student.enrolment.list.button.create = Create
+
+student.enrolment.form.button.activities = Activities
