@@ -1,0 +1,16 @@
+any.course.form.label.code = Code	
+any.course.form.label.title = Title	
+any.course.form.label.anAbstract = Abstract
+any.course.form.label.retailPrice = Retail price
+any.course.form.label.retailPriceSystem = Retail price (Default Money)
+any.course.form.label.date = Date of change
+any.course.form.label.link = Link
+any.course.form.label.activityType = Course type
+any.course.list.label.code = Code
+any.course.list.label.title = Title
+any.course.list.label.retailPrice = Retail price
+any.course.list.label.retailPriceSystem = Retail price (Default Money)
+any.course.list.label.link = Link
+
+any.course.form.button.tutorials-list = Tutorials
+any.course.form.button.tutorials-create = Create a tutorial

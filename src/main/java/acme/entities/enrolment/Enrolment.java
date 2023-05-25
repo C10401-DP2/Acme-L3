@@ -54,7 +54,7 @@ public class Enrolment extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 
-	protected Integer totalTime(final Collection<Activity> activities) {
+	public Integer totalTime(final Collection<Activity> activities) {
 		int tiempo = 0;
 		if (!activities.isEmpty())
 			for (final Activity activity : activities)

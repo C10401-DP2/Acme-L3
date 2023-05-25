@@ -44,6 +44,7 @@ public class Course extends AbstractEntity {
 	protected String			anAbstract;
 
 	@NotNull
+	@Valid
 	protected Money				retailPrice;
 
 	@URL

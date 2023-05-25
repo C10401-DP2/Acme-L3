@@ -8,7 +8,8 @@
 	<acme:input-textarea code="student.enrolment.form.label.motivation" path="motivation"/>	
 	<acme:input-textarea code="student.enrolment.form.label.goals" path="goals"/>
 	<acme:input-select code="student.enrolment.form.label.course" path="course" choices="${courses}"/>
-	<acme:input-textarea code="student.enrolment.form.label.creditCardNumber" path="creditCardNumber"/>	
+	<acme:input-textarea code="student.enrolment.form.label.totalTime" path="totalTime" readonly="true"/>
+	<acme:input-textarea code="student.enrolment.form.label.creditCardNumber" path="creditCardNumber" placeholder="student.enrolment.form.label.creditCardNumber.placeholder"/>	
 	<acme:input-textarea code="student.enrolment.form.label.holder" path="holder"/>
 	<acme:hidden-data path="draftMode"/>
 	<acme:hidden-data path="id"/>
@@ -25,4 +26,7 @@
 			<acme:submit code="student.enrolment.form.button.create" action="/student/enrolment/create"/>
 		</jstl:when>
 	</jstl:choose>
+	<jstl:if test="${ _command == 'show' }" >
+		<acme:button code="student.enrolment.form.button.activities" action="/student/activity/list-mine?enrolmentId=${id}"/>
+	</jstl:if>
 </acme:form>

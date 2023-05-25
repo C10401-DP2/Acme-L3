@@ -78,7 +78,7 @@ public class LecturerCoursePublishServices extends AbstractService<Lecturer, Cou
 
 		if (!super.getBuffer().getErrors().hasErrors("courseType")) {
 			final Collection<Lecture> lectures = this.repository.findManyLecturesByCourseId(object.getId());
-			super.state(object.courseType(lectures).equals(CourseType.THEORY), "courseType", "lecturer.course.form.error.courseType");
+			super.state(!object.courseType(lectures).equals(CourseType.THEORY), "courseType", "lecturer.course.form.error.courseType");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("price")) {
 			Configuration config;
@@ -107,8 +107,11 @@ public class LecturerCoursePublishServices extends AbstractService<Lecturer, Cou
 		assert object != null;
 
 		Tuple tuple;
+		final Collection<Lecture> lectures = this.repository.findManyLecturesByCourseId(object.getId());
+		final CourseType courseType = object.courseType(lectures);
 
-		tuple = super.unbind(object, "code", "title", "anAbstract", "retailPrice", "courseType", "link", "draftMode");
+		tuple = super.unbind(object, "code", "title", "anAbstract", "retailPrice", "link", "draftMode");
+		tuple.put("courseType", courseType);
 		super.getResponse().setData(tuple);
 	}
 }

@@ -21,10 +21,11 @@ auditor.audit.form.button.publish = Publicar
 auditor.audit.form.button.auditing-records = Registros de auditorías
 
 auditor.audit.form.error.duplicated = Este código ya ha sido usado
+auditor.audit.form.error.not-allowed = No deberías hacer eso
 auditor.audit.form.error.course-not-null = El curso no puede estar vacío
 
 auditor.audit.list.label.code = Código
 auditor.audit.list.label.conclusion = Conclusión
-auditor.audit.list.label.mode = Moda
+auditor.audit.list.label.mode = Media
 
 auditor.audit.list.button.create = Crear

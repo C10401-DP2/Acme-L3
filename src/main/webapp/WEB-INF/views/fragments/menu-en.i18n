@@ -29,7 +29,7 @@ master.menu.anonymous.favourite-link5 = 45968205Z: García Chavero, Adrián
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Authenticated
-master.menu.authenticated.course-list = Courses
+master.menu.course-list = Courses list
 master.menu.authenticated.tutorials = All tutorials
 
 # master.menu.administrator ###################################################
@@ -114,5 +114,5 @@ master.menu.user-account.bulletin.list = Bulletin listing
 
 master.menu.student = Student
 master.menu.student.enrolments.list = Enrolments
-master.menu.student.activities.list = Acitivites
+master.menu.student.activities.list = Activities
 
