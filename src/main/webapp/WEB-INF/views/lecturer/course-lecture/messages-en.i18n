@@ -10,4 +10,5 @@ lecturer.course.lecture.form.button.create = Create
 lecturer.course.lecture.form.button.delete = Delete
 
 lecturer.courseLecture.form.button.create = Add lecture
+lecturer.courseLecture.form.button.delete = Delete lecture
 lecturer.courseLecture.form.label.lecture = Lectures
