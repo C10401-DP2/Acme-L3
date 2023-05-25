@@ -95,7 +95,7 @@ public class AuditorAuditDeleteService extends AbstractService<Auditor, Audit> {
 		Tuple tuple;
 
 		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", object.getCourse());
+		choices = SelectChoices.from(courses, "code", object.getCourse());
 
 		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
