@@ -24,12 +24,12 @@ public class AuthenticatedStudentActivityListService extends AbstractService<Stu
 	@Override
 	public void check() {
 		super.getResponse().setChecked(true);
+
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-
 		status = super.getRequest().getPrincipal().hasRole(Student.class);
 		super.getResponse().setAuthorised(status);
 	}
@@ -51,9 +51,10 @@ public class AuthenticatedStudentActivityListService extends AbstractService<Stu
 		assert object != null;
 
 		Tuple tuple;
+		final int enrolmentId = super.getRequest().getData("enrolmentId", int.class);
 
 		tuple = super.unbind(object, "title", "abstrat", "aType", "initialDate", "finalDate");
-
+		super.getResponse().setGlobal("enrolmentId", enrolmentId);
 		super.getResponse().setData(tuple);
 
 	}
