@@ -36,12 +36,13 @@ public class AuthenticatedStudentActivityListService extends AbstractService<Stu
 
 	@Override
 	public void load() {
-		int userAccountId;
 
 		Collection<Activity> objects;
-		userAccountId = super.getRequest().getPrincipal().getActiveRoleId();
+		final int enrolmentId = super.getRequest().getData("enrolmentId", int.class);
 
-		objects = this.repository.findAllActivitiesOfStudent(userAccountId);
+		objects = this.repository.findAllActivitiesOfEnrolment(enrolmentId);
+
+		super.getBuffer().setGlobal("enrolmentId", enrolmentId);
 		super.getBuffer().setData(objects);
 	}
 
@@ -52,7 +53,9 @@ public class AuthenticatedStudentActivityListService extends AbstractService<Stu
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "abstrat", "aType", "initialDate", "finalDate");
+
 		super.getResponse().setData(tuple);
+
 	}
 
 }
