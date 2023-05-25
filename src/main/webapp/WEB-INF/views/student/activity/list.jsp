@@ -22,6 +22,6 @@
 	<acme:list-column code="student.activities.list.label.initialDate" path="initialDate"/>
 	<acme:list-column code="student.activities.list.label.finalDate" path="finalDate"/>
 </acme:list>
-<jstl:if test="${_command == 'list-mine'}">
+<jstl:if test="${_command == 'list-mine' && draftMode == true}">
 	<acme:button code="student.activities.list.button.create" action="/student/activity/create?enrolmentId=${enrolmentId}"/>
 </jstl:if>

@@ -71,6 +71,7 @@ public class AuthenticatedStudentActivityShowService extends AbstractService<Stu
 
 		tuple = super.unbind(object, "title", "abstrat", "aType", "link", "initialDate", "finalDate");
 		tuple.put("activities", choices1);
+		tuple.put("draftMode", object.getEnrolment().getDraftMode());
 
 		super.getResponse().setData(tuple);
 	}

@@ -55,6 +55,7 @@ public class AuthenticatedStudentActivityListService extends AbstractService<Stu
 
 		tuple = super.unbind(object, "title", "abstrat", "aType", "initialDate", "finalDate");
 		super.getResponse().setGlobal("enrolmentId", enrolmentId);
+		tuple.put("draftMode", object.getEnrolment().getDraftMode());
 		super.getResponse().setData(tuple);
 
 	}

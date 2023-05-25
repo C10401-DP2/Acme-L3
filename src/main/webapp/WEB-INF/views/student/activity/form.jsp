@@ -12,10 +12,9 @@
 	<acme:input-url code="student.activities.form.label.link" path="link"/>
 	
 	<acme:hidden-data path="id"/>
-	<acme:hidden-data path="draftMode"/>
 
 	<jstl:choose>	 
-		<jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
 			<acme:submit code="student.activities.form.button.update" action="/student/activity/update"/>
 			<acme:submit code="student.activities.form.button.delete" action="/student/activity/delete"/>
 		</jstl:when>
