@@ -10,17 +10,17 @@ import acme.testing.TestHarness;
 public class PeepListTest extends TestHarness {
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/any/peep/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/peep/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final String moment, final String title, final String nick, final String message) {
 		// HINT: this test lists all peeps and then checks that the listing has the expected data.
 
-		super.clickOnMenu("Any", "List published peeps");
+		super.clickOnMenu("Peeps", "Peeps list");
 		super.checkListingExists();
-		super.sortListing(2, "asc");
+		super.sortListing(0, "asc");
 
-		super.checkColumnHasValue(recordIndex, 0, moment);
-		super.checkColumnHasValue(recordIndex, 1, nick);
-		super.checkColumnHasValue(recordIndex, 2, title);
+		super.checkColumnHasValue(recordIndex, 0, title);
+		super.checkColumnHasValue(recordIndex, 1, moment);
+		super.checkColumnHasValue(recordIndex, 2, nick);
 		super.checkColumnHasValue(recordIndex, 3, message);
 	}
 
