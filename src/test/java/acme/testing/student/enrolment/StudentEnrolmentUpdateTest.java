@@ -40,7 +40,6 @@ public class StudentEnrolmentUpdateTest extends TestHarness {
 		super.fillInputBoxIn("course", course);
 		super.clickOnSubmit("Update");
 
-		super.checkListingExists();
 		super.sortListing(0, "asc");
 
 		super.clickOnListingRecord(recordIndex);

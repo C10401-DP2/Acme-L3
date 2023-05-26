@@ -11,14 +11,13 @@
 	<acme:input-moment code="student.activities.form.label.finalDate" path="finalDate"/>
 	<acme:input-url code="student.activities.form.label.link" path="link"/>
 	
-	<acme:hidden-data path="id"/>
 
 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
 			<acme:submit code="student.activities.form.button.update" action="/student/activity/update"/>
 			<acme:submit code="student.activities.form.button.delete" action="/student/activity/delete"/>
 		</jstl:when>
-		<jstl:when test="${_command == 'create'}">
+		<jstl:when test="${_command == 'create' }">
 			<acme:submit code="student.activities.form.button.create" action="/student/activity/create?enrolmentId=${enrolmentId}"/>
 		</jstl:when>
 	</jstl:choose>

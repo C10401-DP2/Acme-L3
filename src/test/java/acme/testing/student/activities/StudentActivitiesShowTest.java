@@ -23,7 +23,7 @@ public class StudentActivitiesShowTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/student/activities/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int enrolmentRecordIndex, final int activityRecordIndex, final String title, final String abstrat, final String aType, final String enrolment, final String initialDate, final String finalDate) {
+	public void test100Positive(final int enrolmentRecordIndex, final int activityRecordIndex, final String title, final String abstrat, final String aType, final String initialDate, final String finalDate) {
 		// HINT: this test signs in as an employer, lists all of the jobs, click on  
 		// HINT+ one of them, and checks that the form has the expected data.
 

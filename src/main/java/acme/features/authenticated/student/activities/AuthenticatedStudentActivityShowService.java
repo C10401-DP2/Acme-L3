@@ -4,7 +4,7 @@ package acme.features.authenticated.student.activities;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.datatypes.ActivityType;
+import acme.datatypes.ActType;
 import acme.entities.activity.Activity;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.components.jsp.SelectChoices;
@@ -67,7 +67,7 @@ public class AuthenticatedStudentActivityShowService extends AbstractService<Stu
 
 		Tuple tuple = null;
 
-		choices1 = SelectChoices.from(ActivityType.class, object.getAType());
+		choices1 = SelectChoices.from(ActType.class, object.getAType());
 
 		tuple = super.unbind(object, "title", "abstrat", "aType", "link", "initialDate", "finalDate");
 		tuple.put("activities", choices1);

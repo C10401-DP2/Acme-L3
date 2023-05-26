@@ -384,7 +384,7 @@ bg=green</panel_attributes>
       <x>1225</x>
       <y>539</y>
       <w>294</w>
-      <h>119</h>
+      <h>133</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Enrolment
@@ -396,6 +396,8 @@ Enrolment
 + finalDate: Date {Temporal(TIMESTAMP),Past,NotNull}
 + draftMode: Boolean {NotNull}
 + / workTime: Integer
++ creditCardNumber: String {NotBlank, Length(max = 101)}
++ holder: String {NotBlank, Length(max = 101)}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
@@ -605,13 +607,13 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1337</x>
-      <y>651</y>
+      <y>665</y>
       <w>35</w>
-      <h>112</h>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;&gt;&gt;&gt;
 m1=1..*</panel_attributes>
-    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

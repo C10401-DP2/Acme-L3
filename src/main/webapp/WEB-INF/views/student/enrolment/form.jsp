@@ -9,14 +9,14 @@
 	<acme:input-textarea code="student.enrolment.form.label.goals" path="goals"/>
 	<acme:input-select code="student.enrolment.form.label.course" path="course" choices="${courses}"/>
 	<acme:input-textarea code="student.enrolment.form.label.totalTime" path="totalTime" readonly="true"/>
-	<acme:input-textarea code="student.enrolment.form.label.creditCardNumber" path="creditCardNumber" placeholder="student.enrolment.form.label.creditCardNumber.placeholder"/>	
+	<acme:input-textarea code="student.enrolment.form.label.creditCardNumber" path="XXXXXXXXXXXXXXXX" placeholder="student.enrolment.form.label.creditCardNumber.placeholder"/>	
 	<acme:input-textarea code="student.enrolment.form.label.holder" path="holder"/>
 	<acme:hidden-data path="draftMode"/>
 	<acme:hidden-data path="id"/>
 	<acme:hidden-data path="totalTime"/>
 
 	<jstl:choose>	 
-		<jstl:when test="${_command == 'show'}">
+		<jstl:when test="${_command == 'show' && draftMode == true}">
 			<acme:submit code="student.enrolment.form.button.update" action="/student/enrolment/update"/>
 			<acme:submit code="student.enrolment.form.button.delete" action="/student/enrolment/delete"/>
 			<acme:submit code="student.enrolment.form.button.finalise" action="/student/enrolment/finalise"/>
