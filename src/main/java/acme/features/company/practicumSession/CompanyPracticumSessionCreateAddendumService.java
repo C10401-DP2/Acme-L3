@@ -1,6 +1,7 @@
 
 package acme.features.company.practicumSession;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +17,8 @@ import acme.roles.Company;
 @Service
 public class CompanyPracticumSessionCreateAddendumService extends AbstractService<Company, PracticumSession> {
 
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	protected CompanyPracticumSessionRepository repository;
-
-	// AbstractService interface ----------------------------------------------
 
 
 	@Override
@@ -35,23 +32,20 @@ public class CompanyPracticumSessionCreateAddendumService extends AbstractServic
 	public void authorise() {
 		boolean status;
 		int practicumId;
-		PracticumSession addendumSession;
 		Practicum practicum;
-
+		PracticumSession addendumSession;
 		practicumId = super.getRequest().getData("practicumId", int.class);
 		addendumSession = this.repository.findOneAddendumSessionByPracticumId(practicumId);
 		practicum = this.repository.findOnePracticumById(practicumId);
 		status = addendumSession == null && practicum != null && !practicum.getDraftMode() && super.getRequest().getPrincipal().hasRole(practicum.getCompany());
-
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		PracticumSession object;
+		final PracticumSession object;
 		int practicumId;
 		Practicum practicum;
-
 		practicumId = super.getRequest().getData("practicumId", int.class);
 		practicum = this.repository.findOnePracticumById(practicumId);
 
@@ -59,7 +53,7 @@ public class CompanyPracticumSessionCreateAddendumService extends AbstractServic
 		object.setTitle("");
 		object.setAnAbstract("");
 		object.setInitialDate(MomentHelper.getCurrentMoment());
-		object.setFinalDate(MomentHelper.getCurrentMoment());
+		object.setInitialDate(MomentHelper.getCurrentMoment());
 		object.setLink("");
 		object.setAddendum(true);
 		object.setPracticum(practicum);
@@ -70,18 +64,14 @@ public class CompanyPracticumSessionCreateAddendumService extends AbstractServic
 	@Override
 	public void bind(final PracticumSession object) {
 		assert object != null;
-
 		super.bind(object, "title", "anAbstract", "initialDate", "finalDate", "link", "addendum");
 	}
 
 	@Override
 	public void validate(final PracticumSession object) {
 		assert object != null;
-		boolean confirmation;
-		Date date;
 
-		confirmation = object.getPracticum().getDraftMode() ? true : super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "company.sessionPracticum.form.error.confirmation");
+		Date date;
 
 		if (!super.getBuffer().getErrors().hasErrors("finalDate"))
 			super.state(object.getInitialDate().before(object.getFinalDate()), "finalDate", "company.sessionPracticum.form.error.endAfterStart");
@@ -107,13 +97,19 @@ public class CompanyPracticumSessionCreateAddendumService extends AbstractServic
 	@Override
 	public void unbind(final PracticumSession object) {
 		assert object != null;
-		int practicumId;
 		Tuple tuple;
-		practicumId = super.getRequest().getData("practicumId", int.class);
 		tuple = super.unbind(object, "title", "anAbstract", "initialDate", "finalDate", "link", "addendum");
-		tuple.put("practicumId", practicumId);
+		tuple.put("practicumId", super.getRequest().getData("practicumId", int.class));
+		tuple.put("draftMode", object.getPracticum().getDraftMode());
 		tuple.put("confirmation", true);
 		super.getResponse().setData(tuple);
+	}
+
+	public static Date plusOneWeek(final Date date) {
+		final Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		calendar.add(Calendar.DAY_OF_YEAR, 7);
+		return calendar.getTime();
 	}
 
 }

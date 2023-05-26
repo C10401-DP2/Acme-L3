@@ -24,7 +24,9 @@
     <acme:input-checkbox code="ccompany.sessionPracticum.form.label.addendum" path="addendum" readonly="true"/>
     <acme:input-url code="company.sessionPracticum.form.label.moreInfo" path="link"/>
     
- 
+    <jstl:if test="${confirmation}">
+		<acme:input-checkbox code="company.addendum-session.form.label.accept" path="accept"/>
+	</jstl:if>
     
     <jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
