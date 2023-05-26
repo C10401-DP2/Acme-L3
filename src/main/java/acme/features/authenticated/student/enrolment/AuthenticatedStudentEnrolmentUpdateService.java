@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.activity.Activity;
 import acme.entities.course.Course;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.components.jsp.SelectChoices;
@@ -32,9 +33,18 @@ public class AuthenticatedStudentEnrolmentUpdateService extends AbstractService<
 
 	@Override
 	public void authorise() {
-		boolean status;
+		final boolean status;
+		int enrolmentId;
+		Enrolment enrolment;
+		Student student;
 
-		status = super.getRequest().getPrincipal().hasRole(Student.class);
+		enrolmentId = super.getRequest().getData("id", int.class);
+		enrolment = this.repository.findEnrolmentById(enrolmentId);
+		final Collection<Activity> a = this.repository.findAllActivitiesOfEnrolment(enrolmentId);
+
+		student = enrolment.getStudent();
+		status = enrolment != null && enrolment.getDraftMode() && super.getRequest().getPrincipal().hasRole(student);
+
 		super.getResponse().setAuthorised(status);
 	}
 

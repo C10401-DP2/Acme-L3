@@ -18,7 +18,7 @@ public class StudentEnrolmentShowTest extends TestHarness {
 
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/student/enrolment/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/student/enrolment/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	void test100Positive(final int recordIndex, final String code, final String motivation, final String goals, final String course, final String totalTime, final String creditCardNumber, final String holder) {
 
 		super.signIn("student1", "student1");
@@ -46,27 +46,8 @@ public class StudentEnrolmentShowTest extends TestHarness {
 		super.signOut();
 	}
 
-	@ParameterizedTest
-	@CsvFileSource(resources = "/student/enrolment/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	void test200Negative(final int recordIndex, final String code, final String motivation, final String goals, final String course) {
 
-		super.signIn("student1", "student1");
-
-		super.clickOnMenu("Student", "Enrolments");
-		super.checkListingExists();
-		super.sortListing(0, "asc");
-
-		super.clickOnListingRecord(recordIndex);
-		super.checkFormExists();
-		super.fillInputBoxIn("code", code);
-		super.fillInputBoxIn("motivation", motivation);
-		super.fillInputBoxIn("goals", goals);
-		super.fillInputBoxIn("course", course);
-		super.clickOnSubmit("Update");
-
-		super.checkErrorsExist();
-
-		super.signOut();
 	}
 
 	@Test

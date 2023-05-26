@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.datatypes.ActivityType;
+import acme.datatypes.ActType;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
@@ -40,7 +40,7 @@ public class Activity extends AbstractEntity {
 	protected String			abstrat;
 
 	@NotNull
-	protected ActivityType		aType;
+	protected ActType			aType;
 
 	@URL
 	protected String			link;

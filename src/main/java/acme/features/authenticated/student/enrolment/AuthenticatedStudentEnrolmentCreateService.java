@@ -28,7 +28,6 @@ public class AuthenticatedStudentEnrolmentCreateService extends AbstractService<
 	@Override
 	public void authorise() {
 		boolean status;
-		final int enrolmentId = super.getRequest().getData("enrolmentId", int.class);
 
 		status = super.getRequest().getPrincipal().hasRole(Student.class);
 		super.getResponse().setAuthorised(status);
@@ -44,14 +43,11 @@ public class AuthenticatedStudentEnrolmentCreateService extends AbstractService<
 	public void load() {
 		Enrolment object;
 		Student student;
-		final int enrolmentId = super.getRequest().getData("enrolmentId", int.class);
 
 		object = new Enrolment();
 		student = this.repository.findStudentById(super.getRequest().getPrincipal().getActiveRoleId());
 		object.setStudent(student);
 		object.setDraftMode(true);
-		object.setMotivation("");
-		object.setGoals("");
 
 		super.getBuffer().setData(object);
 	}
@@ -74,7 +70,7 @@ public class AuthenticatedStudentEnrolmentCreateService extends AbstractService<
 		assert object != null;
 
 		if (!super.getBuffer().getErrors().hasErrors("course"))
-			super.state(object.getCourse().getDraftMode() == true, "course", "student.enrolment.course.notDraftMode");
+			super.state(!object.getCourse().getDraftMode() == true, "course", "student.enrolment.course.notDraftMode");
 
 	}
 

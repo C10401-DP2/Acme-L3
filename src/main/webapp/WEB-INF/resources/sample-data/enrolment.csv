@@ -1,7 +1,11 @@
 key,code,motivation,goals,draft-mode,credit-card-number,holder,key:student,key:course
 enrolment-01,AI1381,ganar un motivo por el que levantarse cada mañana,g@anar much0 din%ro,0,1234,Pablo Cuenca,student-01,course-01
 enrolment-02,SIL9191,apoyar a su familia,aprender lo necesario para valerse por si mismo y poder cumplir sus sueños y los de su familia,0,4321,Pablo Cuenca,student-01,course-02
-enrolment-03,BFE0987,lograr la iluminación de su alma y el despertar del chakra interior, ser feliz,0,9999,Pablo Cuenca,student-02,course-01
+enrolment-03,BFE0987,lograr la iluminación de su alma y el despertar del chakra interior,ser feliz,0,9999,Pablo Cuenca,student-02,course-01
 enrolment-04,Z1381,conseguir la independiencia de sus padres,ahorrar dinero para invertir en ONG y dar un % a éstas,0,0000,Pablo Cuenca,student-02,course-02
 enrolment-05,Z1382,示例文本,alcanzar la iluminacion del cuerpo y el alma,1,,,student-01,course-01
-enrolment-06,AI1383,ganar un motivo por el que levantarse cada mañana,g@anar much0 din%ro,0,1234,Pablo Cuenca,student-04,course-01
+enrolment-07,AI1386,no ganar ningun motivo por el que levantarse cada mañana,g@anar poco din%ro porque no me gusta,1,,,student-01,course-01
+enrolment-08,AI1387,no ganar ningun motivo por el que levantarse cada mañana,no tengo ningun objetivo en mente de momento pero puede que lo tenga mas adelante porque cambio de id,1,,,student-01,course-01
+enrolment-09,AZ1388,no ganar nada nunca de nada,g@anar poco din%ro porque no me gusta,1,,,student-01,course-01
+enrolment-10,ZZZ9999,ganar un motivo por el que levantarse cada mañana,g@anar much0 din%ro,1,,,student-04,course-01
+enrolment-11,AAA0000,ganar un motivo por el que levantarse cada mañana,g@anar much0 din%ro,1,,,student-04,course-01
