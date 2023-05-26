@@ -1,0 +1,12 @@
+lecturer.dashboard.form.label.totaltlectures = Lecciones teóricas
+lecturer.dashboard.form.label.totalhlectures = Lecciones prácticas
+lecturer.dashboard.form.label.statslectures = Tiempo de enseñanza de las lecciones
+lecturer.dashboard.form.label.statscourses = Tiempo de enseñanza de los cursos
+lecturer.dashboard.form.label.averageLecture = Media
+lecturer.dashboard.form.label.deviationLecture = Desviación típica
+lecturer.dashboard.form.label.minLecture = Min
+lecturer.dashboard.form.label.maxLecture = Max
+lecturer.dashboard.form.label.averageCourse = Media
+lecturer.dashboard.form.label.deviationCourse = Desviación típica
+lecturer.dashboard.form.label.minCourse = Min
+lecturer.dashboard.form.label.maxCourse = Max
