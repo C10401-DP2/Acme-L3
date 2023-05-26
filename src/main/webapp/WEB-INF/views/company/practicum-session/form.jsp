@@ -15,13 +15,17 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
+
 <acme:form>
     <acme:input-textbox code="company.sessionPracticum.form.label.title" path="title"/>
     <acme:input-textbox code="company.sessionPracticum.form.label.overview" path="anAbstract"/>
     <acme:input-moment code="company.sessionPracticum.form.label.startDate" path="initialDate"/>
     <acme:input-moment code="company.sessionPracticum.form.label.endDate" path="finalDate"/>
+    <acme:input-checkbox code="ccompany.sessionPracticum.form.label.addendum" path="addendum" readonly="true"/>
     <acme:input-url code="company.sessionPracticum.form.label.moreInfo" path="link"/>
-    <acme:input-checkbox code="company.sessionPracticum.form.label.addendum" path="addendum"/>
+    
+ 
+    
     <jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
 			<acme:submit code="company.sessionPracticum.form.button.update" action="/company/practicum-session/update"/>
@@ -29,6 +33,9 @@
 		</jstl:when>
 		<jstl:when test="${_command == 'create' && draftMode == true}">
 			<acme:submit code="company.sessionPracticum.form.button.create" action="/company/practicum-session/create?practicumId=${practicumId}"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'create-addendum'}">
+			<acme:submit code="company.sessionPracticum.form.button.create" action="/company/practicum-session/create-addendum?practicumId=${practicumId}"/>
 		</jstl:when>
 					
 	</jstl:choose>
