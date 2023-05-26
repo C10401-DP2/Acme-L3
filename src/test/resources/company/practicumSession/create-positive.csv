@@ -1,0 +1,9 @@
+PracticumRecordIndex,code,practicumTitle,practicumSessionRecordIndex,practicumSessionTitle,anAbstract,initialDate,finalDate,link
+0,A0000,Practicum 01,1,1aUna sesión de prácticas muy interesante,abstracto,2023/08/10 15:00,2023/09/10 15:00,https://Acme-L3.es/practicum-sessions
+0,A0000,Practicum 01,0,1,abstracto,2023/08/10 15:00,2023/09/10 15:00,https://Acme-L3.es/practicum-sessions
+0,A0000,Practicum 01,3,1b,abstracto,2023/08/10 15:00,2023/09/10 15:00,https://Acme-L3.es/practicum-sessions
+0,A0000,Practicum 01,4,1c 74 caracteres: Una sesión muy interesante Una sesión muy interesante!!!,abstracto,2023/08/10 15:00,2023/09/10 15:00,https://Acme-L3.es/practicum-sessions
+0,A0000,Practicum 01,5,1d 75 caracteres: Una sesión muy interesante Una sesión muy interesante!!!!,abstracto,2023/08/10 15:00,2023/09/10 15:00,https://Acme-L3.es/practicum-sessions
+0,A0000,Practicum 01,6,1e<h1>hi</h1>,abstracto,2023/08/10 15:00,2023/09/10 15:00,https://Acme-L3.es/practicum-sessions
+0,A0000,Practicum 01,7,1f<script>alert(""hi"")</script>,abstracto,2023/08/10 15:00,2023/09/10 15:00,https://Acme-L3.es/practicum-sessions
+0,A0000,Practicum 01,8,1g@#?¿><&¬!|¡'`+*-_{}[]^ªº\/=()%$·,abstracto,2023/08/10 15:00,2023/09/10 15:00,https://Acme-L3.es/practicum-sessions

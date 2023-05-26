@@ -46,8 +46,16 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 		Practicum practicum;
 		practicumId = super.getRequest().getData("practicumId", int.class);
 		practicum = this.repository.findOnePracticumById(practicumId);
+
 		object = new PracticumSession();
+		object.setTitle("");
+		object.setAnAbstract("");
+		object.setInitialDate(MomentHelper.getCurrentMoment());
+		object.setInitialDate(MomentHelper.getCurrentMoment());
+		object.setLink("");
+		object.setAddendum(false);
 		object.setPracticum(practicum);
+
 		super.getBuffer().setData(object);
 	}
 
@@ -77,11 +85,6 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
 			date = CompanyPracticumSessionCreateService.plusOneWeek(object.getInitialDate());
 			super.state(object.getInitialDate().equals(date) || object.getFinalDate().after(date), "finalDate", "company.sessionPracticum.form.error.oneWeekLong");
-		}
-		if (!super.getBuffer().getErrors().hasErrors("addendum")) {
-			final Boolean addendum = object.getAddendum();
-			final Integer practicumId = object.getPracticum().getId();
-			super.state(addendum && this.repository.findManyPracticumSessionsByPracticumIdAddendum(practicumId).size() == 1, "addendum", "company.sessionPracticum.form.error.justOneAddendum");
 		}
 
 	}

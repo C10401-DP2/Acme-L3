@@ -72,6 +72,7 @@ public class CompanyPracticumSessionShowService extends AbstractService<Company,
 		tuple.put("practicumId", practicum.getId());
 		tuple.put("draftMode", draftMode);
 		tuple.put("practicum", practicum);
+		tuple.put("confirmation", false);
 
 		super.getResponse().setData(tuple);
 	}
