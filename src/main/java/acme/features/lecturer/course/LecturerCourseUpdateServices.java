@@ -80,7 +80,7 @@ public class LecturerCourseUpdateServices extends AbstractService<Lecturer, Cour
 			Configuration config;
 			config = this.repository.findConfiguration();
 			if (object.getRetailPrice() != null)
-				super.state(Arrays.asList(config.getAcceptedCurrency().split(",")).contains(object.getRetailPrice().getCurrency()), "retailPrice", "lecturer.course.currency");
+				super.state(Arrays.asList(config.getAcceptedCurrency().trim().split(",")).contains(object.getRetailPrice().getCurrency()), "retailPrice", "lecturer.course.currency");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("retailPrice"))
@@ -104,10 +104,11 @@ public class LecturerCourseUpdateServices extends AbstractService<Lecturer, Cour
 		Tuple tuple;
 		final Collection<Lecture> lectures = this.repository.findManyLecturesByCourseId(object.getId());
 		final CourseType courseType = object.courseType(lectures);
+		final boolean canPublish = !lectures.isEmpty();
 
 		tuple = super.unbind(object, "code", "title", "anAbstract", "retailPrice", "link", "draftMode");
 		tuple.put("courseType", courseType);
-
+		tuple.put("canPublish", canPublish);
 		super.getResponse().setData(tuple);
 	}
 }

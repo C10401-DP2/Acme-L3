@@ -6,11 +6,7 @@
 <acme:list>
 	<acme:list-column code="lecturer.lecture.list.label.title" path="title"/>
 	<acme:list-column code="lecturer.lecture.list.label.learningTime" path="learningTime"/>
-	<jstl:choose>
-		<jstl:when test="${!acme:anyOf(_command, 'list-mine')}">
-			<acme:list-column code="lecturer.lecture.list.label.lecturer" path="lecturer"/>
-		</jstl:when>
-	</jstl:choose>
+	<acme:list-column code="lecturer.lecture.list.label.activityType" path="activityType"/>
 </acme:list>
 <jstl:choose>
 	<jstl:when test="${!acme:anyOf(_command, 'list-mine')}">
