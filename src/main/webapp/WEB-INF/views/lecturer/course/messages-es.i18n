@@ -1,5 +1,6 @@
 lecturer.course.list.label.title = Título
 lecturer.course.list.label.retailPrice = Precio
+lecturer.course.list.label.code = Código
 
 lecturer.course.form.label.code = Código:
 lecturer.course.form.label.title = Título:
