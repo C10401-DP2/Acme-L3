@@ -11,7 +11,7 @@ public class StudentActivitiesListTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/student/activities/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int enrolmentRecordIndex, final int activityRecordIndex, final String title, final String abstrat, final String aType, final String enrolment, final String initialDate, final String finalDate) {
+	public void test100Positive(final int enrolmentRecordIndex, final int activityRecordIndex, final String title, final String abstrat, final String aType, final String initialDate, final String finalDate) {
 		super.signIn("student1", "student1");
 
 		super.clickOnMenu("Student", "Enrolments");

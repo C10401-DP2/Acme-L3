@@ -1,12 +1,10 @@
 
 package acme.features.authenticated.student.activities;
 
-import java.time.temporal.ChronoUnit;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.datatypes.ActivityType;
+import acme.datatypes.ActType;
 import acme.entities.activity.Activity;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.components.jsp.SelectChoices;
@@ -67,8 +65,8 @@ public class AuthenticatedStudentActivityCreateService extends AbstractService<S
 		assert object != null;
 
 		super.bind(object, "title", "abstrat", "link", "initialDate", "finalDate");
-		final ActivityType aType;
-		aType = super.getRequest().getData("aType", ActivityType.class);
+		final ActType aType;
+		aType = super.getRequest().getData("aType", ActType.class);
 
 		object.setAType(aType);
 
@@ -77,17 +75,6 @@ public class AuthenticatedStudentActivityCreateService extends AbstractService<S
 	@Override
 	public void validate(final Activity object) {
 		assert object != null;
-
-		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
-			boolean finalDateErrorDuration;
-
-			finalDateErrorDuration = !MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), 1l, ChronoUnit.HOURS);
-
-			if (!finalDateErrorDuration)
-				finalDateErrorDuration = MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), (long) 5 * 3600 + 1, ChronoUnit.SECONDS);
-
-			super.state(finalDateErrorDuration, "finalDate", "assistant.tutorial-session.form.error.duration");
-		}
 
 		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
 			boolean finalDateError;
@@ -111,7 +98,7 @@ public class AuthenticatedStudentActivityCreateService extends AbstractService<S
 		Tuple tuple;
 		SelectChoices choices1;
 
-		choices1 = SelectChoices.from(ActivityType.class, object.getAType());
+		choices1 = SelectChoices.from(ActType.class, object.getAType());
 
 		tuple = super.unbind(object, "title", "abstrat", "link", "initialDate", "finalDate");
 		tuple.put("aType", choices1.getSelected().getKey());

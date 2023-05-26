@@ -34,8 +34,13 @@ public class AuthenticatedStudentEnrolmentDeleteService extends AbstractService<
 	@Override
 	public void authorise() {
 		boolean status;
+		Enrolment object;
+		int id;
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findEnrolmentById(id);
 
-		status = super.getRequest().getPrincipal().hasRole(Student.class);
+		status = super.getRequest().getPrincipal().hasRole(Student.class) && super.getRequest().getPrincipal().getAccountId() == object.getStudent().getId();
+
 		super.getResponse().setAuthorised(status);
 	}
 

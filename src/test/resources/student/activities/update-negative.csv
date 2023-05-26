@@ -1,2 +1,9 @@
-enrolmentRecordIndex,activityRecordIndex,title,abstrat,activityType,enrolment,initialDate,finalDate
-2,0,clase al aire libre pero magistral con voz en digital sisi nono,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,THEORY,AI1381,2020/02/04 22:22,2021/01/05 10:12
+enrolmentRecordIndex,activityRecordIndex,title,abstrat,activityType,initialDate,finalDate
+5,0,clase al aire libre pero magistral con voz en digital sisi nono,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,THEORY,2020/02/04 22:22,2021/01/05 10:12
+5,0,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaq,abstracto,THEORY,2020/02/04 22:22,2021/01/05 10:12
+5,0,,hola,HANDSON,2020/02/04 22:22,2021/01/05 10:12
+5,0,hola,,THEORY,2020/02/04 22:22,2021/01/05 10:12
+5,0,hola,hola,---,2020/02/04 22:22,2021/01/05 10:12
+5,0,hola,hola,THEORY,,2021/01/05 10:12
+5,0,hola,hola,HANDSON,2020/02/04 22:22,
+5,0,hola,hola,THEORY,2021/02/04 22:22,2020/01/05 10:12

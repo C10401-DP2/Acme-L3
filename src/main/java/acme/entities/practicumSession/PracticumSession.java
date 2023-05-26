@@ -10,7 +10,6 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -40,14 +39,14 @@ public class PracticumSession extends AbstractEntity {
 	protected String			anAbstract;
 
 	@NotNull
-	@Past
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				initialDate;
 
 	@NotNull
-	@Past
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				finalDate;
+
+	protected Boolean			addendum;
 
 	@URL
 	protected String			link;

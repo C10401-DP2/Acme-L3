@@ -4,11 +4,12 @@ package acme.features.authenticated.student.activities;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.datatypes.ActivityType;
+import acme.datatypes.ActType;
 import acme.entities.activity.Activity;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
@@ -68,6 +69,13 @@ public class AuthenticatedStudentActivityUpdateService extends AbstractService<S
 	@Override
 	public void validate(final Activity object) {
 		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
+			boolean finalDateError;
+
+			finalDateError = MomentHelper.isBefore(object.getInitialDate(), object.getFinalDate());
+
+			super.state(finalDateError, "finalDate", "assistant.tutorial-session.form.error.end-before-start");
+		}
 
 	}
 
@@ -86,10 +94,10 @@ public class AuthenticatedStudentActivityUpdateService extends AbstractService<S
 
 		SelectChoices choices1;
 
-		choices1 = SelectChoices.from(ActivityType.class, object.getAType());
+		choices1 = SelectChoices.from(ActType.class, object.getAType());
 
 		tuple = super.unbind(object, "title", "abstrat", "aType", "link", "initialDate", "finalDate");
-
+		tuple.put("draftMode", object.getEnrolment().getDraftMode());
 		tuple.put("activities", choices1);
 
 		super.getResponse().setData(tuple);

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.audit.Audit;
+import acme.entities.auditingRecord.AuditingRecord;
 import acme.entities.course.Course;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -65,11 +66,15 @@ public class AuditorAuditShowService extends AbstractService<Auditor, Audit> {
 		Tuple tuple;
 
 		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", object.getCourse());
+		choices = SelectChoices.from(courses, "code", object.getCourse());
+
+		final Collection<AuditingRecord> auditingRecords = this.repository.findAuditingRecordsByAuditId(object.getId());
+		final boolean canPublish = !auditingRecords.isEmpty();
 
 		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
+		tuple.put("canPublish", canPublish);
 
 		super.getResponse().setData(tuple);
 	}

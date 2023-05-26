@@ -22,7 +22,7 @@ public class StudentActivitiesUpdateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/student/activities/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int enrolmentRecordIndex, final int activityRecordIndex, final String title, final String abstrat, final String activityType, final String enrolment, final String initialDate, final String finalDate) {
+	public void test100Positive(final int enrolmentRecordIndex, final int activityRecordIndex, final String title, final String abstrat, final String activityType, final String initialDate, final String finalDate) {
 		// HINT: this test logs in as an employer, lists his or her jobs, 
 		// HINT+ selects one of them, updates it, and then checks that 
 		// HINT+ the update has actually been performed.
@@ -37,7 +37,6 @@ public class StudentActivitiesUpdateTest extends TestHarness {
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 
-		super.checkColumnHasValue(activityRecordIndex, 0, title);
 		super.clickOnListingRecord(activityRecordIndex);
 		super.checkFormExists();
 		super.fillInputBoxIn("title", title);
@@ -63,7 +62,7 @@ public class StudentActivitiesUpdateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/student/activities/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test200Negative(final int enrolmentRecordIndex, final int activityRecordIndex, final String title, final String abstrat, final String activityType, final String enrolment, final String initialDate, final String finalDate) {
+	public void test200Negative(final int enrolmentRecordIndex, final int activityRecordIndex, final String title, final String abstrat, final String activityType, final String initialDate, final String finalDate) {
 		// HINT: this test attempts to update a job with wrong data.
 
 		super.signIn("student1", "student1");

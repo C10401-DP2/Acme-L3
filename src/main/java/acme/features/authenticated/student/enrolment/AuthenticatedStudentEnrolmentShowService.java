@@ -34,8 +34,13 @@ public class AuthenticatedStudentEnrolmentShowService extends AbstractService<St
 	public void authorise() {
 
 		boolean status;
+		Enrolment object;
+		int id;
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findEnrolmentById(id);
 
 		status = super.getRequest().getPrincipal().hasRole(Student.class);
+
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -65,6 +70,7 @@ public class AuthenticatedStudentEnrolmentShowService extends AbstractService<St
 		final Integer totalTime = object.totalTime(this.repository.findAllActivitiesOfEnrolment(object.getId()));
 		tuple.put("totalTime", totalTime);
 		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("draftMode", object.getDraftMode());
 		tuple.put("courses", choices);
 
 		super.getResponse().setData(tuple);

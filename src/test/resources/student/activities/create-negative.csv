@@ -1,12 +1,9 @@
-recordIndex,title,abstrat,activityType,enrolment,initialDate,finalDate
-0,,abstrat1,HANDSON,SIL9191,2021/02/03 21:21,2021/03/10 12:00
-0,titulo1,,THEORY,SIL9191,2021/02/03 21:21,2021/03/10 12:00
-0,titulo2,abstrat2,,SIL9191,2021/02/03 21:21,2021/03/10 12:00
-0,titulo3,abstrat3,THEORY,,2021/02/03 21:21,2021/03/10 12:00
-0,titulo4,abstrat4,HANDSON,SIL9191,,2021/03/10 12:00
-0,titulo5,abstrat5,HANDSON,SIL9191,2021/02/03 21:21,
-0,titulo6,abstrat6,HANDSON,SIL9191,2021/02/03 21:21,2021/03/10 12:00
-0,titulo7,abstrat7,sisi,SIL9191,2021/02/03 21:21,2021/03/10 12:00
-0,titulo8,abstrat8,HANDSON,holahola,2021/02/03 21:21,2021/03/10 12:00
-0,titulo9,abstrat9,HANDSON,SIL9191,2021/03/10 12:00,2021/02/03 21:21
-0,titulo10,abstrat10,THEORY,SIL9191,sisi,nono
+enrolmentRecordIndex,activityRecordIndex,title,abstrat,activityType,initialDate,finalDate
+5,0,,Este mensaje es para que se a abstracto,THEORY,2021/02/03 21:21,2021/03/10 12:00
+5,0,zz,el vaso esta medio lleno o medio vacio?,HANDSON,2020/02/03 00:00,
+5,0,zzz,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,HANDSON,,2020/02/04 00:22
+5,0,zzzz,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,---,2021/02/03 22:22,2021/02/04 11:11
+5,0,zzzzz,,HANDSON,2020/02/03 22:22,2021/02/04 00:00
+5,0,,Dos tigres estan atigrados quien los desatrigara,THEORY,2020/02/03 21:21,2021/03/10 12:00
+5,0,zzzzzzz,zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz,THEORY,2020/02/03 23:59,2021/03/10 12:00
+5,0,zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz,el buen desatigrador que les desengatigre buen,THEORY,2020/12/31 23:59,2021/01/01 00:00

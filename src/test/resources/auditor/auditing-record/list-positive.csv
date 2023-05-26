@@ -1,5 +1,5 @@
 auditRecordIndex,code,auditingRecordRecordIndex,subject,assessment,period,mark
 0,BD5678,0,math,High-stakes assessment,3175,A
 1,M2345,0,physical education,Summative assessment,11158,B
-2,XYZ1234,0,chemistry,Formative assessment,10756,C
-2,XYZ1234,1,math,High-stakes assessment,12075,Aplus
+3,XYZ1234,0,chemistry,Formative assessment,10756,C
+3,XYZ1234,1,math,High-stakes assessment,12075,Aplus

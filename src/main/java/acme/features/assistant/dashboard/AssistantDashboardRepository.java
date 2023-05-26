@@ -41,7 +41,6 @@ public interface AssistantDashboardRepository extends AbstractRepository {
 		numberOfTutorialsByActivityType = new HashMap<ActivityType, Integer>();
 		numberOfTutorialsByActivityType.put(ActivityType.THEORY, 0);
 		numberOfTutorialsByActivityType.put(ActivityType.HANDSON, 0);
-		numberOfTutorialsByActivityType.put(ActivityType.BALANCED, 0);
 
 		for (final TutorialActivityTypeClassification ta : ActivityTypeOfTutorials)
 			numberOfTutorialsByActivityType.put(ta.getType(), numberOfTutorialsByActivityType.get(ta.getType()) + 1);

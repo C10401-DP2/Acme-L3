@@ -1,0 +1,8 @@
+recordIndex,code,title,anAbstract,retailPrice,link
+0,,,,,
+0,A000,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa76aaa,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa76aaaaaaaaaaaaaaaaaaaaaaaaaaa,EUR 12.20,https://www.us.es
+0,J123,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa76aaaaaaaaaaa,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa76aaaaaaaaaaaaaaaaaaaaaaaaaaa,EUR 1999999999.99,https://www.us.es
+0,JJ125,a,a,EUR 0.0,
+0,JJ126,aa,aa,EUR -10.01,https://www.us.es
+0,JJ127,aaaaaaaaa%$&aaaaaaaaaaaaaaaaaaaaaaaaaaa,aaaaaaaaaaaaaaaa$%a,E 19.99,https://www.us.es
+0,JJ127,aaaaaaaaa%$&áà,@@í,190.99,https://www.us.es

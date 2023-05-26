@@ -1,9 +1,9 @@
-enrolmentRecordIndex,ActivityrecordIndex,title,abstrat,activityType,initialDate,finalDate
-1,7,clase al aire libre de prueba,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,HANDSON,2021/02/03 21:21,2021/03/10 12:00
-1,8,clase al aire libre en naturaleza rodeado de arboles en mitad de un bosque de prueba,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,HANDSON,2020/02/03 00:00,2021/02/03 23:59
-1,9,clase al aire libre entre visitando un lago rodeado de pirañas que muerden de prueba,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,HANDSON,2020/02/03 22:22,2021/02/04 00:00
-1,10,clase al aire libre pero magistral con voz en digital probando,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,HANDSON,2021/02/03 22:22,2021/02/04 11:11
-1,11,clase al aire magistral al aire libre de prueba,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,HANDSON,2020/02/03 22:22,2021/02/04 00:00
-1,12,clase magistral probanding,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,THEORY,2020/02/03 21:21,2021/03/10 12:00
-1,13,clase magistral con voz digital probandending,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,THEORY,2020/02/03 23:59,2021/03/10 12:00
-1,14,clase magistral con voz digital y sin profores que revisen lo que dice de probanding,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,THEORY,2020/12/31 23:59,2021/01/01 00:00
+enrolmentRecordIndex,activityRecordIndex,title,abstrat,activityType,initialDate,finalDate
+5,1,z,Este mensaje es para que se a abstracto,HANDSON,2021/02/03 21:21,2021/03/10 12:00
+5,2,zz,el vaso esta medio lleno o medio vacio?,HANDSON,2020/02/03 00:00,2021/02/03 23:59
+5,3,zzz,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,HANDSON,2020/02/03 23:59,2020/02/04 00:01
+5,4,zzzz,3st3 m3ns@j3 3s 4bstr@ct0 y extraño,HANDSON,2021/02/03 22:22,2021/02/04 11:11
+5,5,zzzzz,No me gusta escribir pero soy escritor porque escribo letras,HANDSON,2020/02/03 22:22,2021/02/04 00:00
+5,6,zzzzzz,Dos tigres estan atigrados quien los desatrigara,THEORY,2020/02/03 21:21,2021/03/10 12:00
+5,7,zzzzzzz,zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz,THEORY,2020/02/03 23:59,2021/03/10 12:00
+5,8,zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz,el buen desatigrador que les desengatigre buen,THEORY,2020/12/31 23:59,2021/01/01 00:00
