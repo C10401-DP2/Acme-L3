@@ -34,15 +34,16 @@ public interface AssistantDashboardRepository extends AbstractRepository {
 	Collection<TutorialActivityTypeClassification> findActivityTypeOfManyTutorials();
 
 	default Map<ActivityType, Integer> numberOfTutorialsByActivityType() {
-		Collection<TutorialActivityTypeClassification> ActivityTypeOfTutorials;
+		Collection<TutorialActivityTypeClassification> activityTypeOfTutorials;
 		Map<ActivityType, Integer> numberOfTutorialsByActivityType;
 
-		ActivityTypeOfTutorials = this.findActivityTypeOfManyTutorials();
+		activityTypeOfTutorials = this.findActivityTypeOfManyTutorials();
 		numberOfTutorialsByActivityType = new HashMap<ActivityType, Integer>();
 		numberOfTutorialsByActivityType.put(ActivityType.THEORY, 0);
 		numberOfTutorialsByActivityType.put(ActivityType.HANDSON, 0);
+		numberOfTutorialsByActivityType.put(ActivityType.BALANCED, 0);
 
-		for (final TutorialActivityTypeClassification ta : ActivityTypeOfTutorials)
+		for (final TutorialActivityTypeClassification ta : activityTypeOfTutorials)
 			numberOfTutorialsByActivityType.put(ta.getType(), numberOfTutorialsByActivityType.get(ta.getType()) + 1);
 
 		return numberOfTutorialsByActivityType;

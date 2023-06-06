@@ -16,7 +16,7 @@ public class AssistantTutorialCreateTest extends TestHarness {
 
 		super.signIn("assistant1", "assistant1");
 
-		super.clickOnMenu("Authenticated", "Courses");
+		super.clickOnMenu("Courses", "Courses list");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(0);
@@ -56,7 +56,7 @@ public class AssistantTutorialCreateTest extends TestHarness {
 
 		super.signIn("assistant1", "assistant1");
 
-		super.clickOnMenu("Authenticated", "Courses");
+		super.clickOnMenu("Courses", "Courses list");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(0);

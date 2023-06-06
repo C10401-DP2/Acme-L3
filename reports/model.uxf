@@ -454,7 +454,7 @@ Tutorial
 + title: String {NotBlank, Length(max = 76)}
 + anAbstract: String {NotBlank, Length(max = 101)}
 + goals: String {NotBlank, Length(max = 101)}
-+ /totalTime: Integer {Transient}
++ /totalTime: Double {Transient}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
@@ -511,7 +511,7 @@ Practicum
 + anAbstract: String {NotBlank, Length(max = 101)}
 + goals: String {NotBlank, Length(max = 101)}
 + draftMode: Boolean {NotNull}
-+ /totalTime: Integer
++ /totalTime: Double {Transient}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
@@ -1168,7 +1168,7 @@ m2=1</panel_attributes>
       <w>266</w>
       <h>140</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
 AuditorDashboard
 --
 + totalAudits: Integer
@@ -1191,7 +1191,7 @@ bg=green</panel_attributes>
       <w>266</w>
       <h>140</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
 AssistantDashboard
 --
 + totalTutorials:Integer						
@@ -1214,7 +1214,7 @@ bg=green</panel_attributes>
       <w>252</w>
       <h>140</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
 LecturerDashboard
 --
 + totalTheoryAndHandson: Map&lt;ActivityType, Double&gt;	
@@ -1237,7 +1237,7 @@ bg=green</panel_attributes>
       <w>294</w>
       <h>168</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
 AdministratorDashboard
 --
 + totalPrincipalsWithRole:Integer						
@@ -1257,12 +1257,12 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1904</x>
+      <x>1911</x>
       <y>553</y>
       <w>266</w>
       <h>140</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
 StudentDashboard
 --
 + totalActivities:Integer						
@@ -1285,7 +1285,7 @@ bg=green</panel_attributes>
       <w>266</w>
       <h>147</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
 CompanyDashboard
 --
 + totalHandsOnPracticumByMonth:Map&lt;String,Integer&gt;
