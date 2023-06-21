@@ -28,4 +28,7 @@ public interface AuthenticatedAssistantRepository extends AbstractRepository {
 	@Query("select a from Assistant a where a.userAccount.id = :id")
 	Assistant findOneAssistantByUserAccountId(int id);
 
+	@Query("select a from Assistant a where a.userAccount.username = :username")
+	Assistant findOneAssistantByUsername(String username);
+
 }

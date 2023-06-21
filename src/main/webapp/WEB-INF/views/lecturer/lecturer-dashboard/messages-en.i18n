@@ -1,0 +1,12 @@
+lecturer.dashboard.form.label.totaltlectures = Theoretical  lectures
+lecturer.dashboard.form.label.totalhlectures = Hands on lectures
+lecturer.dashboard.form.label.statslectures = Lecture's Learning Time
+lecturer.dashboard.form.label.statscourses = Course's Learning Time
+lecturer.dashboard.form.label.averageLecture = Average
+lecturer.dashboard.form.label.deviationLecture = Standard deviation
+lecturer.dashboard.form.label.minLecture = Min
+lecturer.dashboard.form.label.maxLecture = Max
+lecturer.dashboard.form.label.averageCourse = Average
+lecturer.dashboard.form.label.deviationCourse = Standard deviation
+lecturer.dashboard.form.label.minCourse = Min
+lecturer.dashboard.form.label.maxCourse = Max

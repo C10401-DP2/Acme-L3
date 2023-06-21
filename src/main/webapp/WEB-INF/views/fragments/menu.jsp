@@ -19,8 +19,12 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		
-		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.authenticated.course-list" action="/any/course/list"/>
+		<acme:menu-option code="master.menu.courses" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.course-list" action="/any/course/list"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.courses" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.course-list" action="/any/course/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -49,6 +53,7 @@
 		<acme:menu-option code="master.menu.lecturer" access="hasRole('Lecturer')">
 			<acme:menu-suboption code="master.menu.lecturer.course" action="/lecturer/course/list"/>
 			<acme:menu-suboption code="master.menu.lecturer.lectureMine" action="/lecturer/lecture/list-mine"/>
+			<acme:menu-suboption code="master.menu.lecturer.dashboard" action="/lecturer/lecturer-dashboard/show"/>			
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.audit.Audit;
 import acme.entities.auditingRecord.AuditingRecord;
-import acme.entities.auditingRecord.Correction;
 import acme.entities.auditingRecord.Mark;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -62,7 +61,7 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 		object.setInitialDate(MomentHelper.getCurrentMoment());
 		object.setFinalDate(MomentHelper.getCurrentMoment());
 		object.setLink("");
-		object.setCorrection(Correction.NOTCORRECTED);
+		object.setIsCorrection(false);
 		object.setAudit(audit);
 
 		super.getBuffer().setData(object);
@@ -72,7 +71,7 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 	public void bind(final AuditingRecord object) {
 		assert object != null;
 
-		super.bind(object, "subject", "assessment", "initialDate", "finalDate", "mark", "correction", "link");
+		super.bind(object, "subject", "assessment", "initialDate", "finalDate", "mark", "isCorrection", "link");
 	}
 
 	@Override
@@ -109,17 +108,14 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 		assert object != null;
 
 		Tuple tuple;
-		SelectChoices choices1;
-		SelectChoices choices2;
+		SelectChoices choices;
 
-		choices1 = SelectChoices.from(Mark.class, object.getMark());
-		choices2 = SelectChoices.from(Correction.class, object.getCorrection());
+		choices = SelectChoices.from(Mark.class, object.getMark());
 
-		tuple = super.unbind(object, "subject", "assessment", "initialDate", "finalDate", "mark", "correction", "link");
+		tuple = super.unbind(object, "subject", "assessment", "initialDate", "finalDate", "mark", "isCorrection", "link");
 		tuple.put("masterId", super.getRequest().getData("masterId", int.class));
 		tuple.put("draftMode", object.getAudit().getDraftMode());
-		tuple.put("marks", choices1);
-		tuple.put("corrections", choices2);
+		tuple.put("marks", choices);
 
 		super.getResponse().setData(tuple);
 	}

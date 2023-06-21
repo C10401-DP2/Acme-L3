@@ -25,7 +25,6 @@
 		<acme:submit code="company.practicum.button.update" action="/company/practicum/update"/>
 		<acme:submit code="company.practicum.button.delete" action="/company/practicum/delete"/>		
 		<acme:submit code="company.practicum.button.publish" action="/company/practicum/publish"/>	
-		<acme:submit code="company.session.form.button.create" action="/company/practicum-session/create?practicumId=${id}"/>
 	</jstl:if>
 	
 </acme:form>

@@ -19,7 +19,6 @@ import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.models.Tuple;
 import acme.framework.controllers.HttpMethod;
-import acme.framework.helpers.BinderHelper;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
@@ -37,7 +36,11 @@ public class AuthenticatedAssistantUpdateService extends AbstractService<Authent
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRole(Assistant.class);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -62,7 +65,7 @@ public class AuthenticatedAssistantUpdateService extends AbstractService<Authent
 	public void bind(final Assistant object) {
 		assert object != null;
 
-		super.bind(object, "supervisor", "expertises", "resume", "link");
+		super.bind(object, "supervisor", "expertiseFields", "resume", "link");
 	}
 
 	@Override
@@ -83,7 +86,7 @@ public class AuthenticatedAssistantUpdateService extends AbstractService<Authent
 
 		Tuple tuple;
 
-		tuple = BinderHelper.unbind(object, "supervisor", "expertiseFields", "resume", "link");
+		tuple = super.unbind(object, "supervisor", "expertiseFields", "resume", "link");
 		super.getResponse().setData(tuple);
 	}
 

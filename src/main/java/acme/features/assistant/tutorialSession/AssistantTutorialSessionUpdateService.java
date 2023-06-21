@@ -84,7 +84,7 @@ public class AssistantTutorialSessionUpdateService extends AbstractService<Assis
 		if (!super.getBuffer().getErrors().hasErrors("initialDate")) {
 			boolean initialDateError;
 
-			initialDateError = MomentHelper.isAfter(object.getInitialDate(), MomentHelper.deltaFromCurrentMoment(1l, ChronoUnit.DAYS));
+			initialDateError = object.getInitialDate() == null || MomentHelper.isAfter(object.getInitialDate(), MomentHelper.deltaFromCurrentMoment(1l, ChronoUnit.DAYS));
 
 			super.state(initialDateError, "initialDate", "assistant.tutorial-session.form.error.at-least-one-day-ahead");
 		}
@@ -92,7 +92,7 @@ public class AssistantTutorialSessionUpdateService extends AbstractService<Assis
 		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
 			boolean finalDateError;
 
-			finalDateError = !MomentHelper.isBefore(object.getFinalDate(), object.getInitialDate());
+			finalDateError = object.getInitialDate() == null || !MomentHelper.isBefore(object.getFinalDate(), object.getInitialDate());
 
 			super.state(finalDateError, "finalDate", "assistant.tutorial-session.form.error.end-before-start");
 		}
@@ -100,10 +100,10 @@ public class AssistantTutorialSessionUpdateService extends AbstractService<Assis
 		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
 			boolean finalDateErrorDuration;
 
-			finalDateErrorDuration = MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), 1l, ChronoUnit.HOURS);
+			finalDateErrorDuration = object.getInitialDate() == null || MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), 1l, ChronoUnit.HOURS);
 
 			if (finalDateErrorDuration)
-				finalDateErrorDuration = !MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), (long) 5 * 3600 + 1, ChronoUnit.SECONDS);
+				finalDateErrorDuration = object.getInitialDate() == null || !MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), (long) 5 * 3600 + 1, ChronoUnit.SECONDS);
 
 			super.state(finalDateErrorDuration, "finalDate", "assistant.tutorial-session.form.error.duration");
 		}

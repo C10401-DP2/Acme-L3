@@ -69,7 +69,7 @@ public class AuditorAuditCreateService extends AbstractService<Auditor, Audit> {
 			Audit existing;
 
 			existing = this.repository.findAuditByCode(object.getCode());
-			super.state(existing == null, "code", "auditor.audit.form.error.duplicated");
+			super.state(existing == null || existing.getId() == object.getId(), "code", "auditor.audit.form.error.duplicated");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("course"))
@@ -92,7 +92,7 @@ public class AuditorAuditCreateService extends AbstractService<Auditor, Audit> {
 		Tuple tuple;
 
 		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", object.getCourse());
+		choices = SelectChoices.from(courses, "code", object.getCourse());
 
 		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints");
 		tuple.put("course", choices.getSelected().getKey());

@@ -1,11 +1,16 @@
 
 package acme.features.lecturer.course;
 
+import java.util.Collection;
+
+import org.assertj.core.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.CourseType;
 import acme.entities.configuration.Configuration;
 import acme.entities.course.Course;
+import acme.entities.lecture.Lecture;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
@@ -71,18 +76,18 @@ public class LecturerCourseUpdateServices extends AbstractService<Lecturer, Cour
 			super.state(existing == null, "code", "lecturer.course.form.error.duplicated");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("price")) {
+		if (!super.getBuffer().getErrors().hasErrors("retailPrice")) {
 			Configuration config;
 			config = this.repository.findConfiguration();
-
-			super.state(config.getAcceptedCurrency().contains(object.getRetailPrice().getCurrency()), "retailPrice", "lecturer.course.currency");
+			if (object.getRetailPrice() != null)
+				super.state(Arrays.asList(config.getAcceptedCurrency().trim().split(",")).contains(object.getRetailPrice().getCurrency()), "retailPrice", "lecturer.course.currency");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("price"))
+		if (!super.getBuffer().getErrors().hasErrors("retailPrice"))
 			super.state(object.getRetailPrice().getAmount() >= 0., "retailPrice", "lecturer.course.negative-price");
 
-		if (!super.getBuffer().getErrors().hasErrors("price"))
-			super.state(object.getRetailPrice().getAmount() <= 1000000, "reatilPrice", "lecturer.course.too-much-price");
+		if (!super.getBuffer().getErrors().hasErrors("retailPrice"))
+			super.state(object.getRetailPrice().getAmount() <= 1000000, "retailPrice", "lecturer.course.too-much-price");
 	}
 
 	@Override
@@ -97,9 +102,13 @@ public class LecturerCourseUpdateServices extends AbstractService<Lecturer, Cour
 		assert object != null;
 
 		Tuple tuple;
+		final Collection<Lecture> lectures = this.repository.findManyLecturesByCourseId(object.getId());
+		final CourseType courseType = object.courseType(lectures);
+		final boolean canPublish = !lectures.isEmpty();
 
 		tuple = super.unbind(object, "code", "title", "anAbstract", "retailPrice", "link", "draftMode");
-
+		tuple.put("courseType", courseType);
+		tuple.put("canPublish", canPublish);
 		super.getResponse().setData(tuple);
 	}
 }

@@ -26,7 +26,11 @@ public class LecturerLectureListMineServices extends AbstractService<Lecturer, L
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+
+		status = super.getRequest().getPrincipal().getActiveRole().equals(Lecturer.class);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override

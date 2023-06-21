@@ -14,3 +14,4 @@ authenticated.assistant.form.label.resume = Currículum
 authenticated.assistant.form.label.link = Link
 
 authenticated.assistant.form.button.create = Registrar
+authenticated.assistant.form.button.update = Actualizar

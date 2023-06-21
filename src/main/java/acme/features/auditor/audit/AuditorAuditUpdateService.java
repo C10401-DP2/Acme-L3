@@ -36,9 +36,11 @@ public class AuditorAuditUpdateService extends AbstractService<Auditor, Audit> {
 		boolean status;
 		int id;
 		Audit audit;
+		Auditor auditor;
 
 		id = super.getRequest().getData("id", int.class);
 		audit = this.repository.findAuditById(id);
+		auditor = audit == null ? null : audit.getAuditor();
 		status = audit != null && audit.getDraftMode() && super.getRequest().getPrincipal().hasRole(audit.getAuditor()) && audit.getAuditor().getId() == super.getRequest().getPrincipal().getActiveRoleId();
 
 		super.getResponse().setAuthorised(status);
@@ -73,6 +75,20 @@ public class AuditorAuditUpdateService extends AbstractService<Auditor, Audit> {
 	public void validate(final Audit object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Audit existing;
+
+			existing = this.repository.findAuditByCode(object.getCode());
+			super.state(existing != null, "code", "auditor.audit.form.error.not-allowed");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Audit existing;
+
+			existing = this.repository.findAuditByCode(object.getCode());
+			super.state(existing.getId() == object.getId(), "code", "auditor.audit.form.error.duplicated");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("course"))
 			super.state(!(object.getCourse() == null), "course", "auditor.audit.form.error.course-not-null");
 	}
@@ -93,7 +109,7 @@ public class AuditorAuditUpdateService extends AbstractService<Auditor, Audit> {
 		Tuple tuple;
 
 		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", object.getCourse());
+		choices = SelectChoices.from(courses, "code", object.getCourse());
 
 		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());

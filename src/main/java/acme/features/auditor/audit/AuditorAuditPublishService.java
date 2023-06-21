@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.audit.Audit;
+import acme.entities.auditingRecord.AuditingRecord;
 import acme.entities.course.Course;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -39,7 +40,8 @@ public class AuditorAuditPublishService extends AbstractService<Auditor, Audit> 
 
 		id = super.getRequest().getData("id", int.class);
 		audit = this.repository.findAuditById(id);
-		status = audit != null && audit.getDraftMode() && super.getRequest().getPrincipal().hasRole(audit.getAuditor()) && audit.getAuditor().getId() == super.getRequest().getPrincipal().getActiveRoleId();
+		final Collection<AuditingRecord> auditingRecords = this.repository.findAuditingRecordsByAuditId(id);
+		status = audit != null && audit.getDraftMode() && super.getRequest().getPrincipal().hasRole(audit.getAuditor()) && audit.getAuditor().getId() == super.getRequest().getPrincipal().getActiveRoleId() && !auditingRecords.isEmpty();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -73,6 +75,20 @@ public class AuditorAuditPublishService extends AbstractService<Auditor, Audit> 
 	public void validate(final Audit object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Audit existing;
+
+			existing = this.repository.findAuditByCode(object.getCode());
+			super.state(existing != null, "code", "auditor.audit.form.error.not-allowed");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Audit existing;
+
+			existing = this.repository.findAuditByCode(object.getCode());
+			super.state(existing.getId() == object.getId(), "code", "auditor.audit.form.error.duplicated");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("course"))
 			super.state(!(object.getCourse() == null), "course", "auditor.audit.form.error.course-not-null");
 	}
@@ -94,7 +110,7 @@ public class AuditorAuditPublishService extends AbstractService<Auditor, Audit> 
 		Tuple tuple;
 
 		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", object.getCourse());
+		choices = SelectChoices.from(courses, "code", object.getCourse());
 
 		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());

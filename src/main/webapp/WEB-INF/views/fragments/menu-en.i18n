@@ -29,7 +29,7 @@ master.menu.anonymous.favourite-link5 = 45968205Z: García Chavero, Adrián
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Authenticated
-master.menu.authenticated.course-list = Courses
+master.menu.course-list = Courses list
 master.menu.authenticated.tutorials = All tutorials
 
 # master.menu.administrator ###################################################
@@ -47,7 +47,7 @@ master.menu.administrator.shut-down = Shut down
 # master.menu.peep ########################################################
 
 master.menu.peep = Peeps
-master.menu.any.all-peeps = Lista de peeps
+master.menu.any.all-peeps = Peeps list
 
 # master.menu.provider ########################################################
 
@@ -65,8 +65,7 @@ master.menu.consumer.favourite-link = Favourite link
 master.menu.lecturer= Lecturer
 master.menu.lecturer.course = My courses
 master.menu.lecturer.lectureMine = My lectures
-master.menu.lecturer.courseLecture = Add lectures to course
-
+master.menu.lecturer.dashboard = Lecturer dashboard
 
 # master.menu.assistant ####################################################
 
