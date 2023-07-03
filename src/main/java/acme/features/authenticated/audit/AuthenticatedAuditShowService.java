@@ -57,7 +57,8 @@ public class AuthenticatedAuditShowService extends AbstractService<Authenticated
 		final Auditor auditor = this.repository.findAuditorByAuditId(id);
 
 		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints");
-		tuple.put("auditor", auditor.getFirm());
+		tuple.put("course", object.getCourse().getCode());
+		tuple.put("auditor", auditor.getProfessionalId());
 
 		super.getResponse().setData(tuple);
 	}

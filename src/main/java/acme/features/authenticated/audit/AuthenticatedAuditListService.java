@@ -71,7 +71,7 @@ public class AuthenticatedAuditListService extends AbstractService<Authenticated
 			}
 
 		tuple = super.unbind(object, "code", "conclusion");
-		tuple.put("course", course.getTitle());
+		tuple.put("course", course.getCode());
 		tuple.put("mode", mode);
 
 		super.getResponse().setData(tuple);

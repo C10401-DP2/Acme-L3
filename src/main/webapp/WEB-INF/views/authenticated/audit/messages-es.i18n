@@ -12,9 +12,10 @@ authenticated.audit.form.label.code = Código
 authenticated.audit.form.label.conclusion = Conclusión
 authenticated.audit.form.label.strong-points = Puntos fuertes
 authenticated.audit.form.label.weak-points = Puntos débiles
+authenticated.audit.form.label.course = Código del curso
 authenticated.audit.form.label.auditor = Auditor
 
 authenticated.audit.list.label.code = Código
 authenticated.audit.list.label.conclusion = Conclusión
-authenticated.audit.list.label.course = Curso
+authenticated.audit.list.label.course = Código del curso
 authenticated.audit.list.label.mode = Moda
