@@ -32,15 +32,7 @@ public class AdministratorOfferUpdateService extends AbstractService<Administrat
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int id;
-		Offer object;
-
-		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOfferById(id);
-		status = object != null && super.getRequest().getPrincipal().hasRole(object.getAdministrator());
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
@@ -68,7 +60,10 @@ public class AdministratorOfferUpdateService extends AbstractService<Administrat
 		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
 			boolean finalDateError;
 
-			finalDateError = MomentHelper.isBefore(object.getInitialDate(), object.getFinalDate());
+			if (object.getInitialDate() == null || object.getFinalDate() == null)
+				finalDateError = true;
+			else
+				finalDateError = MomentHelper.isBefore(object.getInitialDate(), object.getFinalDate());
 
 			super.state(finalDateError, "finalDate", "administrator.offer.form.error.end-before-start");
 		}
@@ -76,7 +71,10 @@ public class AdministratorOfferUpdateService extends AbstractService<Administrat
 		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
 			boolean finalDateErrorDuration;
 
-			finalDateErrorDuration = MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), 1L, ChronoUnit.WEEKS);
+			if (object.getInitialDate() == null || object.getFinalDate() == null)
+				finalDateErrorDuration = true;
+			else
+				finalDateErrorDuration = MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), 1L, ChronoUnit.WEEKS);
 
 			super.state(finalDateErrorDuration, "finalDate", "administrator.offer.form.error.duration");
 		}
@@ -84,10 +82,15 @@ public class AdministratorOfferUpdateService extends AbstractService<Administrat
 		if (!super.getBuffer().getErrors().hasErrors("initialDate")) {
 			boolean initialDateError;
 
-			initialDateError = MomentHelper.isLongEnough(object.getMoment(), object.getInitialDate(), 1L, ChronoUnit.DAYS);
+			if (object.getInitialDate() == null)
+				initialDateError = true;
+			else
+				initialDateError = MomentHelper.isLongEnough(object.getMoment(), object.getInitialDate(), 1L, ChronoUnit.DAYS);
 
 			super.state(initialDateError, "initialDate", "administrator.offer.form.error.one-day-after");
 		}
+		if (!super.getBuffer().getErrors().hasErrors("price"))
+			super.state(object.getPrice().getAmount() >= 0, "price", "administrator.offer.form.error.price-positive-or-zero");
 	}
 
 	@Override
