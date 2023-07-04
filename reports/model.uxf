@@ -1355,7 +1355,7 @@ bg=green</panel_attributes>
       <w>266</w>
       <h>147</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
 CompanyDashboard
 --
 + totalHandsOnPracticumByMonth:Map&lt;String,Integer&gt;
