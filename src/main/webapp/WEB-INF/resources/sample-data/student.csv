@@ -1,5 +1,5 @@
-key,statement,s-feat,w-feat,link,key:user-account,draft-mode
-student-01,este es el statement del student1,"Atento, interesante, trab@jador, nacido en españa","Desinteresado, no habla español, asocial",http://ev.us.es,user-account-student-01,0 
-student-02,esta es la declaración del student2,"Poliglota, inteligente, artista","Capacitista, indisciplinado",null,user-account-student-02,0 
-student-03, esta es la declaración del student3,"Rico, guapo y buen jugador",Me tienen envidia,null,user-account-student-03,0
-student-04, esta es la declaración del student3,"Rico, guapo y buen jugador",Me tienen envidia y mucha,null,user-account-student-04,0
+key,statement,s-feat,w-feat,link,key:user-account
+student-01,este es el statement del student1,"Atento, interesante, trab@jador, nacido en españa","Desinteresado, no habla español, asocial",http://ev.us.es,user-account-student-01
+student-02,esta es la declaración del student2,"Poliglota, inteligente, artista","Capacitista, indisciplinado",null,user-account-student-02
+student-03,esta es la declaración del student3,"Rico, guapo y buen jugador",Me tienen envidia,null,user-account-student-03
+student-04,esta es la declaración del student3,"Rico, guapo y buen jugador",Me tienen envidia y mucha,null,user-account-student-04

@@ -28,7 +28,6 @@ public class AuthenticatedStudentEnrolmentCreateService extends AbstractService<
 	@Override
 	public void authorise() {
 		boolean status;
-
 		status = super.getRequest().getPrincipal().hasRole(Student.class);
 		super.getResponse().setAuthorised(status);
 	}
@@ -71,6 +70,9 @@ public class AuthenticatedStudentEnrolmentCreateService extends AbstractService<
 
 		if (!super.getBuffer().getErrors().hasErrors("course"))
 			super.state(!object.getCourse().getDraftMode() == true, "course", "student.enrolment.course.notDraftMode");
+
+		if (!super.getBuffer().getErrors().hasErrors("code"))
+			super.state(!this.repository.findAllEnrolment().contains(object.getCode()), "code", "student.enrolment.course.repeatedCode");
 
 	}
 
