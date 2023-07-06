@@ -597,8 +597,8 @@ Activity
 + title: String {NotBlank, Length(max = 76}
 + abstrat: String {NotBlank, Length(max = 101)}
 + aType: ActivityType
-+ initialDate: Date {PastOrPresent, Temporal(TIMESTAMP)}
-+ finalDate: Date {PastOrPresent, Temporal(TIMESTAMP)}
++ initialDate: Date {Temporal(TIMESTAMP)}
++ finalDate: Date {Temporal(TIMESTAMP)}
 + link: String {URL}
 bg=green</panel_attributes>
     <additional_attributes/>
@@ -1112,18 +1112,6 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1512</x>
-      <y>616</y>
-      <w>126</w>
-      <h>28</h>
-    </coordinates>
-    <panel_attributes>lt=-&gt;&gt;&gt;&gt;&gt;
-m1=0..*</panel_attributes>
-    <additional_attributes>10.0;10.0;160.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
       <x>1057</x>
       <y>511</y>
       <w>182</w>
@@ -1412,5 +1400,18 @@ m2=1..*
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1512</x>
+      <y>609</y>
+      <w>126</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1=1..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0</additional_attributes>
   </element>
 </diagram>

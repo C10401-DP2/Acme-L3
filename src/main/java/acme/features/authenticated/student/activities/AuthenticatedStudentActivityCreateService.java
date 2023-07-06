@@ -26,22 +26,18 @@ public class AuthenticatedStudentActivityCreateService extends AbstractService<S
 
 	@Override
 	public void authorise() {
-
-		//		boolean status;
-		//
-		//		status = super.getRequest().getPrincipal().hasRole(Student.class);
-		//		super.getResponse().setAuthorised(status);
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		status = super.getRequest().getPrincipal().hasRole(Student.class);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void check() {
 
-		//		boolean status;
-		//
-		//		status = super.getRequest().hasData("enrolmentId", int.class);
-		//		System.out.println(status);
-		//		super.getResponse().setChecked(status);
+		boolean status;
+
+		status = super.getRequest().hasData("enrolmentId", int.class);
+		super.getResponse().setChecked(status);
 		super.getResponse().setChecked(true);
 
 	}
@@ -77,9 +73,9 @@ public class AuthenticatedStudentActivityCreateService extends AbstractService<S
 		assert object != null;
 
 		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
-			boolean finalDateError;
-
-			finalDateError = MomentHelper.isBefore(object.getInitialDate(), object.getFinalDate());
+			boolean finalDateError = false;
+			if (object.getInitialDate() != null && object.getFinalDate() != null)
+				finalDateError = MomentHelper.isBefore(object.getInitialDate(), object.getFinalDate());
 
 			super.state(finalDateError, "finalDate", "assistant.tutorial-session.form.error.end-before-start");
 		}

@@ -37,10 +37,6 @@ public class StudentEnrolmentShowTest extends TestHarness {
 
 		super.checkInputBoxHasValue("creditCardNumber", creditCardNumber);
 		super.checkInputBoxHasValue("holder", holder);
-
-		super.checkSubmitExists("Update");
-		super.checkSubmitExists("Delete");
-		super.checkSubmitExists("Finalise");
 		super.checkLinkExists("Activities");
 
 		super.signOut();

@@ -35,11 +35,13 @@ public class AuthenticatedStudentEnrolmentShowService extends AbstractService<St
 
 		boolean status;
 		Enrolment object;
+		Student student;
 		int id;
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findEnrolmentById(id);
 
-		status = super.getRequest().getPrincipal().hasRole(Student.class);
+		student = this.repository.findStudentById(super.getRequest().getPrincipal().getActiveRoleId());
+		status = super.getRequest().getPrincipal().hasRole(Student.class) && object.getStudent().equals(student);
 
 		super.getResponse().setAuthorised(status);
 	}

@@ -3,7 +3,6 @@ package acme.roles;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -37,8 +36,5 @@ public class Student extends AbstractRole {
 
 	@URL
 	protected String			link;
-
-	@NotNull
-	protected Boolean			draftMode;
 
 }

@@ -30,3 +30,4 @@ student.enrolment.list.label.totalTime = TotalTime
 student.enrolment.list.button.create = Create
 
 student.enrolment.form.button.activities = Activities
+student.enrolment.course.repeatedCode = Repeated code

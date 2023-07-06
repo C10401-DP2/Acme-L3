@@ -16,6 +16,6 @@
 	
 	
 
-		<acme:submit code="authenticated.note.form.button.create" action="/authenticated/note/create"/>
+	<acme:submit test="${_command == 'create'}" code="authenticated.note.form.button.create" action="/authenticated/note/create"/>
 	
 </acme:form>
