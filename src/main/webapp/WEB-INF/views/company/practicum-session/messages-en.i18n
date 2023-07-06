@@ -1,0 +1,37 @@
+company.session.list.label.title= Title
+company.session.list.label.abstraction= Abstraction
+company.session.list.label.startDate= Start date
+company.session.list.label.finishDate= Finish date
+company.session.list.label.link= Link
+
+company.sessionPracticum.list.label.title = Title
+company.sessionPracticum.list.label.overview = Abstract
+company.sessionPracticum.list.label.practicum.title = Practicum Title
+
+company.sessionPracticum.form.label.title = Title
+company.sessionPracticum.form.label.overview = Abstract
+company.sessionPracticum.form.label.startDate = Start Date
+company.sessionPracticum.form.label.endDate = End Date
+company.sessionPracticum.form.label.moreInfo = More Info
+company.sessionPracticum.form.label.addendum = Are you sure you want to make this session an addendum? (Just one per practicum)
+company.sessionPracticum.list.button.create = Create Session
+company.practicum-session.list.label.title = Title
+company.practicum-session.list.label.start-date = Start date 
+company.practicum-session.list.label.end-date = End date
+company.practicum-session.list.label.addendum = Addendum 
+company.addendum-session.list.button.create = Create addendum session
+company.practicum-session.list.label.addendum = Addendum 
+company.addendum-session.form.label.accept = I do accept the excepcional addendum session creation
+
+company.addendum-session.form.label.addendum = ¿Is this practicum session an addendum session? (unchangeable)
+company.sessionPracticum.form.button.update = Update
+company.sessionPracticum.form.button.delete = Delete
+company.sessionPracticum.form.button.create = Create
+company.sessionPracticum.form.button.confirmation = Confirm
+company.sessionPracticum.form.error.justOneAddendum = This practicum already has an addendum.
+company.sessionPracticum.form.error.endAfterStart = The start date must be before the end date
+company.sessionPracticum.form.error.oneWeekAhead = The start date must be at least one week ahead from now
+company.sessionPracticum.form.error.oneWeekLong = The period must be at least one week long
+company.sessionPracticum.form.error.confirmation = You have to confirm the addendum creation
+
+company.sessionPracticum.list.button.create = Create

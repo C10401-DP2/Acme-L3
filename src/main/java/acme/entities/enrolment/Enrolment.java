@@ -1,7 +1,8 @@
 
 package acme.entities.enrolment;
 
-import javax.persistence.Column;
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
@@ -11,6 +12,7 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.activity.Activity;
 import acme.entities.course.Course;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Student;
@@ -30,7 +32,6 @@ public class Enrolment extends AbstractEntity {
 
 	@NotBlank
 	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
-	@Column(unique = true)
 	protected String			code;
 
 	@NotBlank
@@ -50,17 +51,27 @@ public class Enrolment extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-	protected Integer			totalTime;
+
+	public Integer totalTime(final Collection<Activity> activities) {
+		int tiempo = 0;
+		if (!activities.isEmpty())
+			for (final Activity activity : activities)
+				tiempo += activity.totalTime();
+		return tiempo;
+
+	}
 
 	//Relationships -----------------------------------------------------------
 
-	@Valid
-	@NotNull
-	@ManyToOne(optional = false)
-	protected Student			student;
 
 	@Valid
 	@NotNull
 	@ManyToOne(optional = false)
-	protected Course			course;
+	protected Student	student;
+
+	@Valid
+	@NotNull
+	@ManyToOne(optional = false)
+	protected Course	course;
+
 }

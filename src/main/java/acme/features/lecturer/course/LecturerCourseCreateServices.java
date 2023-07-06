@@ -1,6 +1,8 @@
 
 package acme.features.lecturer.course;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +21,10 @@ public class LecturerCourseCreateServices extends AbstractService<Lecturer, Cour
 
 	@Override
 	public void check() {
-		super.getResponse().setChecked(true);
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRole(Lecturer.class);
+		super.getResponse().setChecked(status);
 	}
 
 	@Override
@@ -49,6 +54,7 @@ public class LecturerCourseCreateServices extends AbstractService<Lecturer, Cour
 		assert object != null;
 
 		super.bind(object, "code", "title", "anAbstract", "retailPrice", "link", "draftMode");
+		object.setDraftMode(true);
 	}
 
 	@Override
@@ -63,17 +69,17 @@ public class LecturerCourseCreateServices extends AbstractService<Lecturer, Cour
 			super.state(existing == null, "code", "lecturer.course.form.error.duplicated");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("price")) {
+		if (!super.getBuffer().getErrors().hasErrors("retailPrice")) {
 			Configuration config;
 			config = this.repository.findConfiguration();
 
-			super.state(config.getAcceptedCurrency().contains(object.getRetailPrice().getCurrency()), "retailPrice", "lecturer.course.currency");
+			super.state(Arrays.asList(config.getAcceptedCurrency().trim().split(",")).contains(object.getRetailPrice().getCurrency()), "retailPrice", "lecturer.course.currency");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("price"))
+		if (!super.getBuffer().getErrors().hasErrors("retailPrice"))
 			super.state(object.getRetailPrice().getAmount() >= 0., "retailPrice", "lecturer.course.negative-price");
 
-		if (!super.getBuffer().getErrors().hasErrors("price"))
+		if (!super.getBuffer().getErrors().hasErrors("retailPrice"))
 			super.state(object.getRetailPrice().getAmount() <= 1000000, "retailPrice", "lecturer.course.too-much-price");
 
 	}

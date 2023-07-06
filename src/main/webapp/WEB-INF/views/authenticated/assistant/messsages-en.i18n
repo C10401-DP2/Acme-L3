@@ -14,3 +14,4 @@ authenticated.assistant.form.label.resume = Résumé
 authenticated.assistant.form.label.link = Link
 
 authenticated.assistant.form.button.create = Register
+authenticated.assistant.form.button.update = Update

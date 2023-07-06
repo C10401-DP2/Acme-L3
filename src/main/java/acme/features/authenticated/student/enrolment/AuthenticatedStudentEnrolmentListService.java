@@ -6,7 +6,9 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.course.Course;
 import acme.entities.enrolment.Enrolment;
+import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
@@ -48,10 +50,18 @@ public class AuthenticatedStudentEnrolmentListService extends AbstractService<St
 	@Override
 	public void unbind(final Enrolment object) {
 		assert object != null;
+		Collection<Course> courses;
+		SelectChoices choices;
+
+		courses = this.repository.findCourses();
+		choices = SelectChoices.from(courses, "title", object.getCourse());
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "code", "motivation", "goals", "totalTime");
+		tuple = super.unbind(object, "code", "motivation", "goals");
+		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
+
 		super.getResponse().setData(tuple);
 	}
 

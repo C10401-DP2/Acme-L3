@@ -16,8 +16,9 @@ public class Configuration extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
-	String						currency;
+	protected String			currency;
 
 	@NotBlank
-	String						acceptedCurrency;
+	protected String			acceptedCurrency;
+
 }

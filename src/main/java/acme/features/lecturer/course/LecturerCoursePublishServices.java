@@ -1,6 +1,7 @@
 
 package acme.features.lecturer.course;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,13 +79,13 @@ public class LecturerCoursePublishServices extends AbstractService<Lecturer, Cou
 
 		if (!super.getBuffer().getErrors().hasErrors("courseType")) {
 			final Collection<Lecture> lectures = this.repository.findManyLecturesByCourseId(object.getId());
-			super.state(object.courseType(lectures).equals(CourseType.THEORY), "courseType", "lecturer.course.form.error.courseType");
+			super.state(!object.courseType(lectures).equals(CourseType.THEORY), "courseType", "lecturer.course.form.error.courseType");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("price")) {
 			Configuration config;
 			config = this.repository.findConfiguration();
 
-			super.state(config.getAcceptedCurrency().contains(object.getRetailPrice().getCurrency()), "retailPrice", "lecturer.course.currency");
+			super.state(Arrays.asList(config.getAcceptedCurrency().trim().split(",")).contains(object.getRetailPrice().getCurrency()), "retailPrice", "lecturer.course.currency");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("price"))
@@ -107,8 +108,11 @@ public class LecturerCoursePublishServices extends AbstractService<Lecturer, Cou
 		assert object != null;
 
 		Tuple tuple;
+		final Collection<Lecture> lectures = this.repository.findManyLecturesByCourseId(object.getId());
+		final CourseType courseType = object.courseType(lectures);
 
-		tuple = super.unbind(object, "code", "title", "anAbstract", "retailPrice", "courseType", "link", "draftMode");
+		tuple = super.unbind(object, "code", "title", "anAbstract", "retailPrice", "link", "draftMode");
+		tuple.put("courseType", courseType);
 		super.getResponse().setData(tuple);
 	}
 }

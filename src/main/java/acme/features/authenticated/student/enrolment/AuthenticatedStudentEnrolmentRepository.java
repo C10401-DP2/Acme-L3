@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.activity.Activity;
 import acme.entities.course.Course;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.repositories.AbstractRepository;
@@ -31,5 +32,11 @@ public interface AuthenticatedStudentEnrolmentRepository extends AbstractReposit
 
 	@Query("SELECT SUM(EXTRACT(MINUTE FROM TIMEDIFF(a.finalDate, a.initialDate))) FROM Activity a WHERE a.enrolment IS NOT NULL AND a.enrolment.id = :id")
 	Integer sumTotalTime(int id);
+
+	@Query("SELECT a FROM Activity a WHERE a.enrolment.id = :id")
+	Collection<Activity> findAllActivitiesOfEnrolment(int id);
+
+	@Query("SELECT a.code FROM Enrolment a")
+	Collection<String> findAllEnrolment();
 
 }

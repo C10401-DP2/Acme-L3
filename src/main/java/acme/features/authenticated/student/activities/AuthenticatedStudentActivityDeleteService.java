@@ -1,15 +1,11 @@
 
 package acme.features.authenticated.student.activities;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.datatypes.ActivityType;
 import acme.entities.activity.Activity;
 import acme.entities.enrolment.Enrolment;
-import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
@@ -32,7 +28,20 @@ public class AuthenticatedStudentActivityDeleteService extends AbstractService<S
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		final Enrolment enrolment;
+		int id1;
+		int id;
+
+		Activity object;
+		id1 = super.getRequest().getPrincipal().getAccountId();
+
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findActivityById(id);
+		enrolment = object.getEnrolment();
+
+		status = super.getRequest().getPrincipal().hasRole(Student.class) && enrolment.getDraftMode() == true && enrolment.getStudent().getUserAccount().getId() == id1;
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -71,19 +80,9 @@ public class AuthenticatedStudentActivityDeleteService extends AbstractService<S
 		assert object != null;
 
 		Tuple tuple;
-		Collection<Enrolment> enrolments;
-		SelectChoices choices;
-		SelectChoices choices1;
-
-		enrolments = this.repository.findAllEnrolmentOfStudent(super.getRequest().getPrincipal().getActiveRoleId());
-		choices = SelectChoices.from(enrolments, "code", object.getEnrolment());
-		choices1 = SelectChoices.from(ActivityType.class, object.getAType());
 
 		tuple = super.unbind(object, "title", "abstrat", "aType", "link", "initialDate", "finalDate");
-		tuple.put("enrolment", choices.getSelected().getKey());
-		tuple.put("enrolments", choices);
-		tuple.put("activities", choices1);
-
+		tuple.put("draftMode", object.getEnrolment().getDraftMode());
 		super.getResponse().setData(tuple);
 	}
 

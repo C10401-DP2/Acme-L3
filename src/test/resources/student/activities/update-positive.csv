@@ -1,0 +1,6 @@
+enrolmentRecordIndex,activityRecordIndex,title,abstrat,activityType,initialDate,finalDate
+5,0,esto es un titulo largo largo largo largo muy largo tan largo que es el limi,este mensaje esta editado,THEORY,2020/02/04 22:22,2021/01/05 10:12
+5,0,this is a nice title,este mensaje abstracto es muy muy muy largo tan largo que podemos llegar al limite de 101 caracteres,THEORY,2020/02/04 22:22,2021/01/05 10:12
+5,0,Native Speaking languages,!!,HANDSON,2020/02/04 22:22,2020/02/05 22:22
+5,0,Not exactly,??,THEORY,2020/02/04 23:59,2020/02/05 00:00
+5,0,Not exactly,??,THEORY,2020/12/31 23:59,2021/01/01 00:00

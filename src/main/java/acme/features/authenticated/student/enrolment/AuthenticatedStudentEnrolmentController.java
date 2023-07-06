@@ -43,7 +43,7 @@ public class AuthenticatedStudentEnrolmentController extends AbstractController<
 		super.addBasicCommand("update", this.updateService);
 		super.addBasicCommand("delete", this.deleteService);
 		super.addBasicCommand("create", this.createService);
-		//super.addBasicCommand("finalise", this.finaliseService);
+		super.addCustomCommand("finalise", "update", this.finaliseService);
 
 	}
 }

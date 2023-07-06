@@ -8,8 +8,10 @@
 	<acme:input-textbox code="any.course.form.label.title" path="title"/>	
 	<acme:input-textbox code="any.course.form.label.anAbstract" path="anAbstract"/>	
 	<acme:input-textbox code="any.course.form.label.retailPrice" path="retailPrice"/>	
+	<acme:input-textbox code="any.course.form.label.retailPriceSystem" path="default" readonly="true"/>	
+	<acme:input-textbox code="any.course.form.label.date" path="date" readonly="true"/>	
 	<acme:input-textbox code="any.course.form.label.link" path="link"/>	
-	<acme:input-textbox code="any.course.form.label.activityType" path="activityType"/>
+	<acme:input-textbox code="any.course.form.label.activityType" path="courseType"/>
 
 	<acme:check-access test="isAuthenticated()">
 		<acme:button code="any.course.form.button.tutorials-list" action="/authenticated/tutorial/list?courseId=${id}"/>

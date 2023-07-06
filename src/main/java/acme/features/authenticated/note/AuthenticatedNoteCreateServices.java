@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.note.Note;
 import acme.framework.components.accounts.Authenticated;
+import acme.framework.components.accounts.Principal;
+import acme.framework.components.accounts.UserAccount;
 import acme.framework.components.models.Tuple;
 import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
@@ -32,6 +34,13 @@ public class AuthenticatedNoteCreateServices extends AbstractService<Authenticat
 	public void load() {
 		Note object;
 		Date moment;
+		Principal principal;
+		int userAccountId;
+		UserAccount userAccount;
+
+		principal = super.getRequest().getPrincipal();
+		userAccountId = principal.getAccountId();
+		userAccount = this.repository.findUserAccountById(userAccountId);
 
 		moment = MomentHelper.getCurrentMoment();
 
@@ -39,7 +48,7 @@ public class AuthenticatedNoteCreateServices extends AbstractService<Authenticat
 		object.setInstMoment(moment);
 		object.setTitle("");
 		object.setMessage("");
-		object.setAuthor("");
+		object.setAuthor(userAccount.getUsername() + " - " + userAccount.getIdentity().getFullName());
 		object.setEmail(null);
 		object.setLink(null);
 
@@ -50,7 +59,7 @@ public class AuthenticatedNoteCreateServices extends AbstractService<Authenticat
 	public void bind(final Note object) {
 		assert object != null;
 
-		super.bind(object, "title", "author", "message", "instMoment", "link");
+		super.bind(object, "title", "message", "instMoment", "link");
 	}
 
 	@Override
@@ -73,7 +82,7 @@ public class AuthenticatedNoteCreateServices extends AbstractService<Authenticat
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "title", "author", "message", "instMoment", "email", "link");
+		tuple = super.unbind(object, "title", "message", "instMoment", "email", "link");
 
 		super.getResponse().setData(tuple);
 	}

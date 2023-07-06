@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.activity.Activity;
 import acme.entities.course.Course;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.components.jsp.SelectChoices;
@@ -32,7 +33,19 @@ public class AuthenticatedStudentEnrolmentUpdateService extends AbstractService<
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		final boolean status;
+		int enrolmentId;
+		Enrolment enrolment;
+		Student student;
+
+		enrolmentId = super.getRequest().getData("id", int.class);
+		enrolment = this.repository.findEnrolmentById(enrolmentId);
+		final Collection<Activity> a = this.repository.findAllActivitiesOfEnrolment(enrolmentId);
+
+		student = enrolment.getStudent();
+		status = enrolment != null && enrolment.getDraftMode() && super.getRequest().getPrincipal().hasRole(student);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -50,12 +63,15 @@ public class AuthenticatedStudentEnrolmentUpdateService extends AbstractService<
 	public void bind(final Enrolment object) {
 		assert object != null;
 
-		super.bind(object, "code", "motivation", "goals", "totalTime", "initialDate", "finalDate");
+		super.bind(object, "code", "motivation", "goals");
 	}
 
 	@Override
 	public void validate(final Enrolment object) {
 		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("course"))
+			super.state(object.getCourse().getDraftMode() == false, "course", "student.enrolment.course.notDraftMode");
+
 	}
 
 	@Override
@@ -76,7 +92,7 @@ public class AuthenticatedStudentEnrolmentUpdateService extends AbstractService<
 		courses = this.repository.findCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
-		tuple = super.unbind(object, "code", "motivation", "goals", "totalTime", "draftMode");
+		tuple = super.unbind(object, "code", "motivation", "goals", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 

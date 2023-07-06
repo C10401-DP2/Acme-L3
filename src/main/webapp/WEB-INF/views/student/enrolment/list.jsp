@@ -19,7 +19,6 @@
 	<acme:list-column code="student.enrolment.list.label.code" path="code"/>
 	<acme:list-column code="student.enrolment.list.label.motivation" path="motivation"/>
 	<acme:list-column code="student.enrolment.list.label.goals" path="goals"/>
-	<acme:list-column code="student.enrolment.list.label.totalTime" path="totalTime"/>
 </acme:list>
 <jstl:if test="${_command == 'list-mine'}">
 	<acme:button code="student.enrolment.list.button.create" action="/student/enrolment/create"/>

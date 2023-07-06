@@ -24,32 +24,39 @@ public class AuthenticatedStudentActivityListService extends AbstractService<Stu
 	@Override
 	public void check() {
 		super.getResponse().setChecked(true);
+
 	}
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		status = super.getRequest().getPrincipal().hasRole(Student.class);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		int userAccountId;
-
 		Collection<Activity> objects;
-		userAccountId = super.getRequest().getPrincipal().getActiveRoleId();
+		final int enrolmentId = super.getRequest().getData("enrolmentId", int.class);
+		objects = this.repository.findAllActivitiesOfEnrolment(enrolmentId);
 
-		objects = this.repository.findAllActivitiesOfStudent(userAccountId);
 		super.getBuffer().setData(objects);
 	}
 
 	@Override
 	public void unbind(final Activity object) {
 		assert object != null;
-
+		final boolean prueba = false;
 		Tuple tuple;
+		final int enrolmentId = super.getRequest().getData("enrolmentId", int.class);
+
+		super.getResponse().setGlobal("draftMode", object.getEnrolment().getDraftMode());
 
 		tuple = super.unbind(object, "title", "abstrat", "aType", "initialDate", "finalDate");
+		super.getResponse().setGlobal("enrolmentId", enrolmentId);
+		super.getResponse().setGlobal("prueba", prueba);
 		super.getResponse().setData(tuple);
+
 	}
 
 }

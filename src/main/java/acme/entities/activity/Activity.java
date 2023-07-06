@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.datatypes.ActivityType;
+import acme.datatypes.ActType;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
@@ -31,7 +31,6 @@ public class Activity extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes
-
 	@NotBlank
 	@Length(max = 76)
 	protected String			title;
@@ -41,14 +40,16 @@ public class Activity extends AbstractEntity {
 	protected String			abstrat;
 
 	@NotNull
-	protected ActivityType		aType;
+	protected ActType			aType;
 
 	@URL
 	protected String			link;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				initialDate;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				finalDate;
 
@@ -56,9 +57,13 @@ public class Activity extends AbstractEntity {
 	@Transient
 	public Integer totalTime() {
 		long total;
-		total = this.getInitialDate().getTime() - this.getFinalDate().getTime();
+		if (this.getInitialDate() == null || this.getFinalDate() == null)
+			return null;
+		else {
+			total = this.getFinalDate().getTime() - this.getInitialDate().getTime();
 
-		return (int) total / 3600000;
+			return (int) total / 3600000;
+		}
 	}
 
 	// Relationships

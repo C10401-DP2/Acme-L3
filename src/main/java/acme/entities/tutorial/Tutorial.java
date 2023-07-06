@@ -4,7 +4,6 @@ package acme.entities.tutorial;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -29,7 +28,7 @@ public class Tutorial extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Pattern(regexp = "[A-Z]{1,3}[0-9]{4}")
+	@Pattern(regexp = "[A-Z]{1,3}[0-9]{3}")
 	@Column(unique = true)
 	protected String			code;
 
@@ -50,24 +49,16 @@ public class Tutorial extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-
-	@Transient
-	protected Integer totalTime() {
-		//estimatedHours: sum of stretchs  of time of associated TutorialSessions.
-		return null;
-	}
-
 	// Relationships ----------------------------------------------------------
 
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Assistant			assistant;
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	protected Assistant	assistant;
-
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	protected Course	course;
+	protected Course			course;
 
 }
