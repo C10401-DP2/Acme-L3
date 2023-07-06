@@ -20,6 +20,7 @@
 	<acme:input-textarea code="authenticated.audit.form.label.conclusion" path="conclusion"/>	
 	<acme:input-textarea code="authenticated.audit.form.label.strong-points" path="strongPoints"/>
 	<acme:input-textarea code="authenticated.audit.form.label.weak-points" path="weakPoints"/>
+	<acme:input-textbox code="authenticated.audit.form.label.course" path="course"/>
 	<acme:input-textbox code="authenticated.audit.form.label.auditor" path="auditor"/>
 	<acme:hidden-data path="id"/>
 </acme:form>

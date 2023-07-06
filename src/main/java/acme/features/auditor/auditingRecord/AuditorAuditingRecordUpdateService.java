@@ -71,7 +71,10 @@ public class AuditorAuditingRecordUpdateService extends AbstractService<Auditor,
 		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
 			boolean finalDateError;
 
-			finalDateError = MomentHelper.isBefore(object.getInitialDate(), object.getFinalDate());
+			if (object.getInitialDate() == null || object.getFinalDate() == null)
+				finalDateError = true;
+			else
+				finalDateError = MomentHelper.isBefore(object.getInitialDate(), object.getFinalDate());
 
 			super.state(finalDateError, "finalDate", "auditor.auditing-record.form.error.end-before-start");
 		}
@@ -79,7 +82,10 @@ public class AuditorAuditingRecordUpdateService extends AbstractService<Auditor,
 		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
 			boolean finalDateErrorDuration;
 
-			finalDateErrorDuration = MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), 1L, ChronoUnit.HOURS);
+			if (object.getInitialDate() == null || object.getFinalDate() == null)
+				finalDateErrorDuration = true;
+			else
+				finalDateErrorDuration = MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), 1L, ChronoUnit.HOURS);
 
 			super.state(finalDateErrorDuration, "finalDate", "auditor.auditing-record.form.error.duration");
 		}
