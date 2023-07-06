@@ -175,11 +175,11 @@ bg=green
 Offer
 --
 + heading: String {NotBlank, Length(max = 76}
-+ moment: Date {Past, Temporal(TIMESTAMP)}
++ moment: Date {NotNull, Past, Temporal(TIMESTAMP)}
 + summary: String {NotBlank, Length{max = 101}}
-+ initialDate: Date {Temporal(TIMESTAMP)}
-+ finalDate: Date {Temporal(TIMESTAMP)} 
-+ price: Money
++ initialDate: Date {NotNull, Temporal(TIMESTAMP)}
++ finalDate: Date {NotNull, Temporal(TIMESTAMP)} 
++ price: Money {NotNull}
 + link: String {URL}
 bg=green</panel_attributes>
     <additional_attributes/>
@@ -217,7 +217,7 @@ bg=green</panel_attributes>
 Peep
 --
 + title: String {NotBlank, Length(max = 76}
-+ moment: Date {Past, Temporal(TIMESTAMP)}
++ moment: Date {NotNull, Past, Temporal(TIMESTAMP)}
 + nick: String {NotBlank, Length{max = 76} }
 + message: String {NotBlank, Length{max = 101}}
 + email: String {Email}
@@ -237,7 +237,7 @@ bg=green</panel_attributes>
 Note
 --
 + title: String {NotBlank, Length(max = 76}
-+ moment: Date {Past, Temporal(TIMESTAMP)}
++ moment: Date {NotNull, Past, Temporal(TIMESTAMP)}
 + author: String {NotBlank, Length{max = 76} }
 + message: String {NotBlank, Length{max = 101}}
 + email: String {Email}
@@ -257,12 +257,12 @@ bg=green</panel_attributes>
 Banner
 --
 + title: String {NotBlank, Length(max = 76}
-+ moment: Date {NotNull,Past, Temporal(TIMESTAMP)}
-+ initialDisplay: Date {Temporal{TIMESTAMP}
-+ finalDisplay: Date {Temporal{TIMESTAMP}
-+ image: String {URL}
++ moment: Date {NotNull, Past, Temporal(TIMESTAMP)}
++ initialDisplay: Date {NotNull, Temporal{TIMESTAMP}
++ finalDisplay: Date {NotNull, Temporal{TIMESTAMP}
++ image: String {NotBlank, URL}
 + slogan: String {NotBlank, Length(max = 76}
-+ documentLink: String {URL}
++ documentLink: String {NotBlank, URL}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
@@ -309,14 +309,15 @@ bg=green</panel_attributes>
       <x>1246</x>
       <y>1106</y>
       <w>224</w>
-      <h>84</h>
+      <h>91</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Bulletin
 --
 + title: String {NotBlank, Length(max = 76}
-+ moment: Date {Past, Temporal(TIMESTAMP)}
-+ isCritical: Boolean
++ moment: Date {NotNull, Past, Temporal(TIMESTAMP)}
++ message: String {NotBlank, Length(max = 101)}
++ isCritical: Boolean {NotNull}
 + link: String {URL}
 bg=green</panel_attributes>
     <additional_attributes/>

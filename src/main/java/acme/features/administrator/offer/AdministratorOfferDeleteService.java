@@ -1,15 +1,12 @@
 
 package acme.features.administrator.offer;
 
-import java.time.temporal.ChronoUnit;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.offer.Offer;
 import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
-import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 
 @Service
@@ -32,15 +29,7 @@ public class AdministratorOfferDeleteService extends AbstractService<Administrat
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int id;
-		Offer object;
-
-		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOfferById(id);
-		status = object != null && super.getRequest().getPrincipal().hasRole(object.getAdministrator());
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
@@ -64,30 +53,6 @@ public class AdministratorOfferDeleteService extends AbstractService<Administrat
 	@Override
 	public void validate(final Offer object) {
 		assert object != null;
-
-		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
-			boolean finalDateError;
-
-			finalDateError = MomentHelper.isBefore(object.getInitialDate(), object.getFinalDate());
-
-			super.state(finalDateError, "finalDate", "administrator.offer.form.error.end-before-start");
-		}
-
-		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
-			boolean finalDateErrorDuration;
-
-			finalDateErrorDuration = MomentHelper.isLongEnough(object.getInitialDate(), object.getFinalDate(), 1L, ChronoUnit.WEEKS);
-
-			super.state(finalDateErrorDuration, "finalDate", "administrator.offer.form.error.duration");
-		}
-
-		if (!super.getBuffer().getErrors().hasErrors("initialDate")) {
-			boolean initialDateError;
-
-			initialDateError = MomentHelper.isLongEnough(object.getMoment(), object.getInitialDate(), 1L, ChronoUnit.DAYS);
-
-			super.state(initialDateError, "initialDate", "administrator.offer.form.error.one-day-after");
-		}
 	}
 
 	@Override
