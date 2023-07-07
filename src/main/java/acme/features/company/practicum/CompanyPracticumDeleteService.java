@@ -83,9 +83,17 @@ public class CompanyPracticumDeleteService extends AbstractService<Company, Prac
 	public void unbind(final Practicum object) {
 		assert object != null;
 
+		Collection<PracticumSession> sessions;
+		Double estimatedTime;
 		Tuple tuple;
 
+		sessions = this.repository.findManyPracticumSessionsByPracticumId(object.getId());
+		estimatedTime = 0.;
+		if (!sessions.isEmpty())
+			estimatedTime = object.estimatedTime(sessions);
+
 		tuple = super.unbind(object, "code", "title", "abstraction", "goals", "draftMode");
+		tuple.put("estimatedTime", estimatedTime);
 
 		super.getResponse().setData(tuple);
 	}
