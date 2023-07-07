@@ -1,10 +1,13 @@
 
 package acme.features.company.practicum;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.practicum.Practicum;
+import acme.entities.practicumSession.PracticumSession;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
@@ -56,7 +59,7 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	public void bind(final Practicum object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "anAbstract", "goals", "draftMode");
+		super.bind(object, "code", "title", "anAbstract", "goals", "draftMode", "estimatedTime");
 	}
 
 	@Override
@@ -83,9 +86,17 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	public void unbind(final Practicum object) {
 		assert object != null;
 
+		Double estimatedTime;
 		Tuple tuple;
+		Collection<PracticumSession> sessions;
+
+		sessions = this.repository.findManyPracticumSessionsByPracticumId(object.getId());
+		estimatedTime = 0.;
+		if (!sessions.isEmpty())
+			estimatedTime = object.estimatedTime(sessions);
 
 		tuple = super.unbind(object, "code", "title", "abstraction", "goals", "draftMode");
+		tuple.put("estimatedTime", estimatedTime);
 
 		super.getResponse().setData(tuple);
 	}
