@@ -22,6 +22,7 @@ administrator.offer.form.button.delete = Delete
 administrator.offer.form.error.end-before-start = The final date can not be before the initial date
 administrator.offer.form.error.duration = The duration must be at least one week long
 administrator.offer.form.error.one-day-after = The initial date must be one day after the instantiation moment
+administrator.offer.form.error.price-positive-or-zero = The price must be positive or zero
 
 administrator.offer.list.label.moment = Moment
 administrator.offer.list.label.heading = Heading
