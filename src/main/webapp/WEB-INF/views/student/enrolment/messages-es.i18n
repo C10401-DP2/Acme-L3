@@ -27,6 +27,7 @@ student.enrolment.list.label.motivation = Motivacion
 student.enrolment.list.label.goals = Objetivos
 student.enrolment.list.label.totalTime = Tiempo total
 
+student.enrolment.placeholder.holder = Propietario
 student.enrolment.list.button.create = Crear
 student.enrolment.form.button.activities = Actividades
 student.enrolment.course.repeatedCode = Codigo repetido
