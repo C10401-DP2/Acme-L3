@@ -9,8 +9,8 @@
 	<acme:input-textarea code="student.enrolment.form.label.goals" path="goals"/>
 	<acme:input-select code="student.enrolment.form.label.course" path="course" choices="${courses}"/>
 	<acme:input-textarea code="student.enrolment.form.label.totalTime" path="totalTime" readonly="true"/>
-	<acme:input-textarea code="student.enrolment.form.label.creditCardNumber" path="XXXXXXXXXXXXXXXX" placeholder="student.enrolment.form.label.creditCardNumber.placeholder"/>	
-	<acme:input-textarea code="student.enrolment.form.label.holder" path="holder"/>
+	<acme:input-textarea code="student.enrolment.form.label.creditCardNumber" path="creditCardNumber" placeholder="XXXXXXXXXXXXXXXX"/>	
+	<acme:input-textarea code="student.enrolment.form.label.holder" path="holder" placeholder="student.enrolment.placeholder.holder"/>
 	<acme:hidden-data path="draftMode"/>
 	<acme:hidden-data path="id"/>
 	<acme:hidden-data path="totalTime"/>

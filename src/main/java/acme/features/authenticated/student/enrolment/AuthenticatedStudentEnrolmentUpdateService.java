@@ -72,6 +72,9 @@ public class AuthenticatedStudentEnrolmentUpdateService extends AbstractService<
 		if (!super.getBuffer().getErrors().hasErrors("course"))
 			super.state(object.getCourse().getDraftMode() == false, "course", "student.enrolment.course.notDraftMode");
 
+		if (!super.getBuffer().getErrors().hasErrors("code"))
+			super.state(!this.repository.findAllEnrolment().contains(object.getCode()), "code", "student.enrolment.course.repeatedCode");
+
 	}
 
 	@Override
