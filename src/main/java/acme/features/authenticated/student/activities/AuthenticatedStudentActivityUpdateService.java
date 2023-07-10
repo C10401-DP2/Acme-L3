@@ -70,9 +70,9 @@ public class AuthenticatedStudentActivityUpdateService extends AbstractService<S
 	public void validate(final Activity object) {
 		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
-			boolean finalDateError;
-
-			finalDateError = MomentHelper.isBefore(object.getInitialDate(), object.getFinalDate());
+			boolean finalDateError = false;
+			if (object.getInitialDate() != null && object.getFinalDate() != null)
+				finalDateError = MomentHelper.isBefore(object.getInitialDate(), object.getFinalDate());
 
 			super.state(finalDateError, "finalDate", "assistant.tutorial-session.form.error.end-before-start");
 		}
