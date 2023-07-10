@@ -1,6 +1,7 @@
 
 package acme.features.administrator.banner;
 
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,30 @@ public class AdministratorBannerUpdateServices extends AbstractService<Administr
 	@Override
 	public void validate(final Banner object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("initialDisplay")) {
+			boolean initialDisplayError;
+
+			if (object.getInitialDisplay() == null || object.getFinalDisplay() == null)
+				initialDisplayError = true;
+			else {
+				final Date initialDisplay = super.getRequest().getData("initialDisplay", Date.class);
+				final Date finalDisplay = super.getRequest().getData("finalDisplay", Date.class);
+				initialDisplayError = initialDisplay.before(finalDisplay);
+			}
+			super.state(initialDisplayError, "initialDisplay", "administrator.banner.form.error-dates");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("finalDisplay")) {
+			boolean finalDisplayErrorDuration;
+
+			if (object.getInitialDisplay() == null || object.getFinalDisplay() == null)
+				finalDisplayErrorDuration = true;
+			else
+				finalDisplayErrorDuration = MomentHelper.isLongEnough(object.getInitialDisplay(), object.getFinalDisplay(), 1L, ChronoUnit.WEEKS);
+
+			super.state(finalDisplayErrorDuration, "finalDisplay", "administrator.banner.form.error.duration");
+		}
 	}
 
 	@Override
