@@ -15,3 +15,4 @@ administrator.banner.form.button.update = Actualizar
 administrator.banner.form.button.delete = Eliminar
 
 administrator.banner.form.error-dates = La fecha de inicio debe ser anterior a la final
+administrator.banner.form.error.duration = Debe durar al menos una semana
