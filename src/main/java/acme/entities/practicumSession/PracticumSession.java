@@ -40,11 +40,11 @@ public class PracticumSession extends AbstractEntity {
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				initialDate;
+	protected Date				initialDate;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				finalDate;
+	protected Date				finalDate;
 
 	protected Boolean			addendum;
 
