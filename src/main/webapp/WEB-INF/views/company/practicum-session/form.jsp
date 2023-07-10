@@ -21,7 +21,7 @@
     <acme:input-textbox code="company.sessionPracticum.form.label.overview" path="anAbstract"/>
     <acme:input-moment code="company.sessionPracticum.form.label.startDate" path="initialDate"/>
     <acme:input-moment code="company.sessionPracticum.form.label.endDate" path="finalDate"/>
-    <acme:input-checkbox code="ccompany.sessionPracticum.form.label.addendum" path="addendum" readonly="true"/>
+    <acme:input-checkbox code="company.sessionPracticum.form.label.addendum" path="addendum" readonly="true"/>
     <acme:input-url code="company.sessionPracticum.form.label.moreInfo" path="link"/>
     
     <jstl:if test="${confirmation}">
