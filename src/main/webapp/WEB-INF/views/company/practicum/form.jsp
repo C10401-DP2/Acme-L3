@@ -16,15 +16,12 @@
 	<acme:input-select code="company.practicum.list.label.course" path="course" choices="${courses}"/>
 	
 	<jstl:choose>
-		<jstl:when test="${_command != 'show' && draftMode == false}">
+		<jstl:when test="${_command == 'show' && draftMode == false}">
 		<acme:button code="practicum.practicum-session.button.practicum-sessionList" action="/company/practicum-session/list?practicumId=${id}"/>
-		<acme:input-textbox code="company.practicum.list.label.draftMode" path="draftMode" readonly="true"/>
 		</jstl:when>
-		
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="company.practicum.form.button.create" action="/company/practicum/create"/>
 		</jstl:when>
-	
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">	
 			<acme:button code="practicum.practicum-session.button.practicum-sessionList" action="/company/practicum-session/list?practicumId=${id}"/>
 			<acme:submit code="company.practicum.button.update" action="/company/practicum/update"/>

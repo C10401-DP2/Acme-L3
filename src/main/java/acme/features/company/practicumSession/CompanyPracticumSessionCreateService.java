@@ -74,16 +74,18 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 		confirmation = object.getPracticum().getDraftMode() ? true : super.getRequest().getData("confirmation", boolean.class);
 		super.state(confirmation, "confirmation", "company.sessionPracticum.form.error.confirmation");
 
-		if (!super.getBuffer().getErrors().hasErrors("initialDate") && !super.getBuffer().getErrors().hasErrors("finalDate"))
+		if (!super.getBuffer().getErrors().hasErrors("initialDate") && !super.getBuffer().getErrors().hasErrors("finalDate")) {
 			if (!super.getBuffer().getErrors().hasErrors("finalDate"))
 				super.state(object.getInitialDate().before(object.getFinalDate()), "finalDate", "company.sessionPracticum.form.error.endAfterStart");
-			else if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
-				date = CompanyPracticumSessionCreateService.plusOneWeek(object.getInitialDate());
-				super.state(object.getInitialDate().equals(date) || object.getFinalDate().after(date), "finalDate", "company.sessionPracticum.form.error.oneWeekLong");
-			} else if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
+			if (!super.getBuffer().getErrors().hasErrors("finalDate")) {
 				date = CompanyPracticumSessionCreateService.plusOneWeek(object.getInitialDate());
 				super.state(object.getInitialDate().equals(date) || object.getFinalDate().after(date), "finalDate", "company.sessionPracticum.form.error.oneWeekLong");
 			}
+			if (!super.getBuffer().getErrors().hasErrors("initialDate")) {
+				date = CompanyPracticumSessionCreateService.plusOneWeek(MomentHelper.getCurrentMoment());
+				super.state(object.getInitialDate().equals(date) || object.getInitialDate().after(date), "initialDate", "company.sessionPracticum.form.error.oneWeekAhead");
+			}
+		}
 
 	}
 
