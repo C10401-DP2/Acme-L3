@@ -91,6 +91,9 @@ public class AdministratorOfferUpdateService extends AbstractService<Administrat
 		}
 		if (!super.getBuffer().getErrors().hasErrors("price"))
 			super.state(object.getPrice().getAmount() >= 0, "price", "administrator.offer.form.error.price-positive-or-zero");
+
+		if (!super.getBuffer().getErrors().hasErrors("price"))
+			super.state(this.repository.systemConfiguration().getAcceptedCurrency().contains(object.getPrice().getCurrency()), "price", "administrator.offer.form.error.incorrect-currency");
 	}
 
 	@Override
