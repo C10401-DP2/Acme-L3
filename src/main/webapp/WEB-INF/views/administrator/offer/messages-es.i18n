@@ -23,6 +23,7 @@ administrator.offer.form.error.end-before-start = La fecha final no puede estar 
 administrator.offer.form.error.duration = La duración debe de ser de mínimo una semana
 administrator.offer.form.error.one-day-after = La fecha inicial debe de estar al menos un día después del momento de instanciación
 administrator.offer.form.error.price-positive-or-zero = El precio debe ser positivo o cero
+administrator.offer.form.error.incorrect-currency = La moneda introducida es incorrecta
 
 administrator.offer.list.label.moment = Momento
 administrator.offer.list.label.heading = Cabecera

@@ -23,6 +23,7 @@ administrator.offer.form.error.end-before-start = The final date can not be befo
 administrator.offer.form.error.duration = The duration must be at least one week long
 administrator.offer.form.error.one-day-after = The initial date must be one day after the instantiation moment
 administrator.offer.form.error.price-positive-or-zero = The price must be positive or zero
+administrator.offer.form.error.incorrect-currency = The currency used is incorrect
 
 administrator.offer.list.label.moment = Moment
 administrator.offer.list.label.heading = Heading
