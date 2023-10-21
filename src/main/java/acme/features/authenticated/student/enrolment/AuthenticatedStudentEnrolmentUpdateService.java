@@ -36,11 +36,14 @@ public class AuthenticatedStudentEnrolmentUpdateService extends AbstractService<
 		int enrolmentId;
 		Enrolment enrolment;
 		Student student;
+		int id1;
 
 		enrolmentId = super.getRequest().getData("id", int.class);
 		enrolment = this.repository.findEnrolmentById(enrolmentId);
+		id1 = super.getRequest().getPrincipal().getAccountId();
+
 		student = enrolment.getStudent();
-		status = enrolment != null && enrolment.getDraftMode() && super.getRequest().getPrincipal().hasRole(student);
+		status = enrolment != null && enrolment.getDraftMode() && super.getRequest().getPrincipal().hasRole(student) && enrolment.getStudent().getUserAccount().getId() == id1;
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -69,8 +72,11 @@ public class AuthenticatedStudentEnrolmentUpdateService extends AbstractService<
 		if (!super.getBuffer().getErrors().hasErrors("course"))
 			super.state(object.getCourse().getDraftMode() == false, "course", "student.enrolment.course.notDraftMode");
 
-		if (!super.getBuffer().getErrors().hasErrors("code"))
-			super.state(!this.repository.findAllEnrolment().contains(object.getCode()), "code", "student.enrolment.course.repeatedCode");
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Enrolment enrolment;
+			enrolment = this.repository.findEnrolmentByCode(object.getCode());
+			super.state(enrolment == null || enrolment.getCode().equals(object.getCode()) && enrolment.getId() == object.getId(), "code", "student.enrolment.course.repeatedCode");
+		}
 
 	}
 

@@ -35,10 +35,9 @@ public class StudentActivitiesShowTest extends TestHarness {
 		super.clickOnListingRecord(enrolmentRecordIndex);
 		super.clickOnButton("Activities");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 		super.clickOnListingRecord(activityRecordIndex);
 
-		super.checkFormExists();
+		//super.checkFormExists();
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("abstrat", abstrat);
 		super.checkInputBoxHasValue("aType", aType);

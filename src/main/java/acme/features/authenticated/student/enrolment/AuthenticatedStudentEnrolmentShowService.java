@@ -37,11 +37,13 @@ public class AuthenticatedStudentEnrolmentShowService extends AbstractService<St
 		Enrolment object;
 		Student student;
 		int id;
+		int id1;
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findEnrolmentById(id);
+		id1 = super.getRequest().getPrincipal().getAccountId();
 
 		student = this.repository.findStudentById(super.getRequest().getPrincipal().getActiveRoleId());
-		status = super.getRequest().getPrincipal().hasRole(Student.class) && object.getStudent().equals(student);
+		status = super.getRequest().getPrincipal().hasRole(Student.class) && object.getStudent().equals(student) && object.getStudent().getUserAccount().getId() == id1;
 
 		super.getResponse().setAuthorised(status);
 	}

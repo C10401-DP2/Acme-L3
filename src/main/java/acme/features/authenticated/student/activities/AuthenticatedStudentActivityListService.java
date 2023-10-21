@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.activity.Activity;
+import acme.entities.enrolment.Enrolment;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
@@ -23,14 +24,24 @@ public class AuthenticatedStudentActivityListService extends AbstractService<Stu
 
 	@Override
 	public void check() {
-		super.getResponse().setChecked(true);
+		boolean status;
+
+		status = super.getRequest().hasData("enrolmentId", int.class);
+
+		super.getResponse().setChecked(status);
 
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		status = super.getRequest().getPrincipal().hasRole(Student.class);
+		int enrolmentId;
+		final int id;
+		Enrolment enrolment;
+		id = super.getRequest().getPrincipal().getAccountId();
+		enrolmentId = super.getRequest().getData("enrolmentId", int.class);
+		enrolment = this.repository.findEnrolmentById(enrolmentId);
+		status = enrolment != null && enrolment.getStudent().getUserAccount().getId() == id;
 		super.getResponse().setAuthorised(status);
 	}
 
