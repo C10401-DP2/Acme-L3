@@ -31,3 +31,4 @@ student.enrolment.placeholder.holder = Propietario
 student.enrolment.list.button.create = Crear
 student.enrolment.form.button.activities = Actividades
 student.enrolment.course.repeatedCode = Codigo repetido
+student.enrolment.course.nullCode = Codigo no valido

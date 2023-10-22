@@ -31,3 +31,4 @@ student.enrolment.list.button.create = Create
 student.enrolment.placeholder.holder = Holder
 student.enrolment.form.button.activities = Activities
 student.enrolment.course.repeatedCode = Repeated code
+student.enrolment.course.nullCode = Not valid Code

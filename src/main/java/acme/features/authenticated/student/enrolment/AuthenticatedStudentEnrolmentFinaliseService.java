@@ -36,13 +36,15 @@ public class AuthenticatedStudentEnrolmentFinaliseService extends AbstractServic
 		int enrolmentId;
 		Enrolment enrolment;
 		Student student;
+		int id1;
 
 		enrolmentId = super.getRequest().getData("id", int.class);
 		enrolment = this.repository.findEnrolmentById(enrolmentId);
 		final Collection<Activity> a = this.repository.findAllActivitiesOfEnrolment(enrolmentId);
+		id1 = super.getRequest().getPrincipal().getAccountId();
 
 		student = enrolment.getStudent();
-		status = enrolment != null && enrolment.getDraftMode() && super.getRequest().getPrincipal().hasRole(student) && !a.isEmpty();
+		status = enrolment != null && enrolment.getDraftMode() && super.getRequest().getPrincipal().hasRole(student) && !a.isEmpty() && enrolment.getStudent().getUserAccount().getId() == id1;
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -68,7 +70,6 @@ public class AuthenticatedStudentEnrolmentFinaliseService extends AbstractServic
 
 			super.state(creditCardNumber.length() == 16, "creditCardNumber", "student.enrolment.error.lowerNibble.notValidNumber");
 		}
-
 	}
 
 	@Override

@@ -39,4 +39,7 @@ public interface AuthenticatedStudentEnrolmentRepository extends AbstractReposit
 	@Query("SELECT a.code FROM Enrolment a")
 	Collection<String> findAllEnrolment();
 
+	@Query("SELECT a FROM Enrolment a WHERE a.code = :code")
+	Enrolment findEnrolmentByCode(String code);
+
 }
